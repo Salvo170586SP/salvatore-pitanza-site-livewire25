@@ -1,0 +1,30 @@
+<?php
+
+use App\Livewire\Guest\Pages\AboutMe as PagesAboutMe;
+use App\Livewire\Guest\Pages\HomePage;
+use App\Livewire\Guest\Pages\ProjectsPage;
+use App\Livewire\Guest\Pages\SkillsPage;
+use Illuminate\Support\Facades\Route;
+use Livewire\Volt\Volt;
+
+
+
+Route::get('/', HomePage::class);
+Route::get('/about-me', PagesAboutMe::class);
+Route::get('/skills', SkillsPage::class);
+Route::get('/projects', ProjectsPage::class);
+
+Route::view('dashboard', 'dashboard')
+    ->middleware(['auth', 'verified'])
+    ->name('dashboard');
+
+
+Route::middleware(['auth'])->group(function () {
+    Route::redirect('settings', 'settings/profile');
+
+    Volt::route('settings/profile', 'settings.profile')->name('profile.edit');
+    Volt::route('settings/password', 'settings.password')->name('password.edit');
+    Volt::route('settings/appearance', 'settings.appearance')->name('appearance.edit');
+});
+
+require __DIR__ . '/auth.php';

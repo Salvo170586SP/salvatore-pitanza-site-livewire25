@@ -1,0 +1,63 @@
+<div>
+    <section id="jumbotron"
+        class="relative overflow-hidden w-full text-white bg-gradient-to-br from-indigo-400/10 to-transparent border-b border-zinc-800 py-55">
+        <div class="absolute inset-0 z-0
+            bg-[linear-gradient(to_right,#4f46e520_2px,transparent_2px),linear-gradient(to_bottom,#4f46e520_2px,transparent_2px)]
+            bg-[size:6rem_6rem] [mask-image:radial-gradient(ellipse_70%_80%_at_50%_0%,#000_80%,transparent_100%)]">
+        </div>
+        <div class="absolute inset-0 z-0 bg-gradient-to-br from-indigo-500/10 to-transparent"></div>
+        <div class="flex justify-center items-center">
+            <div class="flex flex-col items-center">
+                <div class="px-10 md:px-32 ">
+                    <div class="flex justify-between">
+                        <div class="flex items-center jus gap-3">
+                            <div class="relative">
+                                <figure
+                                    class="w-[70px] h-[70px]  border border-indigo-100/20 rounded-full overflow-hidden">
+                                    <img src="/assets/imgs/unnamed.png" class="object-cover w-full h-full" />
+                                </figure>
+                                <span
+                                    class="inline-block absolute bottom-0 right-0 bg-red-500 w-3 h-3 rounded-full"></span>
+                            </div>
+                            <div>
+                                <h1 class="text-3xl font-medium">Salvatore Pitanza</h1>
+                                <h4 class="text-sm font-semibold text-zinc-400">WEB DEVELOPER FULLSTACK</h4>
+                            </div>
+                        </div>
+
+                    </div>
+                    <br />
+
+                 {{--    <div class="w-full flex justify-center">
+                        <figure class="w-[100px] h-[100px] rounded-full overflow-hidden">
+                            <img src="/assets/icon/code.png" class="object-cover w-full h-full" />
+                        </figure>
+                    </div> --}}
+                    <p class="text-6xl font-bold mt-5">
+                        Benvenuto nel mio <span class="text-blue-600">portfolio</span>
+                    </p>
+                    <p class="text-zinc-400 text-center font-semibold mt-2">
+                        Le competenze, le passioni e la mia vita oltre il coding.
+                    </p>
+
+                </div>
+                <div class="flex flex-col items-center mt-15">
+                    <small class="text-lg font-semibold text-center mb-4 text-zinc-400">
+                        Scopri le mie competenze nel mondo dello sviluppo
+                        web
+                    </small>
+                    <button
+                        class="bg-blue-600 hover:bg-blue-700 inline-flex items-center cursor-pointer py-3 px-5 hover:scale-110 transition-all rounded-[8px] font-medium z-10"
+                        wire:navigate href="/skills">
+                        Guarda le mie competenze
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
+                            stroke="currentColor" class="size-4">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </section>
+</div>
