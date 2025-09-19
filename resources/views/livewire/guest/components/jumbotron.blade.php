@@ -12,12 +12,15 @@
                     <div class="flex justify-between">
                         <div class="flex items-center jus gap-3">
                             <div class="relative">
+                                @if($biography->img_url)
                                 <figure
                                     class="w-[70px] h-[70px]  border border-indigo-100/20 rounded-full overflow-hidden">
-                                    <img src="/assets/imgs/unnamed.png" class="object-cover w-full h-full" />
+                                    <img src="{{ asset('/storage/'.$biography->img_url) }}"
+                                        class="object-cover w-full h-full" />
                                 </figure>
                                 <span
                                     class="inline-block absolute bottom-0 right-0 bg-red-500 w-3 h-3 rounded-full"></span>
+                                @endif
                             </div>
                             <div>
                                 <h1 class="text-3xl font-medium">Salvatore Pitanza</h1>
@@ -28,11 +31,7 @@
                     </div>
                     <br />
 
-                 {{--    <div class="w-full flex justify-center">
-                        <figure class="w-[100px] h-[100px] rounded-full overflow-hidden">
-                            <img src="/assets/icon/code.png" class="object-cover w-full h-full" />
-                        </figure>
-                    </div> --}}
+
                     <p class="text-6xl font-bold mt-5">
                         Benvenuto nel mio <span class="text-blue-600">portfolio</span>
                     </p>

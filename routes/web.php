@@ -1,5 +1,8 @@
 <?php
 
+use App\Livewire\Admin\Biography\CreateBio;
+use App\Livewire\Admin\Biography\EditBio;
+use App\Livewire\Admin\Biography\IndexBio;
 use App\Livewire\Guest\Pages\AboutMe as PagesAboutMe;
 use App\Livewire\Guest\Pages\HomePage;
 use App\Livewire\Guest\Pages\ProjectsPage;
@@ -15,16 +18,20 @@ Route::get('/skills', SkillsPage::class);
 Route::get('/projects', ProjectsPage::class);
 
 Route::view('dashboard', 'dashboard')
-    ->middleware(['auth', 'verified'])
-    ->name('dashboard');
+->middleware(['auth', 'verified'])
+->name('dashboard');
 
 
 Route::middleware(['auth'])->group(function () {
-    Route::redirect('settings', 'settings/profile');
+    Route::get('/admin/biography-home', IndexBio::class)->name('biograpyIndex');
+    Route::get('/admin/biography-home/created', CreateBio::class)->name('biograpyCreated');
+    Route::get('/admin/biography-home/{biography}/edit', EditBio::class)->name('biograpyEdit');
 
-    Volt::route('settings/profile', 'settings.profile')->name('profile.edit');
-    Volt::route('settings/password', 'settings.password')->name('password.edit');
-    Volt::route('settings/appearance', 'settings.appearance')->name('appearance.edit');
+    Route::redirect('/admin/settings', 'settings/profile');
+
+    Volt::route('/admin/settings/profile', 'settings.profile')->name('profile.edit');
+    Volt::route('/admin/settings/password', 'settings.password')->name('password.edit');
+    Volt::route('/admin/settings/appearance', 'settings.appearance')->name('appearance.edit');
 });
 
 require __DIR__ . '/auth.php';

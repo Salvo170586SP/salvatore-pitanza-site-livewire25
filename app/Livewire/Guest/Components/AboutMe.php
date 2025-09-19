@@ -2,12 +2,15 @@
 
 namespace App\Livewire\Guest\Components;
 
+use App\Models\Biography;
 use Livewire\Component;
 
 class AboutMe extends Component
 {
     public function render()
     {
-        return view('livewire.guest.components.about-me');
+        $biography = Biography::first();
+
+        return view('livewire.guest.components.about-me', compact('biography'));
     }
 }

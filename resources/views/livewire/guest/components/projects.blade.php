@@ -11,6 +11,7 @@
 
             <div
                 class="w-full  flex flex-col justify-center items-center bg-[#171717]  border-zinc-800 overflow-hidden rounded-xl transition duration-300 ease-in-out hover:-translate-y-1">
+               
                 {{-- <div
                     class="border-b border-zinc-800 w-full h-full flex items-center justify-center text-sm font-bold overflow-hidden">
                     Immagine assente
