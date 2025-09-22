@@ -28,7 +28,7 @@
                 </p>
                 <div class="w-full my-4 md:my-5 lg:mt-10">
                     <button wire:navigate href="/about-me"
-                        class="bg-blue-600 hover:bg-blue-700 hover:scale-110 text-sm mt-5 flex items-center rounded-[7px] font-semibold transition-all  px-8 py-2 cursor-pointer">
+                        class="text-blue-400 hover:text-blue-500 px-4 py-2 mt-5 flex items-center justify-between font-semibold transition-all cursor-pointer">
                         Dettagli
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
                             stroke="currentColor" class="size-4">

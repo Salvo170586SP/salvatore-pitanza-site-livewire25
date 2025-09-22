@@ -87,7 +87,7 @@
                             </div>
                         </flux:modal>
 
-                        <flux:button wire:navigate href="/admin/trainings-home/{{$training->id}}/edit" variant="filled"
+                        <flux:button wire:navigate href="/admin/trainings-home/{{$training->id}}/edit" class="-ms-2" variant="filled"
                             icon="pencil">
                             Modifica
                         </flux:button>
