@@ -1,7 +1,9 @@
 <div>
     <div class="flex justify-between items-center border-b border-zinc-600 py-3">
         <h2 class="text-xl font-bold uppercase">Biografia \ Modifica</h2>
-        <flux:button wire:navigate href="\admin\biography-home" class="w-[150px]">Torna indietro</flux:button>
+         <flux:button icon="arrow-left" wire:navigate href="/admin/biography-home">
+            Torna indietro
+        </flux:button>
     </div>
 
     <form wire:submit.prevent="submit" class="mt-5">

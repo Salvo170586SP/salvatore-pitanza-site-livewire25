@@ -3,6 +3,9 @@
 use App\Livewire\Admin\Biography\CreateBio;
 use App\Livewire\Admin\Biography\EditBio;
 use App\Livewire\Admin\Biography\IndexBio;
+use App\Livewire\Admin\Trainings\TrainingsCreate;
+use App\Livewire\Admin\Trainings\TrainingsEdit;
+use App\Livewire\Admin\Trainings\TrainingsIndex;
 use App\Livewire\Guest\Pages\AboutMe as PagesAboutMe;
 use App\Livewire\Guest\Pages\HomePage;
 use App\Livewire\Guest\Pages\ProjectsPage;
@@ -26,6 +29,10 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/admin/biography-home', IndexBio::class)->name('biograpyIndex');
     Route::get('/admin/biography-home/created', CreateBio::class)->name('biograpyCreated');
     Route::get('/admin/biography-home/{biography}/edit', EditBio::class)->name('biograpyEdit');
+   
+    Route::get('/admin/trainings-home', TrainingsIndex::class)->name('trainingsIndex');
+    Route::get('/admin/trainings-home/created', TrainingsCreate::class)->name('trainingsCreated');
+    Route::get('/admin/trainings-home/{training}/edit', TrainingsEdit::class)->name('trainingsEdit');
 
     Route::redirect('/admin/settings', 'settings/profile');
 
