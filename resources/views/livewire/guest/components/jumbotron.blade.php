@@ -11,17 +11,12 @@
                 <div class="px-10 md:px-32 ">
                     <div class="flex justify-between">
                         <div class="flex items-center jus gap-3">
-                            <div class="relative">
-                                @if($biography->img_url)
-                                <figure
-                                    class="w-[70px] h-[70px]  border border-indigo-100/20 rounded-full overflow-hidden">
-                                    <img src="{{ asset('/storage/'.$biography->img_url) }}"
-                                        class="object-cover w-full h-full" />
-                                </figure>
-                                <span
-                                    class="inline-block absolute bottom-0 right-0 bg-red-500 w-3 h-3 rounded-full"></span>
-                                @endif
-                            </div>
+                            @if($biography->img_url)
+                            <figure class="w-[70px] h-[70px]  border border-indigo-100/20 rounded-full overflow-hidden">
+                                <img src="{{ asset('/storage/'.$biography->img_url) }}"
+                                    class="object-cover w-full h-full" />
+                            </figure>
+                            @endif
                             <div>
                                 <h1 class="text-3xl font-medium">Salvatore Pitanza</h1>
                                 <h4 class="text-sm font-semibold text-zinc-400">WEB DEVELOPER FULLSTACK</h4>

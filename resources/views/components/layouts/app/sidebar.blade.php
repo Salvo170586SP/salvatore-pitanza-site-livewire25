@@ -17,6 +17,7 @@
                     <flux:navlist.item icon="user" :href="route('biograpyIndex')" :current="request()->routeIs('biograpyIndex')" wire:navigate>{{ __('Biografia') }}</flux:navlist.item>
                     <flux:navlist.item icon="user" :href="route('trainingsIndex')" :current="request()->routeIs('trainingsIndex')" wire:navigate>{{ __('Percorsi') }}</flux:navlist.item>
                     <flux:navlist.item icon="user" :href="route('projectsIndex')" :current="request()->routeIs('projectsIndex')" wire:navigate>{{ __('Progetti') }}</flux:navlist.item>
+                    <flux:navlist.item icon="user" :href="route('experiencesIndex')" :current="request()->routeIs('experiencesIndex')" wire:navigate>{{ __('Esperienze') }}</flux:navlist.item>
                 </flux:navlist.group>
             </flux:navlist>
 

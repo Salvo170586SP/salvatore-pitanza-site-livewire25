@@ -3,6 +3,9 @@
 use App\Livewire\Admin\Biography\CreateBio;
 use App\Livewire\Admin\Biography\EditBio;
 use App\Livewire\Admin\Biography\IndexBio;
+use App\Livewire\Admin\Experiences\CreateExperiences;
+use App\Livewire\Admin\Experiences\EditExperiences;
+use App\Livewire\Admin\Experiences\IndexExperiences;
 use App\Livewire\Admin\Projects\CreateProjects;
 use App\Livewire\Admin\Projects\EditProjects;
 use App\Livewire\Admin\Projects\IndexProjects;
@@ -15,8 +18,6 @@ use App\Livewire\Guest\Pages\ProjectsPage;
 use App\Livewire\Guest\Pages\SkillsPage;
 use Illuminate\Support\Facades\Route;
 use Livewire\Volt\Volt;
-
-
 
 Route::get('/', HomePage::class);
 Route::get('/about-me', PagesAboutMe::class);
@@ -40,6 +41,10 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/admin/projects-home', IndexProjects::class)->name('projectsIndex');
     Route::get('/admin/projects-home/created', CreateProjects::class)->name('projectsCreated');
     Route::get('/admin/projects-home/{project}/edit', EditProjects::class)->name('projectsEdit');
+   
+    Route::get('/admin/experiences-home', IndexExperiences::class)->name('experiencesIndex');
+    Route::get('/admin/experiences-home/created', CreateExperiences::class)->name('experiencesCreated');
+    Route::get('/admin/experiences-home/{experience}/edit', EditExperiences::class)->name('experiencesEdit');
 
     Route::redirect('/admin/settings', 'settings/profile');
 
