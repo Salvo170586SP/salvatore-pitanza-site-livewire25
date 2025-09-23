@@ -55,7 +55,6 @@ class EditBio extends Component
         return $this->redirect('/admin/biography-home', navigate: true);
     }
 
-
     public function render()
     {
         return view('livewire.admin.biography.edit-bio');

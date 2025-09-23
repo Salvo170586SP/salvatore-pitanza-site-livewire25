@@ -9,6 +9,9 @@ use App\Livewire\Admin\Experiences\IndexExperiences;
 use App\Livewire\Admin\Projects\CreateProjects;
 use App\Livewire\Admin\Projects\EditProjects;
 use App\Livewire\Admin\Projects\IndexProjects;
+use App\Livewire\Admin\Skills\CreateSkills;
+use App\Livewire\Admin\Skills\EditSkills;
+use App\Livewire\Admin\Skills\IndexSkills;
 use App\Livewire\Admin\Trainings\TrainingsCreate;
 use App\Livewire\Admin\Trainings\TrainingsEdit;
 use App\Livewire\Admin\Trainings\TrainingsIndex;
@@ -30,21 +33,30 @@ Route::view('dashboard', 'dashboard')
 
 
 Route::middleware(['auth'])->group(function () {
+    //biography
     Route::get('/admin/biography-home', IndexBio::class)->name('biograpyIndex');
     Route::get('/admin/biography-home/created', CreateBio::class)->name('biograpyCreated');
     Route::get('/admin/biography-home/{biography}/edit', EditBio::class)->name('biograpyEdit');
    
+    //trainings
     Route::get('/admin/trainings-home', TrainingsIndex::class)->name('trainingsIndex');
     Route::get('/admin/trainings-home/created', TrainingsCreate::class)->name('trainingsCreated');
     Route::get('/admin/trainings-home/{training}/edit', TrainingsEdit::class)->name('trainingsEdit');
    
+    //projects
     Route::get('/admin/projects-home', IndexProjects::class)->name('projectsIndex');
     Route::get('/admin/projects-home/created', CreateProjects::class)->name('projectsCreated');
     Route::get('/admin/projects-home/{project}/edit', EditProjects::class)->name('projectsEdit');
    
+    //experiences
     Route::get('/admin/experiences-home', IndexExperiences::class)->name('experiencesIndex');
     Route::get('/admin/experiences-home/created', CreateExperiences::class)->name('experiencesCreated');
     Route::get('/admin/experiences-home/{experience}/edit', EditExperiences::class)->name('experiencesEdit');
+  
+    //skills
+    Route::get('/admin/skills-home', IndexSkills::class)->name('skillsIndex');
+    Route::get('/admin/skills-home/created', CreateSkills::class)->name('skillsCreated');
+    Route::get('/admin/skills-home/{skill}/edit', EditSkills::class)->name('skillsEdit');
 
     Route::redirect('/admin/settings', 'settings/profile');
 
