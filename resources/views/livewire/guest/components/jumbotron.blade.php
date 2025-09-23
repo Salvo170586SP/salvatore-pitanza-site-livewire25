@@ -12,7 +12,7 @@
                     <div class="flex justify-between">
                         <div class="flex items-center jus gap-3">
                             @if($biography->img_url)
-                            <figure class="w-[70px] h-[70px]  border border-indigo-100/20 rounded-full overflow-hidden">
+                            <figure class="w-[70px] h-[70px]  border-3 border-indigo-100/50 rounded-full overflow-hidden">
                                 <img src="{{ asset('/storage/'.$biography->img_url) }}"
                                     class="object-cover w-full h-full" />
                             </figure>
