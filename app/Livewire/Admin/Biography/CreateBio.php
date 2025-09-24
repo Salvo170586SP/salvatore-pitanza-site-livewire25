@@ -28,7 +28,9 @@ class CreateBio extends Component
     {
         $this->validate();
 
-        $url = $this->img_url->store('imgBio', 'public');
+        if($this->img_url){
+            $url = $this->img_url->store('imgBio', 'public');
+        }
 
         Biography::create([
             'user_id' => Auth::id(),

@@ -9,7 +9,11 @@ use App\Livewire\Admin\Experiences\IndexExperiences;
 use App\Livewire\Admin\Projects\CreateProjects;
 use App\Livewire\Admin\Projects\EditProjects;
 use App\Livewire\Admin\Projects\IndexProjects;
+use App\Livewire\Admin\Skills\CreateDescriptionSkills;
+use App\Livewire\Admin\Skills\CreateDocuments;
+use App\Livewire\Admin\Skills\CreateGeneralDescription;
 use App\Livewire\Admin\Skills\CreateSkills;
+use App\Livewire\Admin\Skills\EditGeneralDescription;
 use App\Livewire\Admin\Skills\EditSkills;
 use App\Livewire\Admin\Skills\IndexSkills;
 use App\Livewire\Admin\Trainings\TrainingsCreate;
@@ -57,7 +61,9 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/admin/skills-home', IndexSkills::class)->name('skillsIndex');
     Route::get('/admin/skills-home/created', CreateSkills::class)->name('skillsCreated');
     Route::get('/admin/skills-home/{skill}/edit', EditSkills::class)->name('skillsEdit');
-
+    Route::get('/admin/skills-home/create-general-description', CreateGeneralDescription::class)->name('skillsCreateGeneralDescription');
+    Route::get('/admin/skills-home/{skillInfo}/edit-general-description', EditGeneralDescription::class)->name('skillsEditGeneralDescription');
+ 
     Route::redirect('/admin/settings', 'settings/profile');
 
     Volt::route('/admin/settings/profile', 'settings.profile')->name('profile.edit');

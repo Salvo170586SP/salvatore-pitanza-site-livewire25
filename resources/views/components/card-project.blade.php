@@ -1,12 +1,12 @@
 @props([
-    'project',
+'project',
 ])
 
-<div
-    class="w-full  flex flex-col justify-center items-center bg-[#171717] border border-zinc-600/30 overflow-hidden rounded-xl transition duration-300 ease-in-out hover:-translate-y-1">
+<div {{ $attributes->merge(['class' => 'w-full h-100 flex flex-col justify-between items-center bg-[#171717] border
+    border-zinc-600/30 overflow-hidden rounded-xl transition duration-300 ease-in-out hover:-translate-y-1']) }}>
     @if($project->img_url)
-    <figure class="w-full h-[250px]">
-        <img class="w-full h-full object-cover" src="{{asset('storage/'. $project->img_url)}}"
+    <figure class="w-full h-[250px] overflow-hidden">
+        <img class="w-full h-full object-cover object-center" src="{{asset('storage/'. $project->img_url)}}"
             alt="{{$project->img_url}}" />
     </figure>
     @else

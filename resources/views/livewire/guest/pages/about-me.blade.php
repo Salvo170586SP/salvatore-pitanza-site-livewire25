@@ -10,15 +10,14 @@
       <div class="flex flex-col items-center">
         <div class="px-10 md:px-32 ">
           <p class="text-6xl font-bold mt-5">
-            Un pò di <span class="text-blue-600">Me</span>
+            Chi <span class="text-blue-600">Sono</span>
           </p>
         </div>
       </div>
     </div>
   </section>
-  
-  <section id="about"
-    class="w-full flex flex-col py-10 md:py-20 items-center text-white border-b border-zinc-800">
+
+  <section id="about" class="w-full flex flex-col py-10 md:py-20 items-center text-white border-b border-zinc-800">
     <div class="container mx-auto  w-full flex justify-center gap-20">
       <div class="w-700">
         @if (!$biography)
@@ -32,22 +31,24 @@
         @endif
       </div>
 
-      <div class="rounded-2xl border border-zinc-700/90 bg-zinc-900/50 overflow-hidden  w-300">
-        <div class="bg-gradient-to-r bg-zinc-700/50   px-6 py-4">
-          <h3 class="text-lg font-semibold text-zinc-100">Le mie passioni</h3>
-        </div>
-        <div class="flex flex-wrap gap-2 p-6 ">
-          <span
-            class="inline-block px-3 py-1.5 rounded-full text-xs font-medium bg-zinc-700 text-zinc-300 hover:bg-zinc-600 transition-colors mb-2">Sviluppo
-            Frontend</span><span
-            class="inline-block px-3 py-1.5 rounded-full text-xs font-medium bg-zinc-700 text-zinc-300 hover:bg-zinc-600 transition-colors mb-2">Arte</span><span
-            class="inline-block px-3 py-1.5 rounded-full text-xs font-medium bg-zinc-700 text-zinc-300 hover:bg-zinc-600 transition-colors mb-2">Disegno</span><span
-            class="inline-block px-3 py-1.5 rounded-full text-xs font-medium bg-zinc-700 text-zinc-300 hover:bg-zinc-600 transition-colors mb-2">Montagna</span><span
-            class="inline-block px-3 py-1.5 rounded-full text-xs font-medium bg-zinc-700 text-zinc-300 hover:bg-zinc-600 transition-colors mb-2">Escursionismo</span><span
-            class="inline-block px-3 py-1.5 rounded-full text-xs font-medium bg-zinc-700 text-zinc-300 hover:bg-zinc-600 transition-colors mb-2">Natura</span><span
-            class="inline-block px-3 py-1.5 rounded-full text-xs font-medium bg-zinc-700 text-zinc-300 hover:bg-zinc-600 transition-colors mb-2">Sport</span><span
-            class="inline-block px-3 py-1.5 rounded-full text-xs font-medium bg-zinc-700 text-zinc-300 hover:bg-zinc-600 transition-colors mb-2">Arti
-            Marziali</span>
+      <div class="w-300 space-y-5">
+        <div class="rounded-2xl border border-zinc-700/90 bg-zinc-900/50 overflow-hidden">
+          <div class="bg-gradient-to-r bg-zinc-800/50 px-6 py-4">
+            <h3 class="text-lg font-semibold text-zinc-100">Le mie passioni</h3>
+          </div>
+          <div class="flex flex-wrap gap-2 p-6 ">
+            <span
+              class="inline-block px-3 py-1.5 rounded-full text-xs font-medium bg-zinc-700 text-zinc-300 hover:bg-zinc-600 transition-colors mb-2">Sviluppo
+              UI</span><span
+              class="inline-block px-3 py-1.5 rounded-full text-xs font-medium bg-zinc-700 text-zinc-300 hover:bg-zinc-600 transition-colors mb-2">Arte</span><span
+              class="inline-block px-3 py-1.5 rounded-full text-xs font-medium bg-zinc-700 text-zinc-300 hover:bg-zinc-600 transition-colors mb-2">Disegno</span><span
+              class="inline-block px-3 py-1.5 rounded-full text-xs font-medium bg-zinc-700 text-zinc-300 hover:bg-zinc-600 transition-colors mb-2">Montagna</span><span
+              class="inline-block px-3 py-1.5 rounded-full text-xs font-medium bg-zinc-700 text-zinc-300 hover:bg-zinc-600 transition-colors mb-2">Escursionismo</span><span
+              class="inline-block px-3 py-1.5 rounded-full text-xs font-medium bg-zinc-700 text-zinc-300 hover:bg-zinc-600 transition-colors mb-2">Natura</span><span
+              class="inline-block px-3 py-1.5 rounded-full text-xs font-medium bg-zinc-700 text-zinc-300 hover:bg-zinc-600 transition-colors mb-2">Sport</span><span
+              class="inline-block px-3 py-1.5 rounded-full text-xs font-medium bg-zinc-700 text-zinc-300 hover:bg-zinc-600 transition-colors mb-2">Arti
+              Marziali</span>
+          </div>
         </div>
       </div>
     </div>

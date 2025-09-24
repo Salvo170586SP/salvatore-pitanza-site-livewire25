@@ -13,7 +13,7 @@
                 </button>
                 <button wire:navigate href="/about-me"
                     class="text-sm font-medium text-zinc-400 hover:text-zinc-100 transition-colors cursor-pointer">
-                    Mi Presento
+                    Chi sono
                 </button>
                 <button wire:navigate href="/skills"
                     class="text-sm font-medium text-zinc-400 hover:text-zinc-100 transition-colors cursor-pointer">

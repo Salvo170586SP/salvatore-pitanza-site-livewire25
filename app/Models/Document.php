@@ -5,9 +5,9 @@ namespace App\Models;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
-class Skill extends Model
+class Document extends Model
 {
-    protected $fillable = ['user_id', 'name', 'url_icon'];
+    protected $fillable = ['user_id', 'doc_url', 'name_doc'];
 
     public function user()
     {

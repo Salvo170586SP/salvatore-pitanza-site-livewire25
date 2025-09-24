@@ -1,11 +1,23 @@
 <div>
+    <section id="jumbotron-skills"
+        class="relative overflow-hidden w-full text-white bg-gradient-to-br from-indigo-400/10 to-transparent border-b border-zinc-800 py-40">
+        <div class="absolute inset-0 z-0
+         bg-[linear-gradient(to_right,#4f46e520_2px,transparent_2px),linear-gradient(to_bottom,#4f46e520_2px,transparent_2px)]
+         bg-[size:6rem_6rem] [mask-image:radial-gradient(ellipse_70%_80%_at_50%_0%,#000_80%,transparent_100%)]">
+        </div>
+        <div class="absolute inset-0 z-0 bg-gradient-to-br from-indigo-500/10 to-transparent"></div>
+        <div class="flex justify-center items-center">
+            <div class="flex flex-col items-center">
+                <div class="px-10 md:px-32 ">
+                    <p class="text-6xl font-bold mt-5">
+                        I miei <span class="text-blue-600">Progetti</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
     <section id="work"
         class="w-full mx-auto flex flex-col py-10 md:py-20 items-center bg-zinc-900 bg-gradient-to-br from-indigo-300/10 text-white border-b border-zinc-800">
-        <div class="w-full py-12 text-center">
-            <h2 class="font-bold text-xl md:text-2xl text-zinc-300">
-                I miei progetti
-            </h2>
-        </div>
         @if($projects)
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 p-8 w-full max-w-7xl mx-auto">
             @foreach($projects as $project)
