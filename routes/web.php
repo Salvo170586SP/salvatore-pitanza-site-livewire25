@@ -24,6 +24,7 @@ use App\Livewire\Admin\Trainings\TrainingsEdit;
 use App\Livewire\Admin\Trainings\TrainingsIndex;
 use App\Livewire\Guest\Pages\AboutMe as PagesAboutMe;
 use App\Livewire\Guest\Pages\Drawings;
+use App\Livewire\Guest\Pages\ErrorPage;
 use App\Livewire\Guest\Pages\HomePage;
 use App\Livewire\Guest\Pages\ProjectsPage;
 use App\Livewire\Guest\Pages\SkillsPage;
@@ -37,8 +38,10 @@ Route::get('/projects', ProjectsPage::class);
 Route::get('/drawings', Drawings::class);
 
 Route::view('dashboard', 'dashboard')
-->middleware(['auth', 'verified'])
-->name('dashboard');
+    ->middleware(['auth', 'verified'])
+    ->name('dashboard');
+
+
 
 
 Route::middleware(['auth'])->group(function () {
@@ -46,39 +49,41 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/admin/biography-home', IndexBio::class)->name('biograpyIndex');
     Route::get('/admin/biography-home/created', CreateBio::class)->name('biograpyCreated');
     Route::get('/admin/biography-home/{biography}/edit', EditBio::class)->name('biograpyEdit');
-   
+
     //trainings
     Route::get('/admin/trainings-home', TrainingsIndex::class)->name('trainingsIndex');
     Route::get('/admin/trainings-home/created', TrainingsCreate::class)->name('trainingsCreated');
     Route::get('/admin/trainings-home/{training}/edit', TrainingsEdit::class)->name('trainingsEdit');
-   
+
     //projects
     Route::get('/admin/projects-home', IndexProjects::class)->name('projectsIndex');
     Route::get('/admin/projects-home/created', CreateProjects::class)->name('projectsCreated');
     Route::get('/admin/projects-home/{project}/edit', EditProjects::class)->name('projectsEdit');
-   
+
     //experiences
     Route::get('/admin/experiences-home', IndexExperiences::class)->name('experiencesIndex');
     Route::get('/admin/experiences-home/created', CreateExperiences::class)->name('experiencesCreated');
     Route::get('/admin/experiences-home/{experience}/edit', EditExperiences::class)->name('experiencesEdit');
-  
+
     //skills
     Route::get('/admin/skills-home', IndexSkills::class)->name('skillsIndex');
     Route::get('/admin/skills-home/created', CreateSkills::class)->name('skillsCreated');
     Route::get('/admin/skills-home/{skill}/edit', EditSkills::class)->name('skillsEdit');
     Route::get('/admin/skills-home/create-general-description', CreateGeneralDescription::class)->name('skillsCreateGeneralDescription');
     Route::get('/admin/skills-home/{skillInfo}/edit-general-description', EditGeneralDescription::class)->name('skillsEditGeneralDescription');
-    
+
     //drawings
     Route::get('/admin/drawings-home', IndexDrawings::class)->name('drawingsIndex');
     Route::get('/admin/drawings-home/create', CreateDrawings::class)->name('skillsCreate');
     Route::get('/admin/drawings-home/{drawing}/edit', EditDrawings::class)->name('skillsEdit');
- 
+
     Route::redirect('/admin/settings', 'settings/profile');
 
     Volt::route('/admin/settings/profile', 'settings.profile')->name('profile.edit');
     Volt::route('/admin/settings/password', 'settings.password')->name('password.edit');
     Volt::route('/admin/settings/appearance', 'settings.appearance')->name('appearance.edit');
 });
+
+Route::fallback(ErrorPage::class);
 
 require __DIR__ . '/auth.php';

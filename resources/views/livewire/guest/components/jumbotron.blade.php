@@ -2,38 +2,35 @@
     <section id="jumbotron"
         class="relative overflow-hidden w-full text-white bg-gradient-to-br from-indigo-400/10 to-transparent border-b border-zinc-800 py-55">
         <div class="absolute inset-0 z-0
-            bg-[linear-gradient(to_right,#4f46e520_2px,transparent_2px),linear-gradient(to_bottom,#4f46e520_2px,transparent_2px)]
+            bg-[linear-gradient(to_right,#4f46e520_1px,transparent_1px),linear-gradient(to_bottom,#4f46e520_1px,transparent_1px)]
             bg-[size:6rem_6rem] [mask-image:radial-gradient(ellipse_70%_80%_at_50%_0%,#000_80%,transparent_100%)]">
         </div>
-        <div class="absolute inset-0 z-0 bg-gradient-to-br from-indigo-500/10 to-transparent"></div>
+        <div class="absolute inset-0 z-0 bg-gradient-to-br from-indigo-900/10 to-transparent"></div>
         <div class="flex justify-center items-center">
             <div class="flex flex-col items-center">
                 <div class="px-10 md:px-32 ">
                     <div class="flex justify-between">
                         <div class="flex items-center jus gap-3">
                             @if($biography->img_url)
-                            <figure class="w-[70px] h-[70px]  border-3 border-indigo-100/50 rounded-full overflow-hidden">
+                            <figure
+                                class="w-[70px] h-[70px]  border-3 border-indigo-100/50 rounded-full overflow-hidden">
                                 <img src="{{ asset('/storage/'.$biography->img_url) }}"
                                     class="object-cover w-full h-full" />
                             </figure>
                             @endif
                             <div>
-                                <h1 class="text-3xl font-medium">Salvatore Pitanza</h1>
-                                <h4 class="text-sm font-semibold text-zinc-400">WEB DEVELOPER FULLSTACK</h4>
+                                <h1 class="text-2xl font-medium uppercase">Salvatore Pitanza</h1>
+                                <h4 class="text-[14px] font-semibold text-zinc-400">Web Developer FullStack - Art
+                                    Creator - Walker</h4>
                             </div>
                         </div>
-
                     </div>
-                    <br />
-
-
                     <p class="text-6xl font-bold mt-5">
                         Benvenuto nel mio <span class="text-blue-600">portfolio</span>
                     </p>
                     <p class="text-zinc-400 text-center font-semibold mt-2">
                         Le competenze, le passioni e la mia vita oltre il coding.
                     </p>
-
                 </div>
                 <div class="flex flex-col items-center mt-15">
                     <small class="text-lg font-semibold text-center mb-4 text-zinc-400">
@@ -52,6 +49,5 @@
                 </div>
             </div>
         </div>
-
     </section>
 </div>
