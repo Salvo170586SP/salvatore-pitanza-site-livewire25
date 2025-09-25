@@ -83,10 +83,15 @@ class User extends Authenticatable
     {
         return $this->hasMany(Skill::class);
     }
-   
+
     public function documents()
     {
         return $this->hasMany(Document::class);
+    }
+
+    public function drawings()
+    {
+        return $this->hasMany(Drawing::class);
     }
 
     public function skillGeneralInfo()

@@ -7,14 +7,15 @@
     <title>{{ $title ?? 'Salvatore Pitanza' }}</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @livewireStyles
-
-</head>
+    @fluxAppearance
+  </head>
 
 <body class="relative flex flex-col justify-between min-h-screen bg-[#18181B] text-white">
     <livewire:guest.components.header-nav />
     {{ $slot }}
     <livewire:guest.components.footer />
     @livewireScripts
-</body>
+    @fluxScripts
+ </body>
 
 </html>

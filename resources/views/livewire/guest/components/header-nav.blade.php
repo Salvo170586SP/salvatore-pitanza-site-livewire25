@@ -23,6 +23,12 @@
                     class="text-sm font-medium text-zinc-400 hover:text-zinc-100 transition-colors cursor-pointer">
                     Progetti
                 </button>
+                <x-dropdown-menu>
+                    <button wire:navigate href="/drawings"
+                        class="text-zinc-400 hover:text-zinc-100 w-full text-start font-semibold rounded-[7px] p-1 cursor-pointer">Galleria
+                        d'Arte
+                    </button>
+                </x-dropdown-menu>
             </nav>
 
             @if (Route::has('login'))
@@ -49,5 +55,4 @@
             @endif
         </div>
     </header>
-
 </div>

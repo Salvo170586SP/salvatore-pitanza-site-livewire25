@@ -3,6 +3,7 @@
 namespace App\Livewire\Admin\Biography;
 
 use App\Models\Biography;
+use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 
 class IndexBio extends Component
@@ -19,7 +20,7 @@ class IndexBio extends Component
 
     public function render()
     {
-        $biography = Biography::first();
+        $biography = Biography::where('user_id', Auth::id())->first();
 
         return view('livewire.admin.biography.index-bio', compact('biography'));
     }

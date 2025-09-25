@@ -3,6 +3,9 @@
 use App\Livewire\Admin\Biography\CreateBio;
 use App\Livewire\Admin\Biography\EditBio;
 use App\Livewire\Admin\Biography\IndexBio;
+use App\Livewire\Admin\Drawings\CreateDrawings;
+use App\Livewire\Admin\Drawings\EditDrawings;
+use App\Livewire\Admin\Drawings\IndexDrawings;
 use App\Livewire\Admin\Experiences\CreateExperiences;
 use App\Livewire\Admin\Experiences\EditExperiences;
 use App\Livewire\Admin\Experiences\IndexExperiences;
@@ -20,6 +23,7 @@ use App\Livewire\Admin\Trainings\TrainingsCreate;
 use App\Livewire\Admin\Trainings\TrainingsEdit;
 use App\Livewire\Admin\Trainings\TrainingsIndex;
 use App\Livewire\Guest\Pages\AboutMe as PagesAboutMe;
+use App\Livewire\Guest\Pages\Drawings;
 use App\Livewire\Guest\Pages\HomePage;
 use App\Livewire\Guest\Pages\ProjectsPage;
 use App\Livewire\Guest\Pages\SkillsPage;
@@ -30,6 +34,7 @@ Route::get('/', HomePage::class);
 Route::get('/about-me', PagesAboutMe::class);
 Route::get('/skills', SkillsPage::class);
 Route::get('/projects', ProjectsPage::class);
+Route::get('/drawings', Drawings::class);
 
 Route::view('dashboard', 'dashboard')
 ->middleware(['auth', 'verified'])
@@ -63,6 +68,11 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/admin/skills-home/{skill}/edit', EditSkills::class)->name('skillsEdit');
     Route::get('/admin/skills-home/create-general-description', CreateGeneralDescription::class)->name('skillsCreateGeneralDescription');
     Route::get('/admin/skills-home/{skillInfo}/edit-general-description', EditGeneralDescription::class)->name('skillsEditGeneralDescription');
+    
+    //drawings
+    Route::get('/admin/drawings-home', IndexDrawings::class)->name('drawingsIndex');
+    Route::get('/admin/drawings-home/create', CreateDrawings::class)->name('skillsCreate');
+    Route::get('/admin/drawings-home/{drawing}/edit', EditDrawings::class)->name('skillsEdit');
  
     Route::redirect('/admin/settings', 'settings/profile');
 
