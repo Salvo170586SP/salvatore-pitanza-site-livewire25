@@ -3,6 +3,7 @@
 namespace App\Livewire\Admin\Experiences;
 
 use App\Models\Experience;
+use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 
 class EditExperiences extends Component
@@ -28,6 +29,10 @@ class EditExperiences extends Component
         $this->experience = $experience;
         $this->title = $experience->title;
         $this->description = $experience->description;
+
+        if (!Auth::user() || $experience->user_id !== Auth::user()->id) {
+            return $this->redirect('/');
+        }
     }
 
     public function submit()

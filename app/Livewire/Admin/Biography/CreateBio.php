@@ -14,6 +14,14 @@ class CreateBio extends Component
     public $description;
     public $img_url = null;
 
+    public function mount()
+    {
+        if (Biography::exists()) {
+            session()->flash('error', 'Esiste già una biografia');
+            return $this->redirect('/admin/biography-home', navigate: true);
+        } 
+    }
+
     protected $rules = [
         'description' => 'required|max:255',
         'img_url' => 'nullable',

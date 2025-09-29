@@ -3,6 +3,7 @@
 namespace App\Livewire\Admin\Skills;
 
 use App\Models\Skill;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Livewire\Component;
 use Livewire\WithFileUploads;
@@ -32,6 +33,10 @@ class EditSkills extends Component
         $this->name = $skill->name;
         if ($skill->url_icon) {
             $this->url_icon = asset('/storage/' . $skill->url_icon);
+        }
+
+        if (!Auth::user() || $skill->user_id !== Auth::user()->id) {
+            return $this->redirect('/');
         }
     }
 

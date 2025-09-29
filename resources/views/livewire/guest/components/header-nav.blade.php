@@ -2,7 +2,7 @@
     <header
         class="fixed  backdrop-blur-sm top-0 left-0 right-0 w-full h-[60px] z-50 bg-zinc-900/80 border-b border-zinc-800 text-sm">
 
-        <div class="container mx-auto h-full w-full flex items-center justify-between {{-- gap-4 --}}">
+        <div class="container mx-auto h-full w-full flex items-center justify-between">
             <figure class="w-[60px] h-[60px] rounded-full overflow-hidden">
                 <img src="/assets/icon/code.png" class="object-cover w-full h-full" />
             </figure>

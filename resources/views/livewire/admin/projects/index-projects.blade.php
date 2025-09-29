@@ -10,8 +10,8 @@
             user-select: none;
         }
     </style>
-    <div class="flex justify-between items-center border-b border-zinc-600 py-3">
-        <h2 class="text-xl font-bold uppercase">Progetti</h2>
+    <div class="flex justify-between items-center border-b border-zinc-200 dark:border-zinc-600 py-3">
+        <h2 class="text-lg font-bold uppercase text-zinc-700 dark:text-white">Progetti</h2>
 
         <div x-data="{ showMessage: true }">
             @if (session('message'))
@@ -22,14 +22,14 @@
     </div>
 
     <div class="w-full flex justify-end mt-12">
-        <flux:button icon="plus" wire:navigate href="/admin/projects-home/created">
+        <flux:button icon="plus" wire:navigate href="/admin/projects-home/created" variant="filled">
             Aggiungi
         </flux:button>
     </div>
     @if($projects->isNotEmpty())
-    <div class="relative my-5 bg-zinc-500/20 rounded-lg table-container overflow-x-auto">
+    <div class="min-w-full bg-zinc-200/20 dark:bg-zinc-500/20  my-5 dark:border-0 border  border-zinc-200 relative rounded-lg  table-container overflow-x-auto">
         <div class="inline-block min-w-full">
-            <table class="w-full  divide-y divide-zinc-500/50">
+            <table class="w-full  divide-y dark:divide-zinc-500/50">
                 <thead>
                     <tr>
                         <th scope="col" class="px-6 py-5 text-left text-xs font-medium   uppercase w-48">
@@ -56,7 +56,7 @@
                         </th>
                     </tr>
                 </thead>
-                <tbody class="bg-zinc-400/10 divide-y divide-zinc-500/60 text-sm">
+                <tbody class="divide-y dark:divide-zinc-600/60 text-sm">
                     @foreach($projects as $project)
                     <tr wire:key="project-{{$project->id}}">
                         <td class="px-6 py-4 font-bold whitespace-nowrap">
@@ -102,8 +102,8 @@
                                 {{$project->getDate() ?? 'n/d'}}
                             </div>
                         </td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm sticky right-0 bg-zinc-700">
-                            <div class="flex justify-center items-center gap-2">
+                        <td class="px-6 py-4 whitespace-nowrap text-sm sticky right-0 backdrop-blur-xl">
+                            <div class="flex justify-end items-center gap-2">
                                 <flux:modal.trigger name="delete-project-[{{$project->id}}]">
                                     <flux:button class="cursor-pointer" variant="filled" icon="eye">Vedi</flux:button>
                                 </flux:modal.trigger>
@@ -139,7 +139,7 @@
                                     <div class="space-y-6">
                                         <div>
                                             <flux:text class="mt-8">
-                                                <div class="bg-red-500 p-2 uppercase font-bold rounded-lg my-3">
+                                                <div class="bg-red-500 text-white p-2 uppercase font-bold rounded-lg my-3">
                                                     Attenzione!!
                                                 </div>
                                             </flux:text>

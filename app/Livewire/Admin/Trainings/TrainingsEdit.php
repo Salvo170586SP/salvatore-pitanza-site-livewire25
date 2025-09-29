@@ -3,6 +3,7 @@
 namespace App\Livewire\Admin\Trainings;
 
 use App\Models\Training;
+use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 
 class TrainingsEdit extends Component
@@ -36,6 +37,10 @@ class TrainingsEdit extends Component
         $this->title = $training->title;
         $this->subtitle = $training->subtitle;
         $this->description = $training->description;
+
+        if (!Auth::user() || $training->user_id !== Auth::user()->id) {
+            return $this->redirect('/');
+        }
     }
 
     public function submit()

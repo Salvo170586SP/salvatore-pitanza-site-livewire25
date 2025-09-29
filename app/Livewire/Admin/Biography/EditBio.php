@@ -3,6 +3,7 @@
 namespace App\Livewire\Admin\Biography;
 
 use App\Models\Biography;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Livewire\Component;
 use Livewire\WithFileUploads;
@@ -26,6 +27,10 @@ class EditBio extends Component
 
     public function mount(Biography $biography)
     {
+        if (!Auth::user() || $biography->user_id !== Auth::user()->id) {
+            return $this->redirect('/');
+        }
+
         $this->biography = $biography;
         $this->description = $biography->description;
         if ($biography->img_url) {

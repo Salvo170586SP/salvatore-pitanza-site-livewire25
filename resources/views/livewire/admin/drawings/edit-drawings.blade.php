@@ -1,7 +1,7 @@
 <div>
-    <div class="flex justify-between items-center border-b border-zinc-600 py-3">
-        <h2 class="text-xl font-bold uppercase">Disegni \ Modifica</h2>
-        <flux:button icon="arrow-left" wire:navigate href="/admin/drawings-home">
+    <div class="flex justify-between items-center border-b border-zinc-200 dark:border-zinc-600 py-3">
+        <h2 class="text-lg font-bold uppercase text-zinc-700 dark:text-white">Disegni \ Modifica</h2>
+        <flux:button icon="arrow-left" wire:navigate href="/admin/drawings-home" variant="filled">
             Torna indietro
         </flux:button>
     </div>
@@ -24,7 +24,7 @@
         </div>
 
         <div class="w-full flex justify-end">
-            <flux:button type="submit" class="w-[150px]">Modifica</flux:button>
+            <flux:button type="submit" class="w-[150px]" variant="filled">Modifica</flux:button>
         </div>
     </form>
 </div>

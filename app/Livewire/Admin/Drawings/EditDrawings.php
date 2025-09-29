@@ -3,6 +3,7 @@
 namespace App\Livewire\Admin\Drawings;
 
 use App\Models\Drawing;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Livewire\Component;
 use Livewire\WithFileUploads;
@@ -29,12 +30,17 @@ class EditDrawings extends Component
 
     public function mount(Drawing $drawing)
     {
+
         $this->drawing = $drawing;
         $this->title = $drawing->title;
         $this->url_instagram = $drawing->url_instagram;
 
         if ($drawing->img_url) {
             $this->img_url = asset('/storage/' . $drawing->img_url);
+        }
+
+        if (!Auth::user() || $drawing->user_id !== Auth::user()->id) {
+            return $this->redirect('/');
         }
     }
 

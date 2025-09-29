@@ -3,6 +3,7 @@
 namespace App\Livewire\Admin\Skills;
 
 use App\Models\SkillGeneralInfo;
+use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 
 class EditGeneralDescription extends Component
@@ -22,6 +23,10 @@ class EditGeneralDescription extends Component
     {
         $this->skillInfo = $skillInfo;
         $this->general_description = $skillInfo->general_description;
+
+        if (!Auth::user() || $skillInfo->user_id !== Auth::user()->id) {
+            return $this->redirect('/');
+        }
     }
 
     public function submit()

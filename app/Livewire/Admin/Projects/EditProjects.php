@@ -3,6 +3,7 @@
 namespace App\Livewire\Admin\Projects;
 
 use App\Models\Project;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Livewire\Component;
 use Livewire\WithFileUploads;
@@ -42,6 +43,10 @@ class EditProjects extends Component
 
         if ($project->img_url) {
             $this->img_url = asset('/storage/' . $project->img_url);
+        }
+
+        if (!Auth::user() || $project->user_id !== Auth::user()->id) {
+            return $this->redirect('/');
         }
     }
 
