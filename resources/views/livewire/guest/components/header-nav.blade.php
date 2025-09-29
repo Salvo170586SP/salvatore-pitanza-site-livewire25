@@ -34,7 +34,7 @@
             @if (Route::has('login'))
             <nav class="flex items-center justify-end gap-4">
                 @auth
-                <a href="{{ url('/dashboard') }}"
+                <a href="{{ url('/admin/dashboard') }}"
                     class="inline-block rounded-[7px] bg-blue-600 hover:bg-blue-700 px-5 py-1.5 text-sm text-white font-medium transition-colors leading-normal">
                     Dashboard
                 </a>

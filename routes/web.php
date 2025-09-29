@@ -3,6 +3,7 @@
 use App\Livewire\Admin\Biography\CreateBio;
 use App\Livewire\Admin\Biography\EditBio;
 use App\Livewire\Admin\Biography\IndexBio;
+use App\Livewire\Admin\Dashboard;
 use App\Livewire\Admin\Drawings\CreateDrawings;
 use App\Livewire\Admin\Drawings\EditDrawings;
 use App\Livewire\Admin\Drawings\IndexDrawings;
@@ -37,15 +38,10 @@ Route::get('/skills', SkillsPage::class);
 Route::get('/projects', ProjectsPage::class);
 Route::get('/drawings', Drawings::class);
 
-Route::view('dashboard', 'dashboard')
-    ->middleware(['auth', 'verified'])
-    ->name('dashboard');
-
-
-
-
 Route::middleware(['auth'])->group(function () {
     //biography
+    Route::get('/admin/dashboard', Dashboard::class)->name('dashboard');
+
     Route::get('/admin/biography-home', IndexBio::class)->name('biograpyIndex');
     Route::get('/admin/biography-home/created', CreateBio::class)->name('biograpyCreated');
     Route::get('/admin/biography-home/{biography}/edit', EditBio::class)->name('biograpyEdit');
