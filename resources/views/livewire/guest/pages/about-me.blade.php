@@ -20,15 +20,17 @@
   <section id="about" class="w-full flex flex-col py-10 md:py-20 items-center text-white border-b border-zinc-800">
     <div class="container mx-auto  w-full flex justify-center gap-20">
       <div class="w-700">
-        @if (!$biography)
+        @isset($biography)
         <div class="text-gray-600 font-medium">
-          <p class="text-medium">Biografia al momento non disponibile.</p>
+          <div class="text-sm font-medium text-justify mt-5 lg:mt-0 px-10 md:px-0">
+            {!!$biography->description!!}
+          </div>
         </div>
         @else
-        <div class="text-sm font-medium text-justify mt-5 lg:mt-0 px-10 md:px-0">
-          {!!$biography->description ?? 'nessuna descrizione disponibile'!!}
+        <div class="w-full text-center font-semibold text-slate-300 text-2xl mt-5">
+          Sezione in allestimento 🛠️
         </div>
-        @endif
+        @endisset
       </div>
 
       <div class="w-300 space-y-5">

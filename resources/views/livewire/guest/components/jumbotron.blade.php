@@ -11,13 +11,13 @@
                 <div class="px-10 md:px-32 ">
                     <div class="flex justify-between">
                         <div class="flex items-center jus gap-3">
-                            @if($biography->img_url)
+                            @isset($biography->img_url)
                             <figure
                                 class="w-[70px] h-[70px]  border-3 border-indigo-100/50 rounded-full overflow-hidden">
                                 <img src="{{ asset('/storage/'.$biography->img_url) }}"
                                     class="object-cover w-full h-full" />
                             </figure>
-                            @endif
+                            @endisset
                             <div>
                                 <h1 class="text-2xl font-medium uppercase">Salvatore Pitanza</h1>
                                 <h4 class="text-[14px] font-semibold text-zinc-400">Web Developer FullStack - Art

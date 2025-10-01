@@ -18,7 +18,7 @@
     <div class="py-5">
         @if(!$biography)
         <div class="w-full flex justify-end mb-5">
-            <flux:button icon="plus" wire:navigate href="/admin/biography-home/created">
+            <flux:button icon="plus" variant="filled" wire:navigate href="/admin/biography-home/created">
                 Aggiungi
             </flux:button>
         </div>

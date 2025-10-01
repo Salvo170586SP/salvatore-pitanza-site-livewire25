@@ -6,7 +6,7 @@
                 Le tecnologie che uso
             </h2>
         </div>
-        @if($skills)
+        @if($skills->count() > 0)
         <div
             class="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-6 text-center gap-3 md:gap-5 p-5 md:p-10 rounded-2xl md:rounded-3xl overflow-auto">
             @foreach($skills as $skill)
@@ -16,7 +16,7 @@
             @endforeach
         </div>
         @else
-        <div class="w-full text-center font-semibold text-slate-300 text-4xl mt-5">
+        <div class="w-full text-center font-semibold text-slate-300 text-2xl mt-5">
             Sezione in allestimento 🛠️
         </div>
         @endif

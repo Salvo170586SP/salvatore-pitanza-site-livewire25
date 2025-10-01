@@ -18,14 +18,20 @@
    </section>
 
    <section id="skills"
-      class="w-full  mx-auto flex flex-col py-10 md:py-20 items-center bg-zinc-900 bg-gradient-to-br from-indigo-300/10 text-white border-b border-zinc-800">
+      class="w-full  mx-auto flex flex-col py-10 md:py-20 items-center text-white border-b border-zinc-800">
       <div
-         class="w-full flex flex-col md:flex-row justify-around items-start gap-4 space-y-10 md:space-y-5 p-15">
+         class="w-full flex flex-col md:flex-row justify-around items-start gap-4 space-y-10 {{-- md:space-y-5 p-15 --}}">
          <div class="md:w-[900px]">
+            @isset($skillInfo)
             <p
                class="max-w-full font-medium text-sm text-slate-200 whitespace-normal overflow-wrap break-words leading-relaxed">
                {!!$skillInfo->general_description!!}
             </p>
+            @else
+            <div class="w-full text-center font-semibold text-slate-300 text-2xl mt-5">
+               Sezione in allestimento 🛠️
+            </div>
+            @endisset
          </div>
 
          <div class="md:w-[500px] space-y-5">
@@ -33,44 +39,40 @@
                <div class="bg-gradient-to-r bg-zinc-800/50 px-6 py-4">
                   <h3 class="text-lg font-semibold text-zinc-100">Documenti</h3>
                </div>
-               @if($documents)
                <div class="w-full space-y-5 p-5">
-                  @foreach($documents as $document)
+                  @forelse($documents as $document)
                   <div wire:key="document-[{{$document->id}}]">
                      <a href="{{asset('storage/'. $document->doc_url)}}" download
                         class="text-sm font-semibold flex justify-start items-center">
                         📄
                         {{$document->name_doc}}</a>
                   </div>
-                  @endforeach
+                  @empty
+                  <div class="w-full text-center font-semibold text-slate-300 text-lg mt-5">
+                     Sezione in allestimento 🛠️
+                  </div>
+                  @endforelse
                </div>
-               @else
-               <div class="w-full text-center font-semibold text-slate-300 text-4xl mt-5">
-                  Sezione in allestimento 🛠️
-               </div>
-               @endif
             </div>
-            
+
             <div class="rounded-2xl border border-zinc-700/90 bg-zinc-900/50 w-full">
 
                <div class="bg-gradient-to-r bg-zinc-800/50 px-6 py-4">
                   <h3 class="text-lg font-semibold text-zinc-100">Tecnologie che uso</h3>
                </div>
-
-               @if($skills)
-               <div
-                  class="flex flex-wrap justify-start items-center p-2">
-                  @foreach($skills as $skill)
-                  <div wire:key="skill-[{{$skill->id}}]">
-                     <x-icon-skill :skill="$skill" />
+               <div class="flex flex-wrap justify-start items-center p-2">
+                  <div class="w-full space-y-5 p-5">
+                     @forelse($skills as $skill)
+                     <div wire:key="skill-[{{$skill->id}}]">
+                        <x-icon-skill :skill="$skill" />
+                     </div>
+                     @empty
+                     <div class="w-full text-center font-semibold text-slate-300 text-lg mt-5">
+                        Sezione in allestimento 🛠️
+                     </div>
+                     @endforelse
                   </div>
-                  @endforeach
                </div>
-               @else
-               <div class="w-full text-center font-semibold text-slate-300 text-4xl mt-5">
-                  Sezione in allestimento 🛠️
-               </div>
-               @endif
             </div>
          </div>
       </div>

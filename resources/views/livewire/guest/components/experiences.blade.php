@@ -12,10 +12,10 @@
                 </p>
             </div>
             <div class="mx-auto w-[400px] md:w-[900px] mt-5 md:mt-10 px-4 md:px-0">
-                @if($experiences)
+                @if($experiences->count() > 0)
                 <x-accordions :experiences="$experiences" />
                 @else
-                <div class="text-center font-semibold text-slate-300 mt-5 text-4xl">
+                <div class="w-full text-center font-semibold text-slate-300 text-2xl mt-5">
                     Sezione in allestimento 🛠️
                 </div>
                 @endif

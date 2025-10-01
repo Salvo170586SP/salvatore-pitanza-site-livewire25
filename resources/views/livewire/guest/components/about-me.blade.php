@@ -7,8 +7,11 @@
             </h2>
         </div>
         <div class="flex justify-center items-center flex-col lg:flex-row text-center gap-5 px-4 md:px-0">
-            @if (!$biography)
-            <p class="font-medium text-zinc-400">Biografia al momento non disponibile.</p>
+            @if(!$biography)
+             <div
+                class="w-[250px] h-[250px] me-20 overflow-hidden rounded-[20px] bg-zinc-800 flex justify-center items-center font-bold">
+                NO IMG
+            </div>
             @else
             @if ($biography->img_url)
             <figure class="w-[250px] h-[250px]  md:me-20  overflow-hidden rounded-[15px]">
@@ -21,10 +24,13 @@
                 NO IMG
             </div>
             @endif
+            @endif
             <div
                 class="w-full md:w-2/3 lg:w-1/3 flex flex-col justify-center items-center text-justify text-sm lg:text-base mt-5 lg:mt-0 px-10 md:px-0">
                 <p class="font-semibold text-zinc-400">
-                    {{$biography->description}}
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam sequi voluptate excepturi veritatis
+                    quo labore asperiores doloremque, ex, provident beatae earum accusamus debitis itaque, tenetur
+                    placeat incidunt praesentium! Nemo, corporis.
                 </p>
                 <div class="w-full my-4 md:my-5 lg:mt-10">
                     <button wire:navigate href="/about-me"
@@ -37,7 +43,6 @@
                     </button>
                 </div>
             </div>
-            @endif
         </div>
     </section>
 </div>

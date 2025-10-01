@@ -16,12 +16,11 @@
                         mondo
                         <br>
                         <span class="text-sm inline pt-5">
-                            Per lavori su richiesta consultare e contattarmi presso la pagina instagram sottostante 
+                            Per lavori su richiesta consultare e contattarmi presso la pagina instagram sottostante
                         </span>
                     </p>
 
                     <div class="mt-10 w-full flex justify-center">
-
                         <a href="#" title="Instagram" class="transform hover:scale-110 transition-transform ">
                             <img class="w-6 h-6 md:w-9 md:h-9 invert" src="assets/icon/instagram.svg" alt="Instagram">
                         </a>
@@ -31,17 +30,15 @@
         </div>
     </section>
     <section id="work"
-        class="w-full mx-auto flex flex-col py-10 md:py-20 items-center bg-zinc-900 bg-gradient-to-br from-indigo-300/10 text-white border-b border-zinc-800">
-        @if($drawings)
+        class="w-full mx-auto flex flex-col py-10 md:py-20 items-center text-white border-b border-zinc-800">
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 p-8 w-full max-w-7xl mx-auto">
-            @foreach($drawings as $draw)
+            @forelse($drawings as $draw)
             <x-draw-card :item="$draw" />
-            @endforeach
+            @empty
+            <div class="w-full text-center font-semibold text-slate-300 text-2xl mt-5">
+                Sezione in allestimento 🛠️
+            </div>
+            @endforelse
         </div>
-        @else
-        <div class="w-full text-center font-semibold text-slate-300 text-4xl mt-5">
-            Sezione in allestimento 🛠️
-        </div>
-        @endif
     </section>
 </div>

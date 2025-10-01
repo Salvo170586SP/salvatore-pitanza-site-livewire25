@@ -8,12 +8,12 @@
 
         </div>
         <div class="flex justify-center items-center flex-col flex-wrap lg:flex-row gap-5 mt-5 px-4 md:px-0 ">
-            @if($trainings)
+            @if($trainings->count() > 0)
             @foreach ($trainings as $training)
             <x-card-training :training="$training" />
             @endforeach
             @else
-            <div class="w-full text-center font-semibold text-slate-300 text-4xl mt-5">
+            <div class="w-full text-center font-semibold text-slate-300 text-2xl mt-5">
                 Sezione in allestimento 🛠️
             </div>
             @endif

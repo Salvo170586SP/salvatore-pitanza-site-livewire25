@@ -15,14 +15,14 @@
             </button>
         </div>
 
-        @if($projects)
+        @if($projects->count() > 0)
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 p-8 w-full max-w-7xl mx-auto">
             @foreach($projects->take(3) as $project)
             <x-card-project :project="$project" />
             @endforeach
         </div>
         @else
-        <div class="w-full text-center font-semibold text-slate-300 text-4xl mt-5">
+        <div class="w-full text-center font-semibold text-slate-300 text-2xl mt-5">
             Sezione in allestimento 🛠️
         </div>
         @endif
