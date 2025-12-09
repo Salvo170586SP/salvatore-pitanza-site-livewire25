@@ -4,5 +4,4 @@
     <livewire:guest.components.skills />
     <livewire:guest.components.trainings />
     <livewire:guest.components.projects />
-    <livewire:guest.components.experiences />
 </div>

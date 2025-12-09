@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Skill extends Model
 {
-    protected $fillable = ['user_id', 'name', 'url_icon'];
+    protected $fillable = ['user_id', 'name', 'url_icon', 'type'];
 
     public function user()
     {

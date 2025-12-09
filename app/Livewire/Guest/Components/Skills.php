@@ -10,7 +10,7 @@ class Skills extends Component
 {
     public function render()
     {
-        $skills = Skill::where('user_id', Auth::id())->get();
+        $skills = Skill::where('user_id', 1)->get();
         return view('livewire.guest.components.skills', compact('skills'));
     }
 }

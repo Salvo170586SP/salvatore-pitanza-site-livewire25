@@ -13,6 +13,15 @@
             <flux:error name="name" />
         </flux:field>
 
+        <flux:select wire:model="type">
+            <flux:select.option value="">-</flux:select.option>
+            @foreach($types as $index => $item)
+            <flux:select.option wire:key="types-{{$item['id']}}" value="{{$item['id']}}">
+                {{$item['label']}}
+            </flux:select.option>
+            @endforeach
+        </flux:select>
+
         <div class="mt-5">
             <flux:input type="file" wire:model="url_icon" label="Allega icona" />
         </div>

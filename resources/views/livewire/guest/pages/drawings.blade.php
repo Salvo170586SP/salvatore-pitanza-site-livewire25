@@ -1,44 +1,50 @@
 <div>
-    <section id="jumbotron-skills"
-        class="relative overflow-hidden w-full text-white bg-gradient-to-br from-indigo-400/10 to-transparent border-b border-zinc-800 py-40">
-        <div class="absolute inset-0 z-0
-         bg-[linear-gradient(to_right,#4f46e520_1px,transparent_1px),linear-gradient(to_bottom,#4f46e520_1px,transparent_1px)]
-         bg-[size:6rem_6rem] [mask-image:radial-gradient(ellipse_70%_80%_at_50%_0%,#000_80%,transparent_100%)]">
-        </div>
-        <div class="absolute inset-0 z-0 bg-gradient-to-br from-indigo-900/10 to-transparent"></div>
-        <div class="flex justify-center items-center">
-            <div class="flex flex-col items-center">
-                <div class="px-10 md:px-32 ">
-                    <p class="text-6xl font-bold mt-5">
-                        I miei <span class="text-blue-600">Disegni</span>
-                    </p>
-                    <p class="mt-3 text-slate-300">Una raccolta di illustrazioni che raccontano il mio modo di vedere il
-                        mondo
-                        <br>
-                        <span class="text-sm inline pt-5">
-                            Per lavori su richiesta consultare e contattarmi presso la pagina instagram sottostante
-                        </span>
-                    </p>
-
-                    <div class="mt-10 w-full flex justify-center">
-                        <a href="#" title="Instagram" class="transform hover:scale-110 transition-transform ">
-                            <img class="w-6 h-6 md:w-9 md:h-9 invert" src="assets/icon/instagram.svg" alt="Instagram">
-                        </a>
-                    </div>
-                </div>
+    <section class="container w-full h-full py-20">
+        <div class="flex flex-wrap justify-between p-6">
+            <div class="flex min-w-72 flex-col gap-1">
+                <p class="text-[#212529] dark:text-white text-4xl font-black leading-tight tracking-[-0.033em]">I miei
+                    disegni</p>
+                <p class="text-[#617589] dark:text-zinc-400 text-sm font-normal leading-normal">Per lavori su richiesta
+                    consultare e contattarmi presso la pagina instagram sottostante</p>
             </div>
         </div>
-    </section>
-    <section id="work"
-        class="w-full mx-auto flex flex-col py-10 md:py-20 items-center text-white border-b border-zinc-800">
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 p-8 w-full max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:px-5">
             @forelse($drawings as $draw)
-            <x-draw-card :item="$draw" />
+            <x-card-project :item="$draw" />
             @empty
             <div class="w-full text-center font-semibold text-slate-300 text-2xl mt-5">
                 Sezione in allestimento 🛠️
             </div>
             @endforelse
+        </div>
+
+        <div
+            class="mt-8 flex flex-col items-center justify-center gap-4 rounded-xl bg-primary/10  dark:bg-zinc-800 dark:border dark:border-zinc-700  p-8 text-center">
+            <h3 class="text-2xl font-bold text-[#212121] dark:text-white">Vuoi realizzare o regalare un ritratto?</h3>
+            <p class="max-w-md text-gray-700 dark:text-zinc-300">Consulta il mio profilo Instagram dedicato.</p>
+            <a class="dark:text-zinc-300 bg-light dark:bg-zinc-800 hover:bg-light/60 dark:hover:bg-zinc-900  transition-colors flex items-center gap-3 border border-zinc-400 dark:border-zinc-700 rounded-xl px-4 py-2"
+                href="#">
+                <svg viewBox="0 -0.5 25 25" fill="none" class="size-8" xmlns="http://www.w3.org/2000/svg">
+                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" c stroke-linejoin="round"></g>
+                    <g id="SVGRepo_iconCarrier">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M15.5 5H9.5C7.29086 5 5.5 6.79086 5.5 9V15C5.5 17.2091 7.29086 19 9.5 19H15.5C17.7091 19 19.5 17.2091 19.5 15V9C19.5 6.79086 17.7091 5 15.5 5Z"
+                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        </path>
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M12.5 15C10.8431 15 9.5 13.6569 9.5 12C9.5 10.3431 10.8431 9 12.5 9C14.1569 9 15.5 10.3431 15.5 12C15.5 12.7956 15.1839 13.5587 14.6213 14.1213C14.0587 14.6839 13.2956 15 12.5 15Z"
+                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        </path>
+                        <rect x="15.5" y="9" width="2" height="2" rx="1" transform="rotate(-90 15.5 9)"
+                            fill="currentColor">
+                        </rect>
+                        <rect x="16" y="8.5" width="1" height="1" rx="0.5" transform="rotate(-90 16 8.5)"
+                            stroke="currentColor" stroke-linecap="round"></rect>
+                    </g>
+                </svg>
+                Contattami
+            </a>
         </div>
     </section>
 </div>

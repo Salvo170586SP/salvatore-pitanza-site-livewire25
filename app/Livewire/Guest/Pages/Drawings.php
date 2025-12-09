@@ -10,7 +10,7 @@ class Drawings extends Component
 {
     public function render()
     {
-        $drawings = Drawing::where('user_id', Auth::id())->get();
+        $drawings = Drawing::where('user_id', 1)->get();
         return view('livewire.guest.pages.drawings', compact('drawings'))->layout('layouts.guest');
     }
 }

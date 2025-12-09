@@ -10,7 +10,7 @@ class Projects extends Component
 {
     public function render()
     {
-        $projects = Project::where('user_id', Auth::id())->get();
+        $projects = Project::where('user_id', 1)->get();
         return view('livewire.guest.components.projects', compact('projects'));
     }
 }

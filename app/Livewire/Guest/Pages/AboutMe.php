@@ -3,6 +3,7 @@
 namespace App\Livewire\Guest\Pages;
 
 use App\Models\Biography;
+use App\Models\Skill;
 use Livewire\Component;
 
 class AboutMe extends Component

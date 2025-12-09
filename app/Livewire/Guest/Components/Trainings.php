@@ -10,7 +10,7 @@ class Trainings extends Component
 {
     public function render()
     {
-        $trainings = Training::where('user_id', Auth::id())->get();
+        $trainings = Training::where('user_id', 1)->get();
         return view('livewire.guest.components.trainings', compact('trainings'));
     }
 }

@@ -13,22 +13,25 @@ class CreateSkills extends Component
 
     public $url_icon = null;
     public $name;
+    public $type;
 
     protected $rules = [
-        'url_icon' => 'required',
+        'url_icon' => 'nullable',
         'name' => 'required|max:64',
+        'type' => 'required',
     ];
 
     protected $messages = [
-        'url_icon.required' => 'Campo obbligatorio',
         'name.required' => 'Campo obbligatorio',
         'name.max' => 'Massimo 64 cartteri',
+        'type.required' => 'Campo obbligatorio',
     ];
 
     public function submit()
     {
         $this->validate();
 
+        $url = null;
         if ($this->url_icon) {
             $url = $this->url_icon->store('imgsSkill', 'public');
         }
@@ -37,6 +40,7 @@ class CreateSkills extends Component
             'user_id' => Auth::id(),
             'url_icon' => $url,
             'name' => $this->name,
+            'type' => $this->type,
         ]);
 
         session()->flash('message', 'Elemento creato con successo!');
@@ -46,6 +50,7 @@ class CreateSkills extends Component
 
     public function render()
     {
-        return view('livewire.admin.skills.create-skills');
+        $types = config('siteConfig.types');
+        return view('livewire.admin.skills.create-skills', compact('types'));
     }
 }

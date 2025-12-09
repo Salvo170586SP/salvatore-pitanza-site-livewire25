@@ -1,19 +1,17 @@
-@import 'tailwindcss';
-@import '../../vendor/livewire/flux/dist/flux.css';
-
- 
- 
+@import "tailwindcss";
+@import "../../vendor/livewire/flux/dist/flux.css";
 
 @source '../views';
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../vendor/livewire/flux-pro/stubs/**/*.blade.php';
 @source '../../vendor/livewire/flux/stubs/**/*.blade.php';
 
-
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    --font-sans: "Instrument Sans", ui-sans-serif, system-ui, sans-serif,
+        "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+        "Noto Color Emoji";
 
     --color-zinc-50: #fafafa;
     --color-zinc-100: #f5f5f5;
@@ -27,9 +25,24 @@
     --color-zinc-900: #171717;
     --color-zinc-950: #0a0a0a;
 
+    /* costumize */
+    --color-primary: #127ae2;
+    --color-light: #f6f7f8;
+    --color-dark: #101922;
+    --color-text-light: #111418;
+    --color-text-dark: #f0f2f4;
+    --color-card-light: #ffffff;
+    --color-card-dark: #182431;
+    --color-subtle-light: #617589;
+    --color-subtle-dark: #a0aec0;
+    --color-border-light: #dbe0e6;
+    --color-border-dark: #334155;
+
     --color-accent: var(--color-neutral-800);
     --color-accent-content: var(--color-neutral-800);
     --color-accent-foreground: var(--color-white);
+
+    --shadow-inner-lg:  inset 0 0px 50px #334155;
 }
 
 @layer theme {
@@ -41,7 +54,6 @@
 }
 
 @layer base {
-
     *,
     ::after,
     ::before,
@@ -60,7 +72,7 @@ html {
 }
 
 [data-flux-label] {
-    @apply  !mb-0 !leading-tight;
+    @apply !mb-0 !leading-tight;
 }
 
 input:focus[data-flux-control],
@@ -72,4 +84,3 @@ select:focus[data-flux-control] {
 /* \[:where(&)\]:size-4 {
     @apply size-4;
 } */
-
