@@ -4,28 +4,22 @@
         <div class="flex flex-col gap-10 px-2 mb-10 sm:px-4">
             <div class="flex flex-col md:flex-row gap-4 text-center items-center justify-center">
 
-                @if(!$biography)
+                @if ($biography && $biography->img_url)
+                <figure
+                    class="border dark:border-zinc-600 md:w-[250px] md:h-[250px]  w-[150px]  h-[150px] md:me-20  overflow-hidden rounded-xl">
+                    <img src="{{ asset('storage/' . $biography->img_url) }}" alt="{{$biography->img_url}}"
+                        class="w-full h-full object-cover" />
+                </figure>
+                @else
                 <div
-                    class="border dark:border-zinc-600 md:w-[250px] md:h-[250px]  w-[150px]  h-[150px] me-20 overflow-hidden rounded-[20px] bg-zinc-800 flex justify-center items-center font-bold">
+                    class="border text-white dark:border-zinc-600 md:w-[250px] md:h-[250px]  w-[150px]  h-[150px] me-20 overflow-hidden rounded-[20px] bg-zinc-800 flex justify-center items-center font-bold">
                     NO IMG
                 </div>
-                @else
-                    @if ($biography->img_url)
-                    <figure
-                        class="border dark:border-zinc-600 md:w-[250px] md:h-[250px]  w-[150px]  h-[150px] md:me-20  overflow-hidden rounded-xl">
-                        <img src="{{ asset('storage/' . $biography->img_url) }}" alt="{{$biography->img_url}}"
-                            class="w-full h-full object-cover" />
-                    </figure>
-                    @else
-                    <div
-                        class="border dark:border-zinc-600 md:w-[250px] md:h-[250px]  w-[150px]  h-[150px] me-20 overflow-hidden rounded-[20px] bg-zinc-800 flex justify-center items-center font-bold">
-                        NO IMG
-                    </div>
-                    @endif
                 @endif
+
                 <div class="text-center md:text-start">
                     <h1 class="text-3xl font-bold leading-tight tracking-tight sm:text-3xl max-w-3xl">
-                         A volte il passo lento è quello che porta più lontano. 
+                        A volte il passo lento è quello che porta più lontano.
                     </h1>
                     <p class="text-sm mt-2 font-normal leading-normal text-subtle-light dark:text-zinc-400 max-w-2xl">
                         Scelgo di dare priorità alla precisione e alla cura dei dettagli. Credo che ogni

@@ -9,6 +9,13 @@
                     miei lavori, dove esploro soluzioni creative tra design e tecnologia.</p>
             </div>
         </div>
+
+        @if($projects && count($projects) == 0)
+        <div class="w-full text-center text-zinc-500 text-xl my-5">
+            Sezione in allestimento
+        </div>
+        @endif
+
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:px-5">
             @foreach($projects as $project)
             <x-card-project :item="$project">

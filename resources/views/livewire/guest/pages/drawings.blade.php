@@ -8,15 +8,19 @@
                     consultare e contattarmi presso la pagina instagram sottostante</p>
             </div>
         </div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:px-5">
-            @forelse($drawings as $draw)
-            <x-card-project :item="$draw" />
-            @empty
-            <div class="w-full text-center font-semibold text-slate-300 text-2xl mt-5">
-                Sezione in allestimento 🛠️
-            </div>
-            @endforelse
+
+        @if($drawings && count($drawings) == 0)
+        <div class="w-full text-center text-zinc-500 text-xl my-5">
+            Sezione in allestimento
         </div>
+        @endif
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:px-5 w-full">
+            @foreach($drawings as $draw)
+            <x-card-project :item="$draw" />
+            @endforeach
+        </div>
+
 
         <div
             class="mt-8 flex flex-col items-center justify-center gap-4 rounded-xl bg-primary/10  dark:bg-zinc-800 dark:border dark:border-zinc-700  p-8 text-center">

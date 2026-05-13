@@ -5,7 +5,7 @@
                 Ultimi progetti
             </h2>
             <button wire:navigate href="/projects"
-            class="inline-flex items-center capitalize my-5 px-4 py-2 text-sm font-medium border border-zinc-300 dark:border-zinc-700 bg-zinc-400/10 hover:bg-zinc-200 dark:hover:bg-zinc-900 text-zinc-500 dark:text-zinc-400 rounded-lg cursor-pointer">
+                class="inline-flex items-center capitalize my-5 px-4 py-2 text-sm font-medium border border-zinc-300 dark:border-zinc-700 bg-zinc-400/10 hover:bg-zinc-200 dark:hover:bg-zinc-900 text-zinc-500 dark:text-zinc-400 rounded-lg cursor-pointer">
                 Tutti I Progetti
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
                     stroke="currentColor" class="size-4 ms-2 text-zinc-500">
@@ -14,7 +14,12 @@
             </button>
         </div>
 
-        @if($projects->count() > 0)
+        @if($projects && count($projects) == 0)
+        <div class="w-full text-center text-zinc-500 text-xl my-5">
+            Sezione in allestimento
+        </div>
+        @endif
+
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 sm:gap-5  md:gap-10 w-full mx-auto">
             @foreach($projects->take(3) as $project)
             <x-card-project :item="$project">
@@ -69,10 +74,6 @@
             </x-card-project>
             @endforeach
         </div>
-        @else
-        <div class="w-full text-center font-semibold text-slate-300 text-2xl mt-5">
-            Sezione in allestimento 🛠️
-        </div>
-        @endif
+
     </section>
 </div>
