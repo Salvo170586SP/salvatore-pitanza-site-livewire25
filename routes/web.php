@@ -70,8 +70,8 @@ Route::middleware(['auth'])->group(function () {
 
     //drawings
     Route::get('/admin/drawings-home', IndexDrawings::class)->name('drawingsIndex');
-    Route::get('/admin/drawings-home/create', CreateDrawings::class)->name('skillsCreate');
-    Route::get('/admin/drawings-home/{drawing}/edit', EditDrawings::class)->name('skillsEdit');
+    Route::get('/admin/drawings-home/create', CreateDrawings::class)->name('drawingsCreate');
+    Route::get('/admin/drawings-home/{drawing}/edit', EditDrawings::class)->name('drawingsEdit');
 
     Route::redirect('/admin/settings', 'settings/profile');
 
