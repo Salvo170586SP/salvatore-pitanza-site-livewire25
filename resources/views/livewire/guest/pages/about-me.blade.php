@@ -3,7 +3,7 @@
     <div class="flex w-full mx-auto max-w-7xl flex-col gap-12 sm:gap-16">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 items-start">
         <div class="w-full h-full md:col-span-1">
-          @if ($biography->img_url)
+          @isset ($biography->img_url)
           <figure class="border dark:border-zinc-600 w-full overflow-hidden rounded-xl">
             <img src="{{ asset('storage/' . $biography->img_url) }}" alt="{{$biography->img_url}}"
               class="w-full h-full object-cover" />
@@ -13,7 +13,7 @@
             class="w-full h-full border dark:border-zinc-600 me-20 overflow-hidden rounded-xl bg-zinc-800 flex justify-center items-center font-bold">
             NO IMG
           </div>
-          @endif
+          @endisset
         </div>
         <div class="md:col-span-2">
           <h1
