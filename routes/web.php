@@ -32,11 +32,11 @@ use App\Livewire\Guest\Pages\SkillsPage;
 use Illuminate\Support\Facades\Route;
 use Livewire\Volt\Volt;
 
-Route::get('/', HomePage::class);
-Route::get('/about-me', PagesAboutMe::class);
-Route::get('/skills', SkillsPage::class);
-Route::get('/projects', ProjectsPage::class);
-Route::get('/drawings', Drawings::class);
+Route::get('/', HomePage::class)->name('home');
+Route::get('/about-me', PagesAboutMe::class)->name('about');
+Route::get('/skills', SkillsPage::class)->name('skills');
+Route::get('/projects', ProjectsPage::class)->name('projects');
+Route::get('/drawings', Drawings::class)->name('drawings');
 
 Route::middleware(['auth'])->group(function () {
     //biography

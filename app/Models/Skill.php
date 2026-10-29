@@ -2,12 +2,27 @@
 
 namespace App\Models;
 
+use App\Enums\SkillLevels;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
 class Skill extends Model
 {
-    protected $fillable = ['user_id', 'name', 'url_icon', 'type'];
+    protected $fillable = [
+        'user_id',
+        'name',
+        'url_icon',
+        'type',
+        'level',
+        'description'
+    ];
+
+    protected function casts()
+    {
+        return [
+            'level' => SkillLevels::class
+        ];
+    }
 
     public function user()
     {

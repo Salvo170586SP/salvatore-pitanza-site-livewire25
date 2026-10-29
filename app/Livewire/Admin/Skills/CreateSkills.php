@@ -14,11 +14,15 @@ class CreateSkills extends Component
     public $url_icon = null;
     public $name;
     public $type;
+    public $level;
+    public $description;
 
     protected $rules = [
         'url_icon' => 'nullable',
         'name' => 'required|max:64',
         'type' => 'required',
+        'level' => 'nullable',
+        'description' => 'nullable',
     ];
 
     protected $messages = [
@@ -41,6 +45,8 @@ class CreateSkills extends Component
             'url_icon' => $url,
             'name' => $this->name,
             'type' => $this->type,
+            'level' => $this->level,
+            'description' => $this->description,
         ]);
 
         session()->flash('message', 'Elemento creato con successo!');

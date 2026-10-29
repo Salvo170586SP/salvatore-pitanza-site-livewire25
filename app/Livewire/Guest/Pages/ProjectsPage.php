@@ -3,14 +3,24 @@
 namespace App\Livewire\Guest\Pages;
 
 use App\Models\Project;
-use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 
 class ProjectsPage extends Component
 {
+    public string $filter = 'all';
+
     public function render()
     {
-        $projects = Project::where('user_id', 1)->get();
+        $projectsQuery = Project::where('user_id', 1);
+
+        if ($this->filter === 'completed') {
+            $projectsQuery->where('is_available', true);
+        } elseif ($this->filter === 'development') {
+            $projectsQuery->where('is_available', false);
+        }
+
+        $projects = $projectsQuery->get();
+
         return view('livewire.guest.pages.projects-page', compact('projects'))->layout('layouts.guest');
     }
 }

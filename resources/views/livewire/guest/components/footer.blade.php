@@ -1,43 +1,91 @@
 <div>
     <!-- Footer -->
-    <footer id="footer"
-        class="h-[200px] flex flex-col gap-8 px-2 sm:px-5 py-10 text-center  border-t border-border-light dark:border-zinc-800">
-        <div class="flex flex-col sm:flex-row flex-wrap gap-3 justify-center">
+    <footer id="footer" class="h-[200px] flex flex-col gap-8 px-5  py-10 text-center  border-t border-border-light">
+
+        @if(request()->is('drawings'))
+        <div
+             class="mt-8 flex flex-col items-center justify-center gap-4 rounded-xl border border-zinc-300 bg-[#0F172A] p-8 text-center transition hover:shadow-lg">
+            <h3 class="text-2xl font-bold text-white">Vuoi realizzare o regalare un ritratto?</h3>
+            <p class="max-w-lg text-gray-200 font-normal leading-normal">Guarda il mio profilo Instagram dedicato.</p>
+
+            <a class="bg-white hover:bg-gray-50 hover:shadow-lg transition flex items-center gap-3 border border-zinc-300 rounded-xl px-4 py-2"
+                href="https://www.instagram.com/creative_store.pitanza/" target="_blank">
+                <svg viewBox="0 0 24 24" fill="none" class="size-6" xmlns="http://www.w3.org/2000/svg">
+                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                    <g id="SVGRepo_iconCarrier">
+                        <path
+                            d="M16.65 7.2H16.66M8 20H16C18.2091 20 20 18.2091 20 16V8C20 5.79086 18.2091 4 16 4H8C5.79086 4 4 5.79086 4 8V16C4 18.2091 5.79086 20 8 20ZM15.75 12C15.75 14.0711 14.0711 15.75 12 15.75C9.92893 15.75 8.25 14.0711 8.25 12C8.25 9.92893 9.92893 8.25 12 8.25C14.0711 8.25 15.75 9.92893 15.75 12Z"
+                            stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </g>
+                </svg>
+                Contattami
+            </a>
+        </div>
+        @else
+        <div
+            class="mt-8 flex flex-col items-center justify-center gap-4 rounded-xl border border-zinc-300 bg-[#0F172A] p-8 text-center transition hover:shadow-lg">
+            <h3 class="text-2xl font-bold text-white">Vuoi saperne di più?</h3>
+
+            <p class="max-w-lg text-gray-200 font-normal leading-normal">Guarda i miei progetti su GitHub o scrivimi su
+                LinkedIn.
+            </p>
+
+            <div class="flex gap-2">
+                <a class="bg-white hover:bg-gray-50 hover:shadow-lg transition flex items-center gap-3 border border-zinc-300 rounded-xl px-4 py-2"
+                    href="https://www.linkedin.com/in/salvatore-pitanza-dev/" target="_blank" rel="noopener noreferrer">
+                    <svg aria-hidden="true" class="size-6" fill="currentColor" viewbox="0 0 24 24">
+                        <path
+                            d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.25 6.5 1.75 1.75 0 016.5 8.25zM19 19h-3v-4.75c0-1.4-1.2-2.5-2.5-2.5S11 12.85 12 14.25V19h-3v-9h2.9v1.3a3.11 3.11 0 012.6-1.4c2.5 0 4.5 2 4.5 4.6V19z">
+                        </path>
+                    </svg>
+                    Contattami
+                </a>
+                <a class="bg-white hover:bg-gray-50 hover:shadow-lg transition flex items-center gap-3 border border-zinc-300 rounded-xl px-4 py-2"
+                    href="https://github.com/Salvo170586SP" target="_blank">
+                    <img src="./assets/imgs/github.png" class="w-5 h-5 dark:invert-80" alt="ig">
+                    GitHub
+                </a>
+            </div>
+        </div>
+        @endif
+
+        <div class="flex flex-col sm:flex-row flex-wrap gap-5 justify-center">
             <button wire:navigate
-                class="text-subtle-light dark:text-zinc-300 text-sm font-semibold leading-normal min-w-24 hover:text-primary dark:hover:text-primary transition-colors"
-                href="#">Home</button>
+                class="text-sm font-medium leading-normal underline underline-offset-4 decoration-transparent hover:decoration-sky-800 hover:text-sky-800 transition-colors duration-300"
+                href="/">Home</button>
             <button wire:navigate
-                class="text-subtle-light dark:text-zinc-300 text-sm font-semibold leading-normal min-w-24 hover:text-primary dark:hover:text-primary transition-colors"
+                class="text-sm font-medium leading-normal underline underline-offset-4 decoration-transparent hover:decoration-sky-800 hover:text-sky-800 transition-colors duration-300"
                 href="/about-me">Chi sono</button>
             <button wire:navigate
-                class="text-subtle-light dark:text-zinc-300 text-sm font-semibold leading-normal min-w-24 hover:text-primary dark:hover:text-primary transition-colors"
+                class="text-sm font-medium leading-normal underline underline-offset-4 decoration-transparent hover:decoration-sky-800 hover:text-sky-800 transition-colors duration-300"
                 href="/skills">CV</button>
             <button wire:navigate
-                class="text-subtle-light dark:text-zinc-300 text-sm font-semibold leading-normal min-w-24 hover:text-primary dark:hover:text-primary transition-colors"
+                class="text-sm font-medium leading-normal underline underline-offset-4 decoration-transparent hover:decoration-sky-800 hover:text-sky-800 transition-colors duration-300"
                 href="/projects">Progetti</button>
             <button wire:navigate
-                class="text-subtle-light sm:ms-8 capitalize dark:text-zinc-300 text-sm font-semibold leading-normal min-w-24 hover:text-primary dark:hover:text-primary transition-colors"
+                class="text-sm font-medium leading-normal underline underline-offset-4 decoration-transparent hover:decoration-sky-800 hover:text-sky-800 transition-colors duration-300"
                 href="/drawings">Galleria d'Arte</button>
         </div>
         <div class="flex flex-wrap justify-center items-center gap-6">
-            <a class="text-subtle-light dark:text-zinc-300 hover:text-primary dark:hover:text-primary transition-colors"
-                href="#">
+            <a class="text-gray-800 hover:text-primary transition-colors"
+                href="https://www.linkedin.com/in/salvatore-pitanza-dev/" target="_blank">
                 <svg aria-hidden="true" class="size-6" fill="currentColor" viewbox="0 0 24 24">
                     <path
                         d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.25 6.5 1.75 1.75 0 016.5 8.25zM19 19h-3v-4.75c0-1.4-1.2-2.5-2.5-2.5S11 12.85 12 14.25V19h-3v-9h2.9v1.3a3.11 3.11 0 012.6-1.4c2.5 0 4.5 2 4.5 4.6V19z">
                     </path>
                 </svg>
             </a>
-            <a class="text-subtle-light dark:text-zinc-300 hover:text-primary dark:hover:text-primary transition-colors"
-                href="#">
+            <a class="text-gray-800 hover:text-primary transition-colors" href="https://github.com/Salvo170586SP"
+                target="_blank">
                 <svg aria-hidden="true" class="size-6" fill="currentColor" viewbox="0 0 24 24">
                     <path clip-rule="evenodd"
                         d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.165 6.837 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.942.359.308.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z"
                         fill-rule="evenodd"></path>
                 </svg>
             </a>
-            <a class="text-subtle-light -sm-3 dark:text-zinc-300 hover:text-primary dark:hover:text-primary transition-colors"
-                href="#">
+            <a class="text-gray-800 -sm-3 hover:text-primary transition-colors"
+                href="https://www.instagram.com/creative_store.pitanza/" target="_blank">
                 <svg viewBox="0 -0.5 25 25" fill="none" class="size-8" xmlns="http://www.w3.org/2000/svg">
                     <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                     <g id="SVGRepo_tracerCarrier" stroke-linecap="round" c stroke-linejoin="round"></g>
@@ -57,9 +105,9 @@
                             stroke="currentColor" stroke-linecap="round"></rect>
                     </g>
                 </svg>
-             </a>
+            </a>
         </div>
-        <p class="text-subtle-light dark:text-zinc-300 text-sm font-normal leading-normal py-5">Italy 2025 - Salvatore
-            Pitanza. Laravel Livewire created</p>
+        <p class="text-subtle-light text-sm font-normal leading-normal py-5">© 2026 - Salvatore
+            Pitanza · Laravel Livewire created</p>
     </footer>
 </div>

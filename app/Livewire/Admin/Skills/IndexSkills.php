@@ -15,9 +15,7 @@ class IndexSkills extends Component
     use WithFileUploads;
     public $name_doc;
     public $doc_url = null;
-
-
-
+    
     protected $rules = [
         'doc_url' => 'required',
         'name_doc' => 'nullable',

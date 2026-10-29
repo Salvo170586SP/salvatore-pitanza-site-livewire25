@@ -13,6 +13,16 @@
             <flux:error name="title" />
         </flux:field>
         <flux:field>
+            <flux:label>Inizio</flux:label>
+            <flux:input type="date" wire:model="start_date" id="start_date" />
+            <flux:error name="start_date" />
+        </flux:field>
+        <flux:field>
+            <flux:label>Fine</flux:label>
+            <flux:input type="date" wire:model="end_date" id="end_date" />
+            <flux:error name="end_date" />
+        </flux:field>
+        <flux:field>
             <flux:label>Descrizione</flux:label>
             <flux:textarea wire:model="description" id="description" />
             <flux:error name="description" />

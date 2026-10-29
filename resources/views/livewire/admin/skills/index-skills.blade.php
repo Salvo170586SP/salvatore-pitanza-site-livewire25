@@ -179,8 +179,7 @@
     </div>
     @if($skills->isNotEmpty())
     <div class="border border-zinc-200 dark:border-0 my-5 rounded-lg overflow-hidden">
-        <table
-            class="min-w-full bg-zinc-200/20 dark:bg-zinc-500/20 divide-y dark:divide-zinc-500/50">
+        <table class="min-w-full bg-zinc-200/20 dark:bg-zinc-500/20 divide-y dark:divide-zinc-500/50">
             <thead>
                 <tr>
                     <th scope="col" class="px-6 py-5 text-left text-xs font-medium uppercase   w-64">
@@ -189,8 +188,12 @@
                     <th scope="col" class="px-6 py-5 text-left text-xs font-medium uppercase   w-64">
                         Nome
                     </th>
-                    <th scope="col" class="px-6 py-5 text-left text-xs font-medium uppercase  w-32">
-                        Ultima modifica</th>
+                    <th scope="col" class="px-6 py-5 text-left text-xs font-medium uppercase   w-64">
+                        Livello
+                    </th>
+                    <th scope="col" class="px-6 py-5 text-left text-xs font-medium uppercase   w-64">
+                        Descrizione
+                    </th>
                     <th scope="col" class="px-6 py-5 text-left text-xs font-medium uppercase w-32">
                     </th>
                 </tr>
@@ -205,8 +208,8 @@
                                 alt="{{$skill->url_icon}}" />
                         </figure>
                         @else
-                        <div class="w-20 h-20 flex items-center justify-center bg-zinc-600 rounded-lg">
-                            No Img
+                        <div class="w-10 h-10 flex items-center justify-center text-gray-400 bg-zinc-200 font-bold rounded-lg">
+                          {{ str($skill->name)->substr(0, 2)->upper() }}
                         </div>
                         @endif
                     </td>
@@ -217,7 +220,12 @@
                     </td>
                     <td class="px-6 py-4">
                         <div class="max-w-xs truncate">
-                            {{$skill->getDate() ?? 'n/d'}}
+                            {{ $skill->level?->value ?? 'n/d' }}
+                        </div>
+                    </td>
+                    <td class="px-6 py-4">
+                        <div class="max-w-xs truncate">
+                            {{$skill->description ?? 'n/d'}}
                         </div>
                     </td>
                     <td class="px-6 py-4 whitespace-nowrap text-sm">

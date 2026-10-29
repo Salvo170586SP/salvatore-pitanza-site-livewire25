@@ -8,20 +8,17 @@
 
   <link rel="icon" type="image/png" href="{{ asset('assets/icon/code.png') }}">
 
-
+  @include('partials.appearance')
   @vite(['resources/css/app.css', 'resources/js/app.js'])
   @livewireStyles
-  @fluxAppearance
 </head>
 
-<body class="container mx-auto w-full h-full px-15 font-display text-black font-display bg-light dark:bg-zinc-900 text-text-light dark:text-text-dark">
+<body class="w-full h-full font-display text-black bg-light">
   <livewire:guest.components.header-nav />
   {{ $slot }}
   <livewire:guest.components.footer />
   @livewireScripts
   @fluxScripts
 </body>
-
-
 
 </html>
