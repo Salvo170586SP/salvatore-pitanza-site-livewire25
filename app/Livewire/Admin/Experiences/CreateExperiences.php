@@ -8,17 +8,23 @@ use Livewire\Component;
 
 class CreateExperiences extends Component
 {
-    public $title;
-    public $description;
+    public string $title;
+    public string $end_date;
+    public string $start_date;
+    public string $description;
 
     protected $rules = [
         'title' => 'required|max:64',
+        'end_date' => 'date',
+        'start_date' => 'date',
         'description' => 'required',
     ];
 
     protected $messages = [
         'title.required' => 'Campo obbligatorio',
         'title.max' => 'Massimo 64 cartteri',
+        'start_date.required' => 'Il campo è una data',
+        'end_date.required' => 'Il campo è una data',
         'description.required' => 'Campo obbligatorio',
     ];
 
@@ -29,6 +35,8 @@ class CreateExperiences extends Component
         Experience::create([
             'user_id' => Auth::id(),
             'title' => $this->title,
+            'start_date' => $this->start_date,
+            'end_date' => $this->end_date,
             'description' => $this->description,
         ]);
 

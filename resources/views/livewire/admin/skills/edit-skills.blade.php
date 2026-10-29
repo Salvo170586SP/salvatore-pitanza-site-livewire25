@@ -7,23 +7,45 @@
     </div>
 
     <form wire:submit.prevent="submit" class="mt-5">
-        <flux:field>
-            <flux:label>Nome</flux:label>
-            <flux:input wire:model="name" id="name" />
-            <flux:error name="name" />
-        </flux:field>
+        <div class="flex flex-col  justify-center items-center gap-5">
+            <flux:field class="w-80">
+                <flux:label>Nome</flux:label>
+                <flux:input wire:model="name" id="name" />
+                <flux:error name="name" />
+            </flux:field>
 
-           <flux:select wire:model="type">
-            <flux:select.option value="">-</flux:select.option>
-            @foreach($types as $index => $item)
-            <flux:select.option wire:key="types-{{$item['id']}}" value="{{$item['id']}}">
-                {{$item['label']}}
-            </flux:select.option>
-            @endforeach
-        </flux:select>
-        
-        <div class="mt-5">
-            <flux:input type="file" wire:model="url_icon" label="Allega icona" />
+            <flux:field class="w-80">
+                <flux:label>Tipo</flux:label>
+                <flux:select wire:model="type" id="type">
+                    <flux:select.option value="">-</flux:select.option>
+                    @foreach($types as $index => $item)
+                    <flux:select.option wire:key="types-{{$item['id']}}" value="{{$item['id']}}">
+                        {{$item['label']}}
+                    </flux:select.option>
+                    @endforeach
+                </flux:select>
+            </flux:field>
+
+            <flux:field class="w-80">
+                <flux:label>Livello</flux:label>
+                <flux:select wire:model="level" id="level">
+                    <flux:select.option value="">-</flux:select.option>
+                    @foreach(\App\Enums\SkillLevels::cases() as $item)
+                    <flux:select.option wire:key="levels-{{ $item->value }}" value="{{ $item->value }}">
+                        {{ $item->value }}
+                    </flux:select.option>
+                    @endforeach
+                </flux:select>
+            </flux:field>
+
+            <flux:field class="w-80">
+                <flux:label>Descrizione</flux:label>
+                <flux:textarea id="description" wire:model="description"></flux:textarea>
+            </flux:field>
+
+            <div class="w-80">
+                <flux:input type="file" wire:model="url_icon" label="Allega icona" />
+            </div>
         </div>
 
         <div class="w-full flex justify-end">

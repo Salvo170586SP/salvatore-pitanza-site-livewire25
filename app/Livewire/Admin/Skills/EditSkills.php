@@ -16,11 +16,15 @@ class EditSkills extends Component
     public $url_icon = null;
     public $name;
     public $type;
+    public $level;
+    public $description;
 
     protected $rules = [
         'url_icon' => 'nullable',
         'name' => 'required|max:64',
         'type' => 'required',
+        'level' => 'nullable',
+        'description' => 'nullable',
     ];
 
     protected $messages = [
@@ -34,6 +38,8 @@ class EditSkills extends Component
         $this->skill = $skill;
         $this->name = $skill->name;
         $this->type = $skill->type;
+        $this->level = $skill->level;
+        $this->description = $skill->description;
 
         if ($skill->url_icon) {
             $this->url_icon = asset('/storage/' . $skill->url_icon);
@@ -60,6 +66,8 @@ class EditSkills extends Component
             'name' => $this->name,
             'url_icon' => $url,
             'type' => $this->type,
+            'level' => $this->level,
+            'description' => $this->description,
         ]);
 
         session()->flash('message', 'Elemento modificato con successo!');

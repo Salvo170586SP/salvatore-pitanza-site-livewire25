@@ -27,7 +27,9 @@
                         Descrizione
                     </th>
                     <th scope="col" class="px-6 py-5 text-left text-xs font-medium uppercase  w-32">
-                        Ultima modifica</th>
+                        Inizio</th>
+                    <th scope="col" class="px-6 py-5 text-left text-xs font-medium uppercase  w-32">
+                        fine</th>
                     <th scope="col" class="px-6 py-5 text-left text-xs font-medium uppercase w-32">
                     </th>
                 </tr>
@@ -47,7 +49,12 @@
                     </td>
                     <td class="px-6 py-4">
                         <div class="max-w-xs truncate">
-                            {{$experience->getDate() ?? 'n/d'}}
+                            {{$experience->getDate($experience->start_date ) ?? '-'}}
+                        </div>
+                    </td>
+                    <td class="px-6 py-4">
+                        <div class="max-w-xs truncate">
+                            {{$experience->getDate($experience->end_date) ?? 'in corso'}}
                         </div>
                     </td>
                     <td class="px-6 py-4 whitespace-nowrap text-sm">

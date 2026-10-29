@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="dark">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
     @include('partials.head')
@@ -8,10 +8,14 @@
 <body class="min-h-screen bg-white dark:bg-zinc-800">
     <flux:sidebar sticky stashable class="border-e border-zinc-200 bg-zinc-50 dark:border-zinc-700 dark:bg-zinc-900">
         <flux:sidebar.toggle class="lg:hidden" icon="x-mark" />
-        <div class="flex justify-center">
-            <figure class="w-[50px] h-[50px] rounded-full overflow-hidden bg-zinc-600">
+        <div class="flex items-center gap-2">
+            <figure class="w-[60px] h-[60px] rounded-full overflow-hidden dark:invert invert-100">
                 <img src="/assets/icon/code.png" class="object-cover w-full h-full" />
             </figure>
+            <div class="-space-y-2 sm:-space-y-1">
+                <p class="font-medium text-sm sm:text-base">Salvatore Pitanza</p>
+                <span class="font-light text-xs">Full-Stack Developer</span>
+            </div>
         </div>
         <flux:navlist variant="outline">
             <flux:navlist.group :heading="__('Platform')" class="grid">
