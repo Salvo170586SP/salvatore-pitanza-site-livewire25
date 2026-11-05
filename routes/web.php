@@ -4,6 +4,9 @@ use App\Livewire\Admin\Biography\CreateBio;
 use App\Livewire\Admin\Biography\EditBio;
 use App\Livewire\Admin\Biography\IndexBio;
 use App\Livewire\Admin\Dashboard;
+use App\Livewire\Admin\Documents\CreateDocuments;
+use App\Livewire\Admin\Documents\EditDocuments;
+use App\Livewire\Admin\Documents\IndexDocuments;
 use App\Livewire\Admin\Drawings\CreateDrawings;
 use App\Livewire\Admin\Drawings\EditDrawings;
 use App\Livewire\Admin\Drawings\IndexDrawings;
@@ -12,9 +15,7 @@ use App\Livewire\Admin\Experiences\EditExperiences;
 use App\Livewire\Admin\Experiences\IndexExperiences;
 use App\Livewire\Admin\Projects\CreateProjects;
 use App\Livewire\Admin\Projects\EditProjects;
-use App\Livewire\Admin\Projects\IndexProjects;
-use App\Livewire\Admin\Skills\CreateDescriptionSkills;
-use App\Livewire\Admin\Skills\CreateDocuments;
+use App\Livewire\Admin\Projects\IndexProjects; 
 use App\Livewire\Admin\Skills\CreateGeneralDescription;
 use App\Livewire\Admin\Skills\CreateSkills;
 use App\Livewire\Admin\Skills\EditGeneralDescription;
@@ -72,6 +73,11 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/admin/drawings-home', IndexDrawings::class)->name('drawingsIndex');
     Route::get('/admin/drawings-home/create', CreateDrawings::class)->name('drawingsCreate');
     Route::get('/admin/drawings-home/{drawing}/edit', EditDrawings::class)->name('drawingsEdit');
+   
+    //documents
+    Route::get('/admin/documents-home', IndexDocuments::class)->name('documentsIndex');
+    Route::get('/admin/documents-home/create', CreateDocuments::class)->name('documentsCreate');
+    Route::get('/admin/documents-home/{document}/edit', EditDocuments::class)->name('documentsEdit');
 
     Route::redirect('/admin/settings', 'settings/profile');
 

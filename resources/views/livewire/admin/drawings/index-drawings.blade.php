@@ -45,8 +45,9 @@
                                 alt="{{$draw->img_url}}" />
                         </figure>
                         @else
-                        <div class="w-15 h-15 flex items-center justify-center bg-zinc-600 rounded-lg">
-                            No Img
+                        <div
+                            class="w-15 h-15 flex items-center justify-center text-gray-400 bg-zinc-200 font-bold rounded-lg">
+                            {{ str($draw->title)->substr(0, 2)->upper() }}
                         </div>
                         @endif
                     </td>

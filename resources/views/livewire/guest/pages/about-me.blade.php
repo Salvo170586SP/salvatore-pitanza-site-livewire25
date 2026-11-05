@@ -4,7 +4,7 @@
     <div class="w-full flex flex-col sm:flex-row sm:items-between gap-5 sm:gap-5">
       <div class="w-full sm:w-700">
         <p class="text-sky-600 font-bold">Palermo, Sicilia · Disponibile da remoto o in sede in Sicilia</p>
-       
+
         <div class="my-5">
           <h1 class="font-serif-display text-3xl sm:text-4xl font-bold leading-tight">
             Chi sono</h1>
@@ -15,7 +15,7 @@
         </div>
 
         <div class="gap-3 py-1 flex ">
-          <a href="" download
+          <a href="{{ asset('storage/'.$document->doc_url)}}" download
             class="flex min-w-[184px] max-w-[480px] border border-zinc-200 cursor-pointer items-center justify-center hover:shadow-lg transition rounded-xl h-12 px-5 bg-sky-900 text-white text-base font-bold leading-normal tracking-[0.015em] hover:bg-sky-800">
             <span class="truncate">Scarica il CV</span>
           </a>
@@ -41,19 +41,13 @@
       </div>
     </div>
 
-
-
     <div class="w-full flex flex-col sm:flex-row gap-5 sm:gap-20">
+
       <div class="sm:w-400">
         <h2 class="font-serif-display text-3xl font-bold pb-4">
           Percorso Professionale</h2>
         <p class="mt-2 font-normal leading-normal text-justify">
-          Il mio percorso è iniziato con una forte passione per l’informatica, che mi ha portato al bootcamp intensivo
-          di Boolean Careers, dove ho consolidato le basi dello sviluppo web e imparato a lavorare con metodo.
-
-          Da allora mi sono specializzato nello sviluppo backend e full-stack con Laravel e nei flussi reattivi di
-          Livewire. Ogni progetto mi ha insegnato qualcosa: seguire un processo, risolvere problemi e costruire
-          soluzioni solide e scalabili.
+          {{$biography->description}}
         </p>
       </div>
 
@@ -94,7 +88,7 @@
         <p class="mt-2 font-normal leading-normal">
           Quando non sono davanti al computer mi rigenero con workout e arti marziali, che mi insegnano disciplina e
           costanza, con le camminate in montagna e con l’arte, che alimenta creatività e senso estetico. Tutto questo
-          contribuisce al modo in cui affronto ogni sfida.
+          contribuisce al modo in cui affronto ogni sfida di vita.
         </p>
       </div>
     </section>

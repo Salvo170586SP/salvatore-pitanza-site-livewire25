@@ -6,12 +6,12 @@
     class="w-full sm:w-90 h-80 bg-white rounded-xl border border-zinc-200 group overflow-hidden transition hover:shadow-lg group relative">
 
     @if($item->img_url)
-    <figure class="bg-center relative bg-no-repeat bg-cover rounded-xl duration-300 group-hover:scale-110">
+    <figure class="w-full h-full relative rounded-xl duration-300 group-hover:scale-110">
         <img class="w-full h-full object-cover object-center" src="{{asset('storage/'. $item->img_url)}}"
             alt="{{$item->img_url}}" />
     </figure>
     @else
-    <div class="w-full aspect-video flex justify-center items-center bg-sky-50 text-sky-400 font-bold  text-4xl">
+    <div class="w-full h-full flex justify-center items-center bg-sky-50 text-sky-400 font-bold text-4xl">
         IMG
     </div>
     @endif

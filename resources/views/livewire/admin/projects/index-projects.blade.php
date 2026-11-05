@@ -27,7 +27,8 @@
         </flux:button>
     </div>
     @if($projects->isNotEmpty())
-    <div class="min-w-full bg-zinc-200/20 dark:bg-zinc-500/20  my-5 dark:border-0 border  border-zinc-200 relative rounded-lg  table-container overflow-x-auto">
+    <div
+        class="min-w-full bg-zinc-200/20 dark:bg-zinc-500/20  my-5 dark:border-0 border  border-zinc-200 relative rounded-lg  table-container overflow-x-auto">
         <div class="inline-block min-w-full">
             <table class="w-full  divide-y dark:divide-zinc-500/50">
                 <thead>
@@ -61,13 +62,14 @@
                     <tr wire:key="project-{{$project->id}}">
                         <td class="px-6 py-4 font-bold whitespace-nowrap">
                             @if($project->img_url)
-                            <figure class="w-20 h-20 overflow-hidden rounded-lg">
+                            <figure class="w-15 h-15 duration-300  overflow-hidden rounded-lg">
                                 <img class="w-full h-full object-cover" src="{{ asset('/storage/'.$project->img_url) }}"
                                     alt="{{$project->img_url}}" />
                             </figure>
                             @else
-                            <div class="w-20 h-20 flex items-center justify-center bg-zinc-600 rounded-lg">
-                               No Img
+                            <div
+                                class="w-15 h-15 flex items-center justify-center text-gray-400 bg-zinc-200 font-bold rounded-lg">
+                                {{ str($project->title)->substr(0, 2)->upper() }}
                             </div>
                             @endif
                         </td>
@@ -139,7 +141,8 @@
                                     <div class="space-y-6">
                                         <div>
                                             <flux:text class="mt-8">
-                                                <div class="bg-red-500 text-white p-2 uppercase font-bold rounded-lg my-3">
+                                                <div
+                                                    class="bg-red-500 text-white p-2 uppercase font-bold rounded-lg my-3">
                                                     Attenzione!!
                                                 </div>
                                             </flux:text>

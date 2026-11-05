@@ -37,6 +37,8 @@
                     :current="request()->routeIs('skillsIndex')" wire:navigate>{{ __('Skills') }}</flux:navlist.item>
                 <flux:navlist.item icon="photo" :href="route('drawingsIndex')"
                     :current="request()->routeIs('drawingsIndex')" wire:navigate>{{ __('Disegni') }}</flux:navlist.item>
+                <flux:navlist.item icon="document" :href="route('documentsIndex')"
+                    :current="request()->routeIs('documentsIndex')" wire:navigate>{{ __('Documenti') }}</flux:navlist.item>
             </flux:navlist.group>
         </flux:navlist>
 

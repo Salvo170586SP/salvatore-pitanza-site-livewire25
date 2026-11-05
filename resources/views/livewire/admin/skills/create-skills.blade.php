@@ -18,9 +18,9 @@
                 <flux:label>Tipo</flux:label>
                 <flux:select wire:model="type" id="type">
                     <flux:select.option value="">-</flux:select.option>
-                    @foreach($types as $index => $item)
-                    <flux:select.option wire:key="types-{{$item['id']}}" value="{{$item['id']}}">
-                        {{$item['label']}}
+                    @foreach(\App\Enums\SkillTypes::cases() as $index => $item)
+                    <flux:select.option wire:key="types-{{ $item->value }}" value="{{ $item->value }}">
+                        {{ $item->value }}
                     </flux:select.option>
                     @endforeach
                 </flux:select>
