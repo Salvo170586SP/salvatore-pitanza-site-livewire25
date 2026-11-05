@@ -4,26 +4,25 @@
     <div class="w-full flex flex-col sm:flex-row sm:items-between gap-5 sm:gap-5">
       <div class="w-full sm:w-700">
         <p class="text-sky-600 font-bold">Palermo, Sicilia · Disponibile da remoto o in sede in Sicilia</p>
-        <h1 class="font-serif-display text-3xl sm:text-4xl font-bold leading-tight">
-          Chi sono</h1>
-        <p class="font-normal leading-normal">
-          Mi chiamo Salvo e lavoro soprattutto con Laravel e Livewire. Mi piace unire logica, creatività e precisione
-          per costruire prodotti digitali che abbiano un impatto reale.
-        </p>
+       
         <div class="my-5">
-          <span class="px-5 py-1 bg-sky-100 rounded-full text-sm font-medium text-sky-800">Laravel</span>
-          <span class="px-5 py-1 bg-sky-100 rounded-full text-sm font-medium text-sky-800">Livewire</span>
-          <span class="px-5 py-1 bg-sky-100 rounded-full text-sm font-medium text-sky-800">Vue.js</span>
+          <h1 class="font-serif-display text-3xl sm:text-4xl font-bold leading-tight">
+            Chi sono</h1>
+          <p class="font-normal leading-normal">
+            Mi chiamo Salvo e lavoro soprattutto con Laravel e Livewire. Mi piace unire logica, creatività e precisione
+            per costruire prodotti digitali che abbiano un impatto reale.
+          </p>
         </div>
-        <div class="gap-3 py-1 flex mt-5">
-          <button wire:navigate href="/projects"
+
+        <div class="gap-3 py-1 flex ">
+          <a href="" download
             class="flex min-w-[184px] max-w-[480px] border border-zinc-200 cursor-pointer items-center justify-center hover:shadow-lg transition rounded-xl h-12 px-5 bg-sky-900 text-white text-base font-bold leading-normal tracking-[0.015em] hover:bg-sky-800">
             <span class="truncate">Scarica il CV</span>
-          </button>
-          <button wire:navigate href="/skills"
+          </a>
+          <a href="https://www.linkedin.com/in/salvatore-pitanza-dev/" target="_blank"
             class="bg-white text-gray-800 flex min-w-[184px] max-w-[480px] hover:shadow-lg transition cursor-pointer items-center justify-center rounded-xl h-12 px-5 border border-zinc-200 text-base font-bold leading-normal tracking-[0.015em]">
             <span class="truncate">Linkedin</span>
-          </button>
+          </a>
         </div>
       </div>
 
