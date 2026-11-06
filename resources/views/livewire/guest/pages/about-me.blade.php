@@ -1,9 +1,10 @@
 <div>
 
-  <section id="jumbotron-about" class="px-10 space-y-20 w-full border-b py-25 sm:py-25">
-    <div class="w-full flex flex-col sm:flex-row sm:items-between gap-5 sm:gap-5">
-      <div class="w-full sm:w-700">
-        <p class="text-sky-600 font-bold">Palermo, Sicilia · Disponibile da remoto o in sede in Sicilia</p>
+  <div id="jumbotron-about" class="px-10 space-y-20 w-full py-25 sm:py-25">
+
+    <section class="w-full flex flex-col md:flex-row sm:items-between gap-5 sm:gap-5">
+      <div class="w-full md:w-700">
+        <p class="text-sky-800 font-bold">Palermo, Sicilia · Disponibile da remoto o in sede in Sicilia</p>
 
         <div class="my-5">
           <h1 class="font-serif-display text-3xl sm:text-4xl font-bold leading-tight">
@@ -14,9 +15,9 @@
           </p>
         </div>
 
-        <div class="gap-3 py-1 flex ">
+        <div class="gap-3 py-1 flex">
           <a href="{{ asset('storage/'.$document->doc_url)}}" download
-            class="flex min-w-[184px] max-w-[480px] border border-zinc-200 cursor-pointer items-center justify-center hover:shadow-lg transition rounded-xl h-12 px-5 bg-sky-900 text-white text-base font-bold leading-normal tracking-[0.015em] hover:bg-sky-800">
+            class="flex min-w-[184px] max-w-[480px] border border-zinc-200 cursor-pointer items-center justify-center hover:shadow-lg transition rounded-xl h-12 px-5 bg-black text-white text-base font-bold leading-normal tracking-[0.015em] hover:bg-sky-900">
             <span class="truncate">Scarica il CV</span>
           </a>
           <a href="https://www.linkedin.com/in/salvatore-pitanza-dev/" target="_blank"
@@ -28,7 +29,7 @@
 
       <div class="w-full flex justify-end">
         @if (isset($biography->img_url))
-        <figure class="border sm:w-80 h-80 overflow-hidden rounded-4xl">
+        <figure class="border w-full md:w-50 lg:w-100 h-80 overflow-hidden rounded-4xl">
           <img src="{{ asset('storage/' . $biography->img_url) }}" alt="{{$biography->img_url}}"
             class="w-full h-full object-cover" />
         </figure>
@@ -39,11 +40,10 @@
         </div>
         @endif
       </div>
-    </div>
+    </section>
 
-    <div class="w-full flex flex-col sm:flex-row gap-5 sm:gap-20">
-
-      <div class="sm:w-400">
+    <section class="w-full flex flex-col md:flex-row gap-5 sm:gap-20">
+      <div class="md:w-400">
         <h2 class="font-serif-display text-3xl font-bold pb-4">
           Percorso Professionale</h2>
         <p class="mt-2 font-normal leading-normal text-justify">
@@ -51,9 +51,9 @@
         </p>
       </div>
 
-      @if (isset($biography->img_url))
+      @if (isset($biography->img_wide_url))
       <figure class="border w-full h-80 overflow-hidden rounded-4xl">
-        <img src="{{ asset('storage/' . $biography->img_url) }}" alt="{{$biography->img_url}}"
+        <img src="{{ asset('storage/' . $biography->img_wide_url) }}" alt="{{$biography->img_wide_url}}"
           class="w-full h-full object-cover" />
       </figure>
       @else
@@ -62,39 +62,30 @@
         SP
       </div>
       @endif
+    </section>
 
-    </div>
-
-
-
-    <section class="my-15 sm:flex sm:gap-5 space-y-5  space-y-0">
+    <section class="my-15 sm:flex sm:gap-5 space-y-5 space-y-0">
       <div
-        class="sm:w-130 sm:h-90 md:h-75 lg:h-60 p-5 bg-white rounded-xl border border-zinc-200 hover:shadow-lg transition">
+        class="w-full sm:h-90 md:h-75 lg:h-35 p-5 bg-white rounded-xl border border-zinc-200 hover:shadow-lg transition">
         <h2 class="text-2xl font-bold">
           Filosofia e Valori</h2>
-        <p class="mt-2 font-normal leading-normal">
-          Credo nei progressi costanti, nella cura dei dettagli e in un approccio che privilegia la qualità rispetto
-          alla fretta. Per me lo sviluppo è un equilibrio tra tecnica e visione: ascoltare, comprendere e costruire
-          con consapevolezza, portando avanti i progetti con un mindset orientato alla chiarezza, alla collaborazione
-          e
-          alla crescita continua.
+        <p class="mt-3 font-normal leading-normal">
+          Cura dei dettagli, qualità prima della fretta, ascolto e crescita continua.
         </p>
       </div>
 
       <div
-        class="sm:w-130 sm:h-90 md:h-75 lg:h-60 p-5 bg-white rounded-xl border border-zinc-200 hover:shadow-lg transition">
+        class="sm:w-full sm:h-90 md:h-75 lg:h-35 p-5 bg-white rounded-xl border border-zinc-200 hover:shadow-lg transition">
         <h2 class="text-2xl font-bold">
           Interessi Personali</h2>
-        <p class="mt-2 font-normal leading-normal">
-          Quando non sono davanti al computer mi rigenero con workout e arti marziali, che mi insegnano disciplina e
-          costanza, con le camminate in montagna e con l’arte, che alimenta creatività e senso estetico. Tutto questo
-          contribuisce al modo in cui affronto ogni sfida di vita.
+        <p class="mt-3 font-normal leading-normal">
+          Workout, arti marziali, montagna e arte: disciplina e costanza anche nel lavoro.
         </p>
       </div>
     </section>
 
     <section class="w-full sm:flex sm:gap-5 space-y-5 space-y-0">
-      <div class="sm:w-250">
+      <div class="{{-- sm:w-250 md:w-full --}} w-full">
         <livewire:guest.components.experiences />
       </div>
 
@@ -105,45 +96,41 @@
         <div class="mt-6 sm:grid sm:grid-cols-2 gap-4 space-y-3 sm:space-y-0">
           <div
             class="px-5 py-1 bg-white border border-sky-200 rounded-full text-sm font-medium text-sky-800 text-center">
-            <span class="font-medium text-sm text-sky-800">Design</span>
+            <span class="font-medium text-sm text-sky-800">Laravel & Livewire</span>
           </div>
 
           <div
             class="px-5 py-1 bg-white border border-sky-200 rounded-full text-sm font-medium text-sky-800 text-center">
-            <span class="text-sm font-medium text-sky-800">Sviluppo Full Stack</span>
+            <span class="text-sm font-medium text-sky-800">API REST</span>
           </div>
 
           <div
             class="px-5 py-1 bg-white border border-sky-200 rounded-full text-sm font-medium text-sky-800 text-center">
-            <span class="text-sm font-medium text-sky-800">Prototipazione</span>
+            <span class="text-sm font-medium text-sky-800">Gestionali su misura</span>
           </div>
 
           <div
             class="px-5 py-1 bg-white border border-sky-200 rounded-full text-sm font-medium text-sky-800 text-center">
-            <span class="text-sm font-medium text-sky-800">Lavorare in Team</span>
+            <span class="text-sm font-medium text-sky-800">MySQL</span>
           </div>
 
           <div
             class="px-5 py-1 bg-white border border-sky-200 rounded-full text-sm font-medium text-sky-800 text-center">
-            <span class="text-sm font-medium text-sky-800">Rispetto delle Scadenze</span>
+            <span class="text-sm font-medium text-sky-800">Lavorare in team</span>
           </div>
 
           <div
             class="px-5 py-1 bg-white border border-sky-200 rounded-full text-sm font-medium text-sky-800 text-center">
-            <div class="text-sm font-medium text-sky-800">Comunicazione</div>
+            <div class="text-sm font-medium text-sky-800">Rispetto delle scadenze</div>
           </div>
         </div>
 
         <button wire:navigate href="/skills"
-          class="w-full mt-5 hover:text-sky-700 text-sky-800 flex items-center gap-2 cursor-pointer font-bold leading-normal tracking-[0.015em]">
-          Vedi tutte le competenze
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
-            stroke="currentColor" class="size-4 text-zinc-500">
-            <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
-          </svg>
+          class="w-full mt-5 hover:text-sky-700  flex items-center justify-center gap-2 cursor-pointer font-medium leading-normal tracking-[0.015em]">
+          Vedi tutte le competenze →
         </button>
       </div>
     </section>
 
-  </section>
+  </div>
 </div>

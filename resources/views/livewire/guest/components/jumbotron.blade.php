@@ -5,7 +5,7 @@
             style="background-image: url('{{ asset('assets/icon/sfondo.jpg') }}');">
         </div>
         <div aria-hidden="true"
-            class="pointer-events-none absolute inset-x-0 bottom-0 z-0 h-1/2 bg-gradient-to-b from-transparent via-white/80 to-white">
+            class="pointer-events-none absolute inset-x-0 bottom-0 z-0 h-1/2 bg-gradient-to-b from-transparent via-white/80 to-gray-100">
         </div>
 
         <!-- HeroSection -->
@@ -34,7 +34,7 @@
                 </p>
                 <div class="flex-wrap gap-3 flex justify-center">
                     <button wire:navigate href="/projects"
-                        class="flex min-w-[184px] max-w-[480px] border border-sky-600 cursor-pointer items-center justify-center hover:shadow-lg transition rounded-xl h-12 px-5 bg-sky-600 text-white text-base font-bold leading-normal tracking-[0.015em] hover:bg-sky-800">
+                        class="flex min-w-[184px] max-w-[480px] border border-sky-600 cursor-pointer items-center justify-center hover:shadow-lg transition rounded-xl h-12 px-5 bg-black text-white text-base font-bold leading-normal tracking-[0.015em] hover:bg-sky-900">
                         <span class="truncate">Portfolio</span>
                     </button>
                     <button wire:navigate href="/skills"
@@ -56,9 +56,11 @@
                             </svg>
                         </div>
                         <div class="flex flex-col gap-2">
-                            <h2 class="text-lg font-bold leading-tight">Introduzione Professionale</h2>
-                            <p class="text-sm font-normal leading-normal text-gray-800">
-                                Progetto e sviluppo applicazioni gestionali su misura, veloci e semplici da usare.
+                            <h2 class="text-lg font-bold leading-tight">Cosa posso fare per te</h2>
+                            <p class="text-sm font-normal leading-normal">
+                                Realizzo gestionali e siti web su misura, dalla gestione di dati e utenti ai pannelli di
+                                controllo:
+                                soluzioni pronte all’uso fin dal primo giorno.
                             </p>
                         </div>
                     </div>
@@ -87,7 +89,6 @@
                                 <path stroke-linecap="round" stroke-linejoin="round"
                                     d="M9.75 3.104v5.714a2.25 2.25 0 0 1-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 0 1 4.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0 1 12 15a9.065 9.065 0 0 0-6.23-.693L5 14.5m14.8.8 1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0 1 12 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5" />
                             </svg>
-
                         </div>
                         <div class="flex flex-col gap-2">
                             <h2 class="text-lg font-bold leading-tight">Le mie Competenze</h2>

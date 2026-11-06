@@ -8,7 +8,7 @@ use Livewire\Component;
 
 class IndexProjects extends Component
 {
-    public function deleteProject($project_id)
+    public function deleteProject(int $project_id)
     {
         $project = Project::findOrFail($project_id);
 

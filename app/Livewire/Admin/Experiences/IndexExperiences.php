@@ -8,7 +8,7 @@ use Livewire\Component;
 
 class IndexExperiences extends Component
 {
-    public function deleteExperience($experience_id)
+    public function deleteExperience(int $experience_id)
     {
         $experience = Experience::findOrFail($experience_id);
 

@@ -8,11 +8,11 @@ use Livewire\Component;
 
 class TrainingsEdit extends Component
 {
-    public $training;
-    public $icon;
-    public $title;
-    public $subtitle;
-    public $description;
+    public Training $training;
+    public ?string $icon;
+    public ?string $title;
+    public ?string $subtitle;
+    public ?string $description;
 
     protected $rules = [
         'icon' => 'required',

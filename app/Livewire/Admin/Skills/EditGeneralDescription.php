@@ -8,8 +8,8 @@ use Livewire\Component;
 
 class EditGeneralDescription extends Component
 {
-    public $skillInfo;
-    public $general_description;
+    public SkillGeneralInfo $skillInfo;
+    public ?string $general_description;
 
     protected $rules = [
         'general_description' => 'required',

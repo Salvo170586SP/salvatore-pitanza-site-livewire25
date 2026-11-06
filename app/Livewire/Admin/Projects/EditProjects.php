@@ -3,6 +3,7 @@
 namespace App\Livewire\Admin\Projects;
 
 use App\Models\Project;
+use App\Models\Skill;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Livewire\Component;
@@ -12,18 +13,22 @@ class EditProjects extends Component
 {
     use WithFileUploads;
 
-    public $project;
+    public Project $project;
     public $img_url = null;
-    public $title;
-    public $description;
-    public $url_git;
-    public $url_web;
-    public $is_available;
+    public string $title;
+    public string $description;
+    public string $url_git;
+    public string $url_web;
+    public bool $is_available;
+    public array $selectedSkills = [];
+
 
     protected $rules = [
         'title' => 'required|max:64',
         'description' => 'max:255',
         'img_url' => 'nullable',
+        'selectedSkills' => 'array',
+        'selectedSkills.*' => 'exists:skills,id',
     ];
 
     protected $messages = [
@@ -40,6 +45,7 @@ class EditProjects extends Component
         $this->url_web = $project->url_web;
         $this->description = $project->description;
         $this->is_available  = (bool) $project->is_available;
+        $this->selectedSkills = $project->skills->pluck('id')->map(fn ($id) => (string) $id)->toArray();
 
         if ($project->img_url) {
             $this->img_url = asset('/storage/' . $project->img_url);
@@ -71,6 +77,9 @@ class EditProjects extends Component
             'is_available' => $this->is_available,
         ]);
 
+        $this->project->skills()->sync($this->selectedSkills);
+
+
         session()->flash('message', 'Progetto modificato con successo!');
 
         return $this->redirect('/admin/projects-home', navigate: true);
@@ -78,6 +87,7 @@ class EditProjects extends Component
 
     public function render()
     {
-        return view('livewire.admin.projects.edit-projects');
+        $skills = Skill::all();
+        return view('livewire.admin.projects.edit-projects', compact('skills'));
     }
 }

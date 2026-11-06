@@ -1,10 +1,10 @@
 <div>
     <!-- Footer -->
-    <footer id="footer" class="h-[200px] flex flex-col gap-8 px-5  py-10 text-center  border-t border-border-light">
+    <footer id="footer" class="h-[200px] flex flex-col gap-8 px-5 py-10 text-center border-t border-border-light">
 
         @if(request()->is('drawings'))
         <div
-             class="mt-8 flex flex-col items-center justify-center gap-4 rounded-xl border border-zinc-300 bg-[#0F172A] p-8 text-center transition hover:shadow-lg">
+            class="mt-8 flex flex-col items-center justify-center gap-4 rounded-xl border border-zinc-300 bg-black p-8 text-center transition hover:shadow-lg">
             <h3 class="text-2xl font-bold text-white">Vuoi realizzare o regalare un ritratto?</h3>
             <p class="max-w-lg text-gray-200 font-normal leading-normal">Guarda il mio profilo Instagram dedicato.</p>
 
@@ -24,7 +24,7 @@
         </div>
         @else
         <div
-            class="mt-8 flex flex-col items-center justify-center gap-4 rounded-xl border border-zinc-300 bg-[#0F172A] p-8 text-center transition hover:shadow-lg">
+            class="mt-8 flex flex-col items-center justify-center gap-4 rounded-xl border border-zinc-300 bg-black p-8 text-center transition hover:shadow-lg">
             <h3 class="text-2xl font-bold text-white">Vuoi saperne di più?</h3>
 
             <p class="max-w-lg text-gray-200 font-normal leading-normal">Guarda i miei progetti su GitHub o scrivimi su
@@ -39,7 +39,7 @@
                             d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.25 6.5 1.75 1.75 0 016.5 8.25zM19 19h-3v-4.75c0-1.4-1.2-2.5-2.5-2.5S11 12.85 12 14.25V19h-3v-9h2.9v1.3a3.11 3.11 0 012.6-1.4c2.5 0 4.5 2 4.5 4.6V19z">
                         </path>
                     </svg>
-                    Contattami
+                    LinkedIn
                 </a>
                 <a class="bg-white hover:bg-gray-50 hover:shadow-lg transition flex items-center gap-3 border border-zinc-300 rounded-xl px-4 py-2"
                     href="https://github.com/Salvo170586SP" target="_blank">
@@ -47,67 +47,114 @@
                     GitHub
                 </a>
             </div>
+            <div x-data="{ copied: false }" class="mt-1 flex items-start text-gray-300 space-x-2">
+                <div>
+                    <p>
+                        Sei un'azienda o hai una proposta di lavoro?
+                    </p>
+                    <p>
+                        Scrivimi a <span class="font-medium text-white">pitanza.salvatore.86@gmail.com</span>
+                        <button type="button" class="cursor-pointer"
+                            x-on:click="navigator.clipboard.writeText('pitanza.salvatore.86@gmail.com'); copied = true; setTimeout(() => copied = false, 5000)">
+                            <span x-show="!copied"  title="Copia indirizzo email">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="size-4">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M15.75 17.25v3.375c0 .621-.504 1.125-1.125 1.125h-9.75a1.125 1.125 0 0 1-1.125-1.125V7.875c0-.621.504-1.125 1.125-1.125H6.75a9.06 9.06 0 0 1 1.5.124m7.5 10.376h3.375c.621 0 1.125-.504 1.125-1.125V11.25c0-4.46-3.243-8.161-7.5-8.876a9.06 9.06 0 0 0-1.5-.124H9.375c-.621 0-1.125.504-1.125 1.125v3.5m7.5 10.375H9.375a1.125 1.125 0 0 1-1.125-1.125v-9.25m12 6.625v-1.875a3.375 3.375 0 0 0-3.375-3.375h-1.5a1.125 1.125 0 0 1-1.125-1.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H9.75" />
+                                </svg>
+                            </span>
+                            <span x-show="copied" title="Copiato"x-cloak>✓</span>
+                        </button>
+                    </p>
+                </div>
+
+            </div>
         </div>
         @endif
 
-        <div class="flex flex-col sm:flex-row flex-wrap gap-5 justify-center">
+        <div class="flex flex-col sm:flex-row flex-wrap gap-3 justify-center">
             <button wire:navigate
                 class="text-sm font-medium leading-normal underline underline-offset-4 decoration-transparent hover:decoration-sky-800 hover:text-sky-800 transition-colors duration-300"
-                href="/">Home</button>
+                href="/">Home</button> <span class="hidden sm:block">·</span> 
             <button wire:navigate
                 class="text-sm font-medium leading-normal underline underline-offset-4 decoration-transparent hover:decoration-sky-800 hover:text-sky-800 transition-colors duration-300"
-                href="/about-me">Chi sono</button>
+                href="/about-me">Chi sono</button> <span class="hidden sm:block">·</span> 
             <button wire:navigate
                 class="text-sm font-medium leading-normal underline underline-offset-4 decoration-transparent hover:decoration-sky-800 hover:text-sky-800 transition-colors duration-300"
-                href="/skills">CV</button>
+                href="/skills">CV</button> <span class="hidden sm:block">·</span> 
             <button wire:navigate
                 class="text-sm font-medium leading-normal underline underline-offset-4 decoration-transparent hover:decoration-sky-800 hover:text-sky-800 transition-colors duration-300"
-                href="/projects">Progetti</button>
+                href="/projects">Progetti</button> <span class="hidden sm:block">·</span> 
             <button wire:navigate
                 class="text-sm font-medium leading-normal underline underline-offset-4 decoration-transparent hover:decoration-sky-800 hover:text-sky-800 transition-colors duration-300"
-                href="/drawings">Galleria d'Arte</button>
+                href="/drawings">Oltre il codice</button>
         </div>
-        <div class="flex flex-wrap justify-center items-center gap-6">
-            <a class="text-gray-800 hover:text-primary transition-colors"
-                href="https://www.linkedin.com/in/salvatore-pitanza-dev/" target="_blank">
-                <svg aria-hidden="true" class="size-6" fill="currentColor" viewbox="0 0 24 24">
-                    <path
-                        d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.25 6.5 1.75 1.75 0 016.5 8.25zM19 19h-3v-4.75c0-1.4-1.2-2.5-2.5-2.5S11 12.85 12 14.25V19h-3v-9h2.9v1.3a3.11 3.11 0 012.6-1.4c2.5 0 4.5 2 4.5 4.6V19z">
-                    </path>
-                </svg>
-            </a>
-            <a class="text-gray-800 hover:text-primary transition-colors" href="https://github.com/Salvo170586SP"
-                target="_blank">
-                <svg aria-hidden="true" class="size-6" fill="currentColor" viewbox="0 0 24 24">
-                    <path clip-rule="evenodd"
-                        d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.165 6.837 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.942.359.308.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z"
-                        fill-rule="evenodd"></path>
-                </svg>
-            </a>
-            <a class="text-gray-800 -sm-3 hover:text-primary transition-colors"
-                href="https://www.instagram.com/creative_store.pitanza/" target="_blank">
-                <svg viewBox="0 -0.5 25 25" fill="none" class="size-8" xmlns="http://www.w3.org/2000/svg">
-                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" c stroke-linejoin="round"></g>
-                    <g id="SVGRepo_iconCarrier">
-                        <path fill-rule="evenodd" clip-rule="evenodd"
-                            d="M15.5 5H9.5C7.29086 5 5.5 6.79086 5.5 9V15C5.5 17.2091 7.29086 19 9.5 19H15.5C17.7091 19 19.5 17.2091 19.5 15V9C19.5 6.79086 17.7091 5 15.5 5Z"
-                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        
+        <div class="container mx-auto flex justify-between flex-col items-center md:flex-row gap-8">
+            <div class="flex flex-col items-center sm:items-start font-medium space-y-2">
+                <p class="text-sm flex items-center gap-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="size-4">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
+                    </svg>
+                    Palermo, Italia
+                </p>
+                <p class="text-sm flex items-center gap-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="size-4">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
+                    </svg>
+
+                    pitanza.salvatore.86@gmail.com
+                </p>
+            </div>
+
+            <div class="flex flex-wrap justify-center items-center gap-6">
+                <a class="text-gray-800 hover:text-primary transition-colors"
+                    href="https://www.linkedin.com/in/salvatore-pitanza-dev/" target="_blank">
+                    <svg aria-hidden="true" class="size-6" fill="currentColor" viewbox="0 0 24 24">
+                        <path
+                            d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.25 6.5 1.75 1.75 0 016.5 8.25zM19 19h-3v-4.75c0-1.4-1.2-2.5-2.5-2.5S11 12.85 12 14.25V19h-3v-9h2.9v1.3a3.11 3.11 0 012.6-1.4c2.5 0 4.5 2 4.5 4.6V19z">
                         </path>
-                        <path fill-rule="evenodd" clip-rule="evenodd"
-                            d="M12.5 15C10.8431 15 9.5 13.6569 9.5 12C9.5 10.3431 10.8431 9 12.5 9C14.1569 9 15.5 10.3431 15.5 12C15.5 12.7956 15.1839 13.5587 14.6213 14.1213C14.0587 14.6839 13.2956 15 12.5 15Z"
-                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                        </path>
-                        <rect x="15.5" y="9" width="2" height="2" rx="1" transform="rotate(-90 15.5 9)"
-                            fill="currentColor">
-                        </rect>
-                        <rect x="16" y="8.5" width="1" height="1" rx="0.5" transform="rotate(-90 16 8.5)"
-                            stroke="currentColor" stroke-linecap="round"></rect>
-                    </g>
-                </svg>
-            </a>
+                    </svg>
+                </a>
+                <a class="text-gray-800 hover:text-primary transition-colors" href="https://github.com/Salvo170586SP"
+                    target="_blank">
+                    <svg aria-hidden="true" class="size-6" fill="currentColor" viewbox="0 0 24 24">
+                        <path clip-rule="evenodd"
+                            d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.165 6.837 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.942.359.308.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z"
+                            fill-rule="evenodd"></path>
+                    </svg>
+                </a>
+                <a class="text-gray-800 -sm-3 hover:text-primary transition-colors"
+                    href="https://www.instagram.com/creative_store.pitanza/" target="_blank">
+                    <svg viewBox="0 -0.5 25 25" fill="none" class="size-8" xmlns="http://www.w3.org/2000/svg">
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" c stroke-linejoin="round"></g>
+                        <g id="SVGRepo_iconCarrier">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M15.5 5H9.5C7.29086 5 5.5 6.79086 5.5 9V15C5.5 17.2091 7.29086 19 9.5 19H15.5C17.7091 19 19.5 17.2091 19.5 15V9C19.5 6.79086 17.7091 5 15.5 5Z"
+                                stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            </path>
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M12.5 15C10.8431 15 9.5 13.6569 9.5 12C9.5 10.3431 10.8431 9 12.5 9C14.1569 9 15.5 10.3431 15.5 12C15.5 12.7956 15.1839 13.5587 14.6213 14.1213C14.0587 14.6839 13.2956 15 12.5 15Z"
+                                stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            </path>
+                            <rect x="15.5" y="9" width="2" height="2" rx="1" transform="rotate(-90 15.5 9)"
+                                fill="currentColor">
+                            </rect>
+                            <rect x="16" y="8.5" width="1" height="1" rx="0.5" transform="rotate(-90 16 8.5)"
+                                stroke="currentColor" stroke-linecap="round"></rect>
+                        </g>
+                    </svg>
+                </a>
+            </div>
         </div>
         <p class="text-subtle-light text-sm font-normal leading-normal py-5">© 2026 - Salvatore
-            Pitanza · Laravel Livewire created</p>
+            Pitanza · Realizzato con Laravel e Livewire</p>
     </footer>
 </div>

@@ -6,19 +6,22 @@ use App\Models\Biography;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Livewire\Component;
+use Livewire\Features\SupportFileUploads\TemporaryUploadedFile as UploadedFile;
 use Livewire\WithFileUploads;
 
 class EditBio extends Component
 {
     use WithFileUploads;
 
-    public $biography;
-    public $description;
-    public $img_url;
+    public Biography $biography;
+    public string $description = '';
+    public  $img_url;
+    public  $img_wide_url;
 
     protected $rules = [
         'description' => 'required',
         'img_url' => 'nullable',
+        'img_wide_url' => 'nullable',
     ];
 
     protected $messages = [
@@ -33,8 +36,13 @@ class EditBio extends Component
 
         $this->biography = $biography;
         $this->description = $biography->description;
+
         if ($biography->img_url) {
             $this->img_url = asset('/storage/' . $biography->img_url);
+        }
+
+        if ($biography->img_wide_url) {
+            $this->img_wide_url = asset('/storage/' . $biography->img_wide_url);
         }
     }
 
@@ -50,9 +58,18 @@ class EditBio extends Component
             $url = $this->img_url->store('imgBio', 'public');
         }
 
+        $url_wide = $this->biography->img_wide_url;
+        if ($this->img_wide_url && !is_string($this->img_wide_url)) {
+            if ($this->biography->img_wide_url) {
+                Storage::disk('public')->delete($this->biography->img_wide_url);
+            }
+            $url_wide = $this->img_wide_url->store('imgBio', 'public');
+        }
+
         $this->biography->update([
             'description' => $this->description,
             'img_url' => $url,
+            'img_wide_url' => $url_wide,
         ]);
 
         session()->flash('message', 'Biografia modificata con successo!');

@@ -1,8 +1,7 @@
 <div>
-    <section id="trainings" class="flex flex-col justify-center items-start px-10 py-10 md:py-15 border-y">
-        <div class="text-center w-full py-10 md:py-0">
-            <h2 class="text-xl sm:text-3xl font-bold leading-tight mb-5">I miei percorsi</h2>
-        </div>
+    <section id="trainings" class="flex flex-col justify-center items-start px-10 py-10 md:py-15 border-b">
+        <h2 class="w-full text-center text-xl sm:text-3xl font-bold leading-tight mb-5">I Miei Percorsi</h2>
+
         <div class="w-full flex flex-col sm:flex-row justify-center items-center gap-5 mt-5">
             @if(isset($trainings))
             @foreach ($trainings as $training)

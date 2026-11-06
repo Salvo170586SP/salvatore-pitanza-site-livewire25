@@ -8,7 +8,7 @@ use Livewire\Component;
 
 class CreateGeneralDescription extends Component
 {
-    public $general_description;
+    public ?string $general_description;
 
     protected $rules = [
         'general_description' => 'required',

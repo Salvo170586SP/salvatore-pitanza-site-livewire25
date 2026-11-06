@@ -9,7 +9,7 @@ use Livewire\Component;
 
 class IndexDrawings extends Component
 {
-    public function deleteDraw($draw_id)
+    public function deleteDraw(int $draw_id)
     {
         $drawing = Drawing::findOrFail($draw_id);
 

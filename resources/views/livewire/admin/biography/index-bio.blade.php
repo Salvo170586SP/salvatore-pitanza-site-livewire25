@@ -27,14 +27,36 @@
         @if($biography)
         <div
             class="w-full rounded-2xl bg-zinc-200/20 border border-zinc-200 dark:border-zinc-700/90 dark:bg-zinc-900/50  overflow-hidden p-5">
-            <div class="flex justify-between gap-5">
-                <figure class="w-50 h-50 overflow-hidden rounded-lg">
+            <div class="flex gap-5">
+                @if($biography->img_url)
+                <figure class="w-60 h-60 overflow-hidden rounded-lg">
                     <img class="w-full h-full object-cover" src="{{ asset('/storage/'.$biography->img_url) }}"
                         alt="{{$biography->img_url}}" />
                 </figure>
-                <div class="w-full p-3 text-xs font-medium dark:text-zinc-300">
-                    {{$biography->description}}</div>
+                @else
+                <div
+                    class="w-60 h-60 overflow-hidden rounded-lg border bg-gray-100 flex justify-center items-center font-medium text-gray-400">
+                    IMG
+                </div>
+                @endif
+
+                @if($biography->img_wide_url)
+                <figure class="w-full h-60 overflow-hidden rounded-lg">
+                    <img class="w-full h-full object-cover" src="{{ asset('/storage/'.$biography->img_wide_url) }}"
+                        alt="{{$biography->img_wide_url}}" />
+                </figure>
+                @else
+                <div
+                    class="w-full h-60 overflow-hidden rounded-lg border bg-gray-100 flex justify-center items-center font-medium text-gray-400">
+                    IMG
+                </div>
+                @endif
+
             </div>
+            <div class="w-full p-3 text-xs font-medium">
+                {{$biography->description}}
+            </div>
+
             <div class="w-full flex justify-between items-center mt-3">
                 <span class="w-full inline-block mt-5 text-xs font-medium dark:text-zinc-300">Ultima
                     modifica il {{$biography->getDate()}}</span>

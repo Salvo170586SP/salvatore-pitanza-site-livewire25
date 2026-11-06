@@ -3,6 +3,7 @@
 namespace App\Livewire\Admin\Projects;
 
 use App\Models\Project;
+use App\Models\Skill;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 use Livewire\WithFileUploads;
@@ -12,16 +13,19 @@ class CreateProjects extends Component
     use WithFileUploads;
 
     public $img_url = null;
-    public $title;
-    public $description;
-    public $url_git;
-    public $url_web;
-    public $is_available = false;
+    public string $title = '';
+    public ?string $description = '';
+    public ?string $url_git = '';
+    public ?string $url_web = '';
+    public bool $is_available = false;
+    public array $selectedSkills = [];
 
     protected $rules = [
         'title' => 'required|max:64',
         'description' => 'max:255',
         'img_url' => 'nullable',
+        'selectedSkills' => 'array',
+        'selectedSkills.*' => 'exists:skills,id',
     ];
 
     protected $messages = [
@@ -33,15 +37,14 @@ class CreateProjects extends Component
     public function submit()
     {
         $this->validate();
-        
+
         $url = $this->img_url;
 
-        if($this->img_url)
-        {
+        if ($this->img_url) {
             $url = $this->img_url->store('imgProj', 'public');
         }
 
-        Project::create([
+        $project =  Project::create([
             'user_id' => Auth::id(),
             'img_url' => $url,
             'title' => $this->title,
@@ -51,6 +54,8 @@ class CreateProjects extends Component
             'is_available' => $this->is_available,
         ]);
 
+        $project->skills()->attach($this->selectedSkills);
+
         session()->flash('message', 'Projetto creato con successo!');
 
         return $this->redirect('/admin/projects-home', navigate: true);
@@ -58,6 +63,7 @@ class CreateProjects extends Component
 
     public function render()
     {
-        return view('livewire.admin.projects.create-projects');
+        $skills = Skill::all();
+        return view('livewire.admin.projects.create-projects', compact('skills'));
     }
 }

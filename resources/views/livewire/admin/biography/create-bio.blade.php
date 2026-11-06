@@ -16,6 +16,10 @@
         <div class="mt-5">
             <flux:input type="file" wire:model="img_url" label="Allega immagine" />
         </div>
+      
+        <div class="mt-5">
+            <flux:input type="file" wire:model="img_wide_url" label="Allega immagine" />
+        </div>
 
 
         <div class="w-full flex justify-end">

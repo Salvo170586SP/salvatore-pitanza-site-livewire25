@@ -8,7 +8,7 @@ use Livewire\Component;
 
 class TrainingsIndex extends Component
 {
-    public function deleteTraining($training_id)
+    public function deleteTraining(int $training_id)
     {
         $training = Training::findOrFail($training_id);
 

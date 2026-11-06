@@ -12,9 +12,9 @@ class EditDrawings extends Component
 {
     use WithFileUploads;
 
-    public $drawing;
-    public $title;
-    public $img_url = null;
+    public Drawing $drawing;
+    public string $title;
+    public $img_url;
     public $url_instagram;
 
     protected $rules = [

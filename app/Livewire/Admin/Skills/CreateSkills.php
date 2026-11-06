@@ -12,10 +12,10 @@ class CreateSkills extends Component
     use WithFileUploads;
 
     public $url_icon = null;
-    public $name;
-    public $type;
-    public $level;
-    public $description;
+    public ?string $name;
+    public ?string $type;
+    public ?string $level;
+    public ?string $description;
 
     protected $rules = [
         'url_icon' => 'nullable',

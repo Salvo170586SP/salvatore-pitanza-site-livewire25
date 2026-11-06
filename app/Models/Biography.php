@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Biography extends Model
 {
-    protected $fillable = ['user_id', 'description', 'img_url'];
+    protected $fillable = ['user_id', 'description', 'img_url', 'img_wide_url'];
 
     public function user()
     {

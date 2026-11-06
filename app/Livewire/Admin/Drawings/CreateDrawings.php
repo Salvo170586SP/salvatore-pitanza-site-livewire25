@@ -5,15 +5,16 @@ namespace App\Livewire\Admin\Drawings;
 use App\Models\Drawing;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
+use Livewire\Features\SupportFileUploads\TemporaryUploadedFile;
 use Livewire\WithFileUploads;
 
 class CreateDrawings extends Component
 {
     use WithFileUploads;
 
-    public $title;
-    public $img_url = null;
-    public $url_instagram;
+    public ?string $title = '';
+    public ?TemporaryUploadedFile $img_url = null;
+    public ?string $url_instagram = '';
 
     protected $rules = [
         'title' => 'required|max:64',

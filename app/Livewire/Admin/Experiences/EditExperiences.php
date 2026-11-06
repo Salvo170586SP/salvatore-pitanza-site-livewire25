@@ -9,11 +9,11 @@ use Livewire\Component;
 class EditExperiences extends Component
 {
 
-    public $experience;
-    public $title;
-    public $start_date;
-    public $end_date;
-    public $description;
+    public Experience $experience;
+    public string $title;
+    public ?string $start_date;
+    public ?string $end_date;
+    public ?string $description;
 
     protected $rules = [
         'title' => 'required|max:64',

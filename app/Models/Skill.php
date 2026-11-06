@@ -5,6 +5,8 @@ namespace App\Models;
 use App\Enums\SkillLevels;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Skill extends Model
 {
@@ -24,9 +26,14 @@ class Skill extends Model
         ];
     }
 
-    public function user()
+    public function user(): HasOne
     {
         return $this->hasOne(User::class);
+    }
+
+    public function projects(): BelongsToMany
+    {
+        return $this->belongsToMany(Project::class);
     }
 
     public function getDate()

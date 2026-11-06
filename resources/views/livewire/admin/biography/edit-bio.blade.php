@@ -14,11 +14,31 @@
         </flux:field>
 
         <div class="mt-5 mb-10 flex justify-between">
-            <flux:input type="file" wire:model="img_url"  label="Allega nuova immagine" />
+            <flux:input type="file" wire:model="img_url"  label="Allega nuova immagine 3:2" />
+            @if($biography->img_url)
             <figure class="w-30 h-30 overflow-hidden rounded-lg">
                 <img class="w-full h-full object-cover" src="{{ asset('/storage/'.$biography->img_url) }}"
                     alt="{{$biography->img_url}}" />
             </figure>
+            @else
+            <div class="w-30 h-30 overflow-hidden rounded-lg border bg-gray-100 flex justify-center items-center font-medium text-gray-400">
+                IMG
+            </div>
+            @endif
+        </div>
+        
+        <div class="mt-5 mb-10 flex justify-between">
+            <flux:input type="file" wire:model="img_wide_url"  label="Allega nuova immagine wide" />
+             @if($biography->img_wide_url)
+            <figure class="w-30 h-30 overflow-hidden rounded-lg">
+                <img class="w-full h-full object-cover" src="{{ asset('/storage/'.$biography->img_wide_url) }}"
+                alt="{{$biography->img_wide_url}}" />
+            </figure>
+            @else
+            <div class="w-30 h-30 overflow-hidden rounded-lg border bg-gray-100 flex justify-center items-center font-medium text-gray-400">
+                IMG
+            </div>
+            @endif
         </div>
         <div class="w-full flex justify-end">
             <flux:button type="submit" class="w-[150px]" variant="filled">Modifica</flux:button>

@@ -38,15 +38,7 @@
                @endforeach
             </div>
             @else
-            <div
-               class="w-full flex justify-center items-center text-gray-800 gap-5 text-center font-semibold text-xl mt-5 py-5 border rounded-xl bg-white">
-               Sezione in allestimento
-               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                  stroke="currentColor" class="size-8 text-gray-800">
-                  <path stroke-linecap="round" stroke-linejoin="round"
-                     d="M14.25 9.75 16.5 12l-2.25 2.25m-4.5 0L7.5 12l2.25-2.25M6 20.25h12A2.25 2.25 0 0 0 20.25 18V6A2.25 2.25 0 0 0 18 3.75H6A2.25 2.25 0 0 0 3.75 6v12A2.25 2.25 0 0 0 6 20.25Z" />
-               </svg>
-            </div>
+            <x-isset-placeholder />
             @endif
          </div>
 
@@ -61,15 +53,7 @@
                @endforeach
             </div>
             @else
-            <div
-               class="w-full flex justify-center items-center text-gray-800 gap-5 text-center font-semibold dark:text-zinc-300 text-xl mt-5 py-5 border rounded-xl bg-white">
-               Sezione in allestimento
-               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                  stroke="currentColor" class="size-8 text-gray-800">
-                  <path stroke-linecap="round" stroke-linejoin="round"
-                     d="M14.25 9.75 16.5 12l-2.25 2.25m-4.5 0L7.5 12l2.25-2.25M6 20.25h12A2.25 2.25 0 0 0 20.25 18V6A2.25 2.25 0 0 0 18 3.75H6A2.25 2.25 0 0 0 3.75 6v12A2.25 2.25 0 0 0 6 20.25Z" />
-               </svg>
-            </div>
+            <x-isset-placeholder />
             @endif
          </div>
 
@@ -84,15 +68,7 @@
                @endforeach
             </div>
             @else
-            <div
-               class="w-full flex justify-center items-center text-gray-800 gap-5 text-center font-semibold text-xl mt-5 py-5 border rounded-xl bg-white">
-               Sezione in allestimento
-               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                  stroke="currentColor" class="size-8 text-gray-800">
-                  <path stroke-linecap="round" stroke-linejoin="round"
-                     d="M14.25 9.75 16.5 12l-2.25 2.25m-4.5 0L7.5 12l2.25-2.25M6 20.25h12A2.25 2.25 0 0 0 20.25 18V6A2.25 2.25 0 0 0 18 3.75H6A2.25 2.25 0 0 0 3.75 6v12A2.25 2.25 0 0 0 6 20.25Z" />
-               </svg>
-            </div>
+            <x-isset-placeholder />
             @endif
          </div>
 

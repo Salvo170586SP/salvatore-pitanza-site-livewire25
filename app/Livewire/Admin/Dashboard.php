@@ -18,6 +18,7 @@ class Dashboard extends Component
         $skillsCount = Skill::all()->count();
         $drawingsCount = Drawing::all()->count();
         $documentsCount = Document::all()->count();
+        
         return view('livewire.admin.dashboard', compact('projectsCount', 'experiencesCount','skillsCount', 'drawingsCount', 'documentsCount'));
     }
 }

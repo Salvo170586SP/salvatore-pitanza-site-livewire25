@@ -4,7 +4,6 @@
         <div class="h-full flex flex-col items-center justify-center gap-5 px-8">
             <h2 class="text-xl sm:text-3xl font-bold leading-tight mb-5">Tecnologie Principali Usate</h2>
             <div class="grid w-full md:grid-cols-3 lg:grid-cols-5 text-center gap-3 md:gap-3">
-
                 <div
                     class="flex items-center justify-center rounded-xl border border-zinc-200 transition bg-white hover:shadow-lg p-5">
                     <div class="flex flex-col items-center justify-center">

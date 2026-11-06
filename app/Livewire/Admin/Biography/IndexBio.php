@@ -8,7 +8,7 @@ use Livewire\Component;
 
 class IndexBio extends Component
 {
-    public function deleteBio($bio_id)
+    public function deleteBio(int $bio_id)
     {
         $biography = Biography::findOrFail($bio_id);
 

@@ -24,6 +24,19 @@
                 <flux:error name="url_git" />
             </flux:field>
         </div>
+         <flux:field class="my-5">
+            <flux:label>
+                Skills
+            </flux:label>
+            <div class="flex gap-5">
+                @foreach($skills as $skill)
+                <flux:label class="flex gap-2">
+                    <flux:checkbox wire:model="selectedSkills" wire:key="skill-{{ $skill->id }}"   label="{{ $skill->name }}" value="{{ $skill->id }}" />
+               
+                </flux:label>
+                @endforeach
+            </div>
+        </flux:field>
         <flux:field>
             <flux:label>Descrizione</flux:label>
             <flux:textarea wire:model="description" id="description" />

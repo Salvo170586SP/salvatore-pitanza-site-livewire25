@@ -5,14 +5,15 @@ namespace App\Livewire\Admin\Biography;
 use App\Models\Biography;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
+use Livewire\Features\SupportFileUploads\TemporaryUploadedFile;
 use Livewire\WithFileUploads;
 
 class CreateBio extends Component
 {
     use WithFileUploads;
 
-    public $description;
-    public $img_url = null;
+    public string $description = '';
+    public ?TemporaryUploadedFile $img_url = null;
 
     public function mount()
     {
@@ -25,6 +26,7 @@ class CreateBio extends Component
     protected $rules = [
         'description' => 'required|max:255',
         'img_url' => 'nullable',
+        'img_wide_url' => 'nullable',
     ];
 
     protected $messages = [
@@ -40,10 +42,15 @@ class CreateBio extends Component
             $url = $this->img_url->store('imgBio', 'public');
         }
 
+        if($this->img_wide_url){
+            $url_wide = $this->img_wide_url->store('imgBio', 'public');
+        }
+
         Biography::create([
             'user_id' => Auth::id(),
             'description' => $this->description,
             'img_url' => $url,
+            'img_wide_url' => $url_wide,
         ]);
 
         session()->flash('message', 'Biografia creata con successo!');
