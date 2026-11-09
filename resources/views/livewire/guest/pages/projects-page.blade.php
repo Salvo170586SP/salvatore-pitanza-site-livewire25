@@ -20,7 +20,7 @@
                 sviluppo</button>
         </div>
 
-        @if(isset($projects))
+        @if($projects && $projects->count() > 0)
         <div class="flex w-full flex-wrap justify-center gap-5 mt-10 mx-auto">
             @foreach($projects as $project)
             <x-card-project :item="$project">
@@ -43,6 +43,7 @@
         @else
         <x-isset-placeholder />
         @endif
+
         <p class="w-full mt-10 text-center">
             Altri lavori e sperimentazioni sono sul mio profilo GitHub.
             <a href="https://github.com/Salvo170586SP" target="_blank"
