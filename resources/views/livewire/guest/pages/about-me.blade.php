@@ -9,13 +9,13 @@
         <div class="my-5">
           <h1 class="font-serif-display text-3xl sm:text-4xl font-bold leading-tight">
             Chi sono</h1>
-          <p class="font-normal leading-normal">
+          <p class="font-normal leading-normal text-justify">
             Mi chiamo Salvo e lavoro soprattutto con Laravel e Livewire. Mi piace unire logica, creatività e precisione
             per costruire prodotti digitali che abbiano un impatto reale.
           </p>
         </div>
 
-        <div class="gap-3 py-1 flex">
+        <div class="gap-3 py-1 flex flex-col sm:flex-row">
           <a href="{{ asset('storage/'.$document->doc_url)}}" download
             class="flex min-w-[184px] max-w-[480px] border border-zinc-200 cursor-pointer items-center justify-center hover:shadow-lg transition rounded-xl h-12 px-5 bg-black text-white text-base font-bold leading-normal tracking-[0.015em] hover:bg-sky-900">
             <span class="truncate">Scarica il CV</span>
@@ -95,32 +95,32 @@
 
         <div class="mt-6 sm:grid sm:grid-cols-2 gap-4 space-y-3 sm:space-y-0">
           <div
-            class="px-5 py-1 bg-white border border-sky-200 rounded-full text-sm font-medium text-sky-800 text-center">
+            class="px-5 py-2 bg-white border border-zinc-200 rounded-full text-sm font-medium text-sky-800 text-center">
             <span class="font-medium text-sm text-sky-800">Laravel & Livewire</span>
           </div>
 
           <div
-            class="px-5 py-1 bg-white border border-sky-200 rounded-full text-sm font-medium text-sky-800 text-center">
+            class="px-5 py-2 bg-white border border-zinc-200 rounded-full text-sm font-medium text-sky-800 text-center">
             <span class="text-sm font-medium text-sky-800">API REST</span>
           </div>
 
           <div
-            class="px-5 py-1 bg-white border border-sky-200 rounded-full text-sm font-medium text-sky-800 text-center">
+            class="px-5 py-2 bg-white border border-zinc-200 rounded-full text-sm font-medium text-sky-800 text-center">
             <span class="text-sm font-medium text-sky-800">Gestionali su misura</span>
           </div>
 
           <div
-            class="px-5 py-1 bg-white border border-sky-200 rounded-full text-sm font-medium text-sky-800 text-center">
+            class="px-5 py-2 bg-white border border-zinc-200 rounded-full text-sm font-medium text-sky-800 text-center">
             <span class="text-sm font-medium text-sky-800">MySQL</span>
           </div>
 
           <div
-            class="px-5 py-1 bg-white border border-sky-200 rounded-full text-sm font-medium text-sky-800 text-center">
+            class="px-5 py-2 bg-white border border-zinc-200 rounded-full text-sm font-medium text-sky-800 text-center">
             <span class="text-sm font-medium text-sky-800">Lavorare in team</span>
           </div>
 
           <div
-            class="px-5 py-1 bg-white border border-sky-200 rounded-full text-sm font-medium text-sky-800 text-center">
+            class="px-5 py-2 bg-white border border-zinc-200 rounded-full text-sm font-medium text-sky-800 text-center">
             <div class="text-sm font-medium text-sky-800">Rispetto delle scadenze</div>
           </div>
         </div>

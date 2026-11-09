@@ -34,7 +34,7 @@
                 </p>
                 <div class="flex-wrap gap-3 flex justify-center">
                     <button wire:navigate href="/projects"
-                        class="flex min-w-[184px] max-w-[480px] border border-sky-600 cursor-pointer items-center justify-center hover:shadow-lg transition rounded-xl h-12 px-5 bg-black text-white text-base font-bold leading-normal tracking-[0.015em] hover:bg-sky-900">
+                        class="flex min-w-[184px] max-w-[480px] border cursor-pointer items-center justify-center hover:shadow-lg transition rounded-xl h-12 px-5 bg-black text-white text-base font-bold leading-normal tracking-[0.015em] hover:bg-sky-900">
                         <span class="truncate">Portfolio</span>
                     </button>
                     <button wire:navigate href="/skills"

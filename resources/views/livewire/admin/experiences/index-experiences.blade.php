@@ -54,7 +54,7 @@
                     </td>
                     <td class="px-6 py-4">
                         <div class="max-w-xs truncate">
-                            {{$experience->getDate($experience->end_date) ?? 'in corso'}}
+                            {{$experience->getDate($experience->end_date) ?? '-'}}
                         </div>
                     </td>
                     <td class="px-6 py-4 whitespace-nowrap text-sm">

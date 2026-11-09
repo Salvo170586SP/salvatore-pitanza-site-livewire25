@@ -10,16 +10,16 @@ class EditExperiences extends Component
 {
 
     public Experience $experience;
-    public string $title;
-    public ?string $start_date;
-    public ?string $end_date;
-    public ?string $description;
+    public string $title = '';
+    public ?string $start_date = null;
+    public ?string $end_date = null;
+    public string $description = '';
 
     protected $rules = [
         'title' => 'required|max:64',
-        'start_date' => 'date',
-        'end_date' => 'date',
-        'description' => 'required',
+        'start_date' => 'nullable|date',
+        'end_date' => 'nullable|date',
+        'description' => 'required|string|max:16383',
     ];
 
     protected $messages = [
@@ -28,14 +28,15 @@ class EditExperiences extends Component
         'start_date.date' => 'Deve essere una data',
         'end_date.date' => 'Deve essere una data',
         'description.required' => 'Campo obbligatorio',
+        'description.max' => 'Massimo 16383 caratteri',
     ];
 
     public function mount(Experience $experience)
     {
         $this->experience = $experience;
         $this->title = $experience->title;
-        $this->start_date = $experience->start_date;
-        $this->end_date = $experience->end_date;
+        $this->start_date = $experience->start_date?->format('Y-m-d');
+        $this->end_date = $experience->end_date?->format('Y-m-d');
         $this->description = $experience->description;
 
         if (!Auth::user() || $experience->user_id !== Auth::user()->id) {
@@ -45,6 +46,9 @@ class EditExperiences extends Component
 
     public function submit()
     {
+        $this->start_date = blank($this->start_date) ? null : $this->start_date;
+        $this->end_date = blank($this->end_date) ? null : $this->end_date;
+
         $this->validate();
 
         $this->experience->update([

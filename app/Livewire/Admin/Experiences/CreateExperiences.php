@@ -8,24 +8,25 @@ use Livewire\Component;
 
 class CreateExperiences extends Component
 {
-    public string $title;
-    public string $end_date;
-    public string $start_date;
-    public string $description;
+    public string $title = '';
+    public ?string $end_date = null;
+    public ?string $start_date = null;
+    public string $description = '';
 
     protected $rules = [
         'title' => 'required|max:64',
-        'end_date' => 'date',
-        'start_date' => 'date',
-        'description' => 'required',
+        'start_date' => 'nullable|date',
+        'end_date' => 'nullable|date',
+        'description' => 'required|string|max:16383',
     ];
 
     protected $messages = [
-        'title.required' => 'Campo obbligatorio',
+       'title.required' => 'Campo obbligatorio',
         'title.max' => 'Massimo 64 cartteri',
-        'start_date.required' => 'Il campo è una data',
-        'end_date.required' => 'Il campo è una data',
+        'start_date.date' => 'Deve essere una data',
+        'end_date.date' => 'Deve essere una data',
         'description.required' => 'Campo obbligatorio',
+        'description.max' => 'Massimo 16383 caratteri',
     ];
 
     public function submit()

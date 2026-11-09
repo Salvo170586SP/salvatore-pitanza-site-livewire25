@@ -9,10 +9,10 @@ use Livewire\Component;
 class TrainingsEdit extends Component
 {
     public Training $training;
-    public ?string $icon;
-    public ?string $title;
-    public ?string $subtitle;
-    public ?string $description;
+    public ?string $icon = null;
+    public ?string $title = '';
+    public ?string $subtitle = '';
+    public ?string $description = '';
 
     protected $rules = [
         'icon' => 'required',

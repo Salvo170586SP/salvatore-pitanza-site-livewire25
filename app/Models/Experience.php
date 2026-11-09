@@ -32,7 +32,7 @@ class Experience extends Model
     return mb_convert_case(
         Carbon::parse($date)
             ->locale('it')
-            ->translatedFormat('d F Y'),
+            ->translatedFormat('F Y'),
         MB_CASE_TITLE,
         'UTF-8'
     );

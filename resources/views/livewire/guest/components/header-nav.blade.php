@@ -40,9 +40,9 @@
                 </div>
 
                 <button @click="isOpen =! isOpen"
-                    class="md:hidden block text-black font-bold border rounded p-2 cursor-pointer"><svg
+                    class="md:hidden block cursor-pointer"><svg
                         xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                        stroke="currentColor" class="size-6">
+                        stroke="currentColor" class="size-7">
                         <path stroke-linecap="round" stroke-linejoin="round"
                             d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
                     </svg>
@@ -52,27 +52,27 @@
         </header>
 
         <!-- MobileNavBar -->
-        <div class="md:hidden" x-show="isOpen" x-cloak @click.outside="isOpen = false" x-transition>
-            <div class="w-full fixed left-0 right-0 top-15 border-b z-100 backdrop-blur-sm bg-light/80 shadow-lg">
-                <nav class="flex flex-col justify-center items-center divide-y divide-zinc-300 w-full">
+        <div class="md:hidden" x-show="isOpen" x-cloak @click.outside="isOpen = false">
+            <div class="w-full fixed left-0 right-0 top-15 border-b z-100 bg-white  shadow-lg">
+                <nav class="flex flex-col justify-center items-center w-full p-2">
                     <button wire:navigate href="/"
-                        class="w-full py-4 text-center text-sm font-medium leading-normal hover:bg-gray-200 hover:decoration-sky-800   hover:text-sky-800 transition-colors duration-300">
+                        class="w-full py-4 text-center text-sm font-medium leading-normal rounded-xl @if(request()->is('/')) bg-gray-200  @else hover:bg-gray-100 hover:decoration-sky-800 hover:text-sky-800 transition-colors duration-300 @endif">
                         Home
                     </button>
                     <button wire:navigate href="/about-me"
-                        class="w-full py-4 text-center text-sm font-medium leading-normal hover:bg-gray-200 hover:decoration-sky-800 hover:text-sky-800 transition-colors duration-300">
+                        class="w-full py-4 text-center text-sm font-medium leading-normal hover:bg-gray-100 rounded-xl @if(request()->is('about-me')) bg-gray-200  @else hover:bg-gray-100 hover:decoration-sky-800 hover:text-sky-800 transition-colors duration-300 @endif">
                         Chi sono
                     </button>
                     <button wire:navigate href="/skills"
-                        class="w-full py-4 text-center text-sm font-medium leading-normal hover:bg-gray-200 hover:decoration-sky-800 hover:text-sky-800 transition-colors duration-300">
+                        class="w-full py-4 text-center text-sm font-medium leading-normal hover:bg-gray-100 rounded-xl @if(request()->is('skills')) bg-gray-200  @else hover:bg-gray-100 hover:decoration-sky-800 hover:text-sky-800 transition-colors duration-300 @endif">
                         CV
                     </button>
                     <button wire:navigate href="/projects"
-                        class="w-full py-4 text-center text-sm font-medium leading-normal hover:bg-gray-200 hover:decoration-sky-800 hover:text-sky-800 transition-colors duration-300">
+                        class="w-full py-4 text-center text-sm font-medium leading-normal hover:bg-gray-100 rounded-xl @if(request()->is('projects')) bg-gray-200  @else hover:bg-gray-100 hover:decoration-sky-800 hover:text-sky-800 transition-colors duration-300 @endif">
                         Progetti
                     </button>
                     <button wire:navigate href="/drawings"
-                        class="w-full py-4 text-center text-sm font-medium leading-normal hover:bg-gray-200 hover:decoration-sky-800 hover:text-sky-800 transition-colors duration-300">
+                        class="w-full py-4 text-center text-sm font-medium leading-normal hover:bg-gray-100 rounded-xl @if(request()->is('drawings')) bg-gray-200  @else hover:bg-gray-100 hover:decoration-sky-800 hover:text-sky-800 transition-colors duration-300 @endif">
                         Oltre il codice
                     </button>
                 </nav>
