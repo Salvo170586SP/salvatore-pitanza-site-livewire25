@@ -2,10 +2,13 @@
 
 namespace App\Livewire\Admin\Skills;
 
+use App\Enums\SkillLevels;
+use App\Enums\SkillTypes;
 use App\Models\Skill;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 use Livewire\WithFileUploads;
+use Illuminate\Validation\Rule;
 
 class CreateSkills extends Component
 {
@@ -17,19 +20,26 @@ class CreateSkills extends Component
     public ?string $level;
     public ?string $description;
 
-    protected $rules = [
-        'url_icon' => 'nullable',
-        'name' => 'required|max:64',
-        'type' => 'required',
-        'level' => 'nullable',
-        'description' => 'nullable',
-    ];
+    protected function rules()
+    {
+        return [
+            'url_icon' => 'nullable',
+            'name' => 'required|max:64',
+            'type' => ['required', Rule::enum(SkillTypes::class)],
+            'level' => ['required', Rule::enum(SkillLevels::class)],
+            'description' => 'nullable',
+        ];
+    }
 
-    protected $messages = [
-        'name.required' => 'Campo obbligatorio',
-        'name.max' => 'Massimo 64 cartteri',
-        'type.required' => 'Campo obbligatorio',
-    ];
+    protected function messages()
+    {
+        return [
+            'name.required' => 'Campo obbligatorio',
+            'name.max' => 'Massimo 64 cartteri',
+            'type.required' => 'Campo obbligatorio',
+            'level.required' => 'Campo obbligatorio',
+        ];
+    }
 
     public function submit()
     {

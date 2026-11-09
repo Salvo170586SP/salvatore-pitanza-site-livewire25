@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Enums\SkillLevels;
+use App\Enums\SkillTypes;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
@@ -22,7 +23,8 @@ class Skill extends Model
     protected function casts()
     {
         return [
-            'level' => SkillLevels::class
+            'type' => SkillTypes::class,
+            'level' => SkillLevels::class,
         ];
     }
 

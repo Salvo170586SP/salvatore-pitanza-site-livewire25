@@ -2,11 +2,15 @@
 
 namespace App\Livewire\Admin\Skills;
 
+use App\Enums\SkillLevels;
+use App\Enums\SkillTypes;
 use App\Models\Skill;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Livewire\Component;
 use Livewire\WithFileUploads;
+use Illuminate\Validation\Rule;
+
 
 class EditSkills extends Component
 {
@@ -14,31 +18,38 @@ class EditSkills extends Component
 
     public Skill $skill;
     public $url_icon = null;
-    public string $name;
-    public ?string $type;
-    public ?string $level;
-    public ?string $description;
+    public string $name = '';
+    public ?string $type = '';
+    public ?string $level = '';
+    public ?string $description = '';
 
-    protected $rules = [
-        'url_icon' => 'nullable',
-        'name' => 'required|max:64',
-        'type' => 'required',
-        'level' => 'nullable',
-        'description' => 'nullable',
-    ];
+    protected function rules()
+    {
+        return [
+            'url_icon' => 'nullable',
+            'name' => 'required|max:64',
+            'type' => ['required', Rule::enum(SkillTypes::class)],
+            'level' => ['required', Rule::enum(SkillLevels::class)],
+            'description' => 'nullable',
+        ];
+    }
 
-    protected $messages = [
-        'name.required' => 'Campo obbligatorio',
-        'name.max' => 'Massimo 64 cartteri',
-        'type.required' => 'Campo obbligatorio',
-    ];
+    protected function messages()
+    {
+        return [
+            'name.required' => 'Campo obbligatorio',
+            'name.max' => 'Massimo 64 cartteri',
+            'type.required' => 'Campo obbligatorio',
+            'level.required' => 'Campo obbligatorio',
+        ];
+    }
 
     public function mount(Skill $skill)
     {
         $this->skill = $skill;
         $this->name = $skill->name;
-        $this->type = $skill->type;
-        $this->level = $skill->level;
+        $this->type = $skill->type?->value;
+        $this->level = $skill->level?->value;
         $this->description = $skill->description;
 
         if ($skill->url_icon) {
@@ -77,7 +88,6 @@ class EditSkills extends Component
 
     public function render()
     {
-        $types = config('siteConfig.types');
-        return view('livewire.admin.skills.edit-skills', compact('types'));
+        return view('livewire.admin.skills.edit-skills');
     }
 }

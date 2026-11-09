@@ -24,6 +24,7 @@
                     </flux:select.option>
                     @endforeach
                 </flux:select>
+                <flux:error name="type" />
             </flux:field>
 
             <flux:field class="w-80">
@@ -36,6 +37,7 @@
                     </flux:select.option>
                     @endforeach
                 </flux:select>
+                <flux:error name="level" />
             </flux:field>
 
             <flux:field class="w-80">
