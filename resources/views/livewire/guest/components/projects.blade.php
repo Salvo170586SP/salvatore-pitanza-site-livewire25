@@ -1,11 +1,11 @@
 <div>
+    @if($projects && $projects->count() > 0)
     <section id="work" class="mx-auto w-full flex flex-col text-black px-10 py-10 md:py-10 items-center">
         <h2 class="w-full text-center text-xl sm:text-3xl font-bold leading-tight mb-5">
             Ultimi Progetti
         </h2>
 
         <div class="w-full flex flex-col flex-wrap sm:flex-row justify-center items-center gap-5 mt-5">
-            @if(isset($projects))
             @foreach($projects->take(3) as $project)
             <x-card-project :item="$project">
                 <x-slot name="badge">
@@ -36,18 +36,6 @@
                 </x-slot>
             </x-card-project>
             @endforeach
-
-            @else
-            <div
-                class="w-full flex justify-center items-center text-gray-300 gap-5 text-center font-semibold dark:text-zinc-300 text-xl mt-5 py-5 border rounded-xl bg-white">
-                Sezione in allestimento
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                    stroke="currentColor" class="size-10 text-gray-200">
-                    <path stroke-linecap="round" stroke-linejoin="round"
-                        d="M14.25 9.75 16.5 12l-2.25 2.25m-4.5 0L7.5 12l2.25-2.25M6 20.25h12A2.25 2.25 0 0 0 20.25 18V6A2.25 2.25 0 0 0 18 3.75H6A2.25 2.25 0 0 0 3.75 6v12A2.25 2.25 0 0 0 6 20.25Z" />
-                </svg>
-            </div>
-            @endif
         </div>
         <button wire:navigate href="/projects"
             class="inline-flex items-center capitalize my-5 px-4 py-2 font-medium border border-zinc-200 bg-white hover:shadow-lg transition rounded-xl cursor-pointer">
@@ -58,4 +46,5 @@
             </svg>
         </button>
     </section>
+    @endif
 </div>
