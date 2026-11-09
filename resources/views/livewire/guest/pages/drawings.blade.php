@@ -12,7 +12,7 @@
         </div>
 
         <div class="flex w-full flex-wrap justify-center gap-5 mt-10 mx-auto">
-            @if(isset($drawings))
+            @if($drawings && $drawings->count() > 0)
             @foreach($drawings as $draw)
             <x-card-draw :item="$draw" />
             @endforeach

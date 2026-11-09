@@ -8,9 +8,7 @@
             @if($experiences->count() > 0)
             <x-accordions :experiences="$experiences" />
             @else
-            <div class="w-full text-center font-semibold text-slate-700 text-2xl mt-5">
-                Sezione in allestimento 🛠️
-            </div>
+            <x-isset-placeholder /> 
             @endif
         </div>
     </section>

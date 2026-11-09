@@ -16,10 +16,12 @@
         </div>
 
         <div class="gap-3 py-1 flex flex-col sm:flex-row">
+          @if($document && $document->doc_url)
           <a href="{{ asset('storage/'.$document->doc_url)}}" download
             class="flex min-w-[184px] max-w-[480px] border border-zinc-200 cursor-pointer items-center justify-center hover:shadow-lg transition rounded-xl h-12 px-5 bg-black text-white text-base font-bold leading-normal tracking-[0.015em] hover:bg-sky-900">
             <span class="truncate">Scarica il CV</span>
           </a>
+          @endif
           <a href="https://www.linkedin.com/in/salvatore-pitanza-dev/" target="_blank"
             class="bg-white text-gray-800 flex min-w-[184px] max-w-[480px] hover:shadow-lg transition cursor-pointer items-center justify-center rounded-xl h-12 px-5 border border-zinc-200 text-base font-bold leading-normal tracking-[0.015em]">
             <span class="truncate">Linkedin</span>
@@ -47,7 +49,7 @@
         <h2 class="font-serif-display text-3xl font-bold pb-4">
           Percorso Professionale</h2>
         <p class="mt-2 font-normal leading-normal text-justify">
-          {{$biography->description}}
+          {{$biography->description ?? 'Descrizione in arrivo...'}}
         </p>
       </div>
 
@@ -85,7 +87,7 @@
     </section>
 
     <section class="w-full sm:flex sm:gap-5 space-y-5 space-y-0">
-      <div class="{{-- sm:w-250 md:w-full --}} w-full">
+      <div class="w-full">
         <livewire:guest.components.experiences />
       </div>
 
