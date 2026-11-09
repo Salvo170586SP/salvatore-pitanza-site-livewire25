@@ -21,15 +21,15 @@ class DatabaseSeeder extends Seeder
         ]); */
 
          $this->call([
-          /*   UserSeeder::class, */
-            BiographySeeder::class,
+            UserSeeder::class,
+            /* BiographySeeder::class,
             TrainingSeeder::class,
-            ProjectSeeder::class,
+            ProjectSeeder::class, */
            /*  ExperienceSeeder::class, */
-            SkillSeeder::class,
+          /*   SkillSeeder::class,
             SkillGeneralInfoSeeder::class,
             DocumentSeeder::class,
-            DrawingSeeder::class,
+            DrawingSeeder::class, */
         ]);
     }
 }
