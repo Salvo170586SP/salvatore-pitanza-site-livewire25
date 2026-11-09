@@ -14,6 +14,7 @@ class CreateBio extends Component
 
     public string $description = '';
     public ?TemporaryUploadedFile $img_url = null;
+    public ?TemporaryUploadedFile $img_wide_url = null;
 
     public function mount()
     {
