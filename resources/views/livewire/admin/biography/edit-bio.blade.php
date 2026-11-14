@@ -27,7 +27,7 @@
             @endif
         </div>
         
-        <div class="mt-5 mb-10 flex justify-between">
+       {{--  <div class="mt-5 mb-10 flex justify-between">
             <flux:input type="file" wire:model="img_wide_url"  label="Allega nuova immagine wide" />
              @if($biography->img_wide_url)
             <figure class="w-30 h-30 overflow-hidden rounded-lg">
@@ -39,7 +39,7 @@
                 IMG
             </div>
             @endif
-        </div>
+        </div> --}}
         <div class="w-full flex justify-end">
             <flux:button type="submit" class="w-[150px]" variant="filled">Modifica</flux:button>
         </div>

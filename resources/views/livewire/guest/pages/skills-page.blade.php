@@ -1,34 +1,19 @@
 <div>
    <section id="skills">
-      <div class="w-full px-10 flex flex-col pt-25 pb-25 sm:pb-20">
+      <div {{-- class="w-full px-10 flex flex-col pt-25 pb-25 sm:pb-20" --}} class="w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 xl:px-16 py-25">
          <div
-            class="w-full backdrop-blur-sm bg-light/80 relative sm:sticky top-none fixed sm:top-15 left-0 right-0 z-40 border-b">
-            <div class="flex min-w-72 flex-col gap-1">
+            class="w-full backdrop-blur-sm bg-light/80">
+            <div class="flex  flex-col gap-1">
                <h1 class="font-serif-display text-4xl font-bold leading-tight tracking-tight">
                   Competenze
                </h1>
                <p class="font-normal leading-normal">Gli strumenti con cui costruisco applicazioni web, dal backend
                   all’interfaccia, e il modo in cui lavoro.</p>
             </div>
-
-            <div class="py-3 hidden sm:block">
-               <nav class="flex flex-wrap gap-2">
-                  <a href="#ling"
-                     class="text-sm border border-zinc-200 hover:text-sky-700 bg-white px-4 py-2 rounded-full font-medium leading-normal">Linguaggi
-                     & Framework</a>
-                  <a href="#db"
-                     class="text-sm border border-zinc-200 hover:text-sky-700 bg-white px-4 py-2 rounded-full font-medium leading-normal">Database</a>
-                  <a href="#tools"
-                     class="text-sm border border-zinc-200 hover:text-sky-700 bg-white px-4 py-2 rounded-full font-medium leading-normal">Tools</a>
-                  <a href="#softskills"
-                     class="text-sm border border-zinc-200 hover:text-sky-700 bg-white px-4 py-2 rounded-full font-medium leading-normal">Soft
-                     Skills</a>
-               </nav>
-            </div>
          </div>
 
-         <div id="ling" class="scroll-mt-32 pt-8">
-            <h2 class="text-2xl font-bold leading-tight tracking-[-0.015em] pb-6 pt-8">
+         <div id="ling">
+            <h2 class="text-xl font-bold leading-tight tracking-[-0.015em] pb-6 pt-8">
                Linguaggi & Framework</h2>
             @if(isset($skillsCode))
             <div class="flex flex-wrap gap-3">
@@ -42,8 +27,8 @@
             @endif
          </div>
 
-         <div id="db" class="scroll-mt-32 pt-8">
-            <h2 class="text-2xl font-bold leading-tight tracking-[-0.015em] pb-3 pt-8">
+         <div id="db">
+            <h2 class="text-xl font-bold leading-tight tracking-[-0.015em] pb-3 pt-8">
                Database</h2>
             @if(isset($skillsDb))
             <div class="flex flex-wrap gap-3">
@@ -57,8 +42,8 @@
             @endif
          </div>
 
-         <div id="tools" class="scroll-mt-32 pt-8">
-            <h2 class="text-2xl font-bold leading-tight tracking-[-0.015em] pb-3 pt-8">
+         <div id="tools">
+            <h2 class="text-xl font-bold leading-tight tracking-[-0.015em] pb-3 pt-8">
                Tools</h2>
             @if(isset($skillsTool))
             <div class="flex flex-wrap gap-3">
@@ -72,13 +57,13 @@
             @endif
          </div>
 
-         <div id="softskills" class="scroll-mt-32 pt-8">
-            <h2 class="text-2xl font-bold leading-tight tracking-[-0.015em] pb-3 pt-8">
+         <div id="softskills">
+            <h2 class="text-xl font-bold leading-tight tracking-[-0.015em] pb-3 pt-8">
                Soft
                Skills</h2>
-            <div class="flex items-center flex-wrap gap-3">
+            <div class="sm:flex grid sm:grid-cols-4 gap-3">
                <div
-                  class="w-full sm:w-80 h-40 flex flex-col gap-3 rounded-xl border border-zinc-200 bg-white p-4 hover:shadow-lg transition">
+                  class="w-full sm:w-70 h-40 flex flex-col gap-3 rounded-2xl border border-zinc-200 bg-white p-4 hover:shadow-lg transition">
                   <span class="material-symbols-outlined text-primary text-3xl"><svg xmlns="http://www.w3.org/2000/svg"
                         fill="none" viewBox="0 0 24 24" stroke-width="2.0" stroke="currentColor" class="size-6">
                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -92,7 +77,7 @@
                   </div>
                </div>
                <div
-                  class="w-full sm:w-80 h-40 flex flex-col gap-3 rounded-xl border border-zinc-200 bg-white p-4 hover:shadow-lg transition">
+                  class="w-full sm:w-70 h-40 flex flex-col gap-3 rounded-2xl border border-zinc-200 bg-white p-4 hover:shadow-lg transition">
                   <span class="material-symbols-outlined text-primary text-3xl">
                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.0"
                         stroke="currentColor" class="size-6">
@@ -108,7 +93,7 @@
                   </div>
                </div>
                <div
-                  class="w-full sm:w-80 h-40 flex flex-col gap-3 rounded-xl border border-zinc-200 bg-white p-4 hover:shadow-lg transition">
+                  class="w-full sm:w-70 h-40 flex flex-col gap-3 rounded-2xl border border-zinc-200 bg-white p-4 hover:shadow-lg transition">
                   <span class="material-symbols-outlined text-primary text-3xl"><svg xmlns="http://www.w3.org/2000/svg"
                         fill="none" viewBox="0 0 24 24" stroke-width="2.0" stroke="currentColor" class="size-6">
                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -123,7 +108,7 @@
                   </div>
                </div>
                <div
-                  class="w-full sm:w-80 h-40 flex flex-col gap-3 rounded-xl border border-zinc-200 p-4 bg-white hover:shadow-lg transition">
+                  class="w-full sm:w-70 h-40 flex flex-col gap-3 rounded-2xl border border-zinc-200 p-4 bg-white hover:shadow-lg transition">
                   <span class="material-symbols-outlined text-primary text-3xl">
                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.0"
                         stroke="currentColor" class="size-6">

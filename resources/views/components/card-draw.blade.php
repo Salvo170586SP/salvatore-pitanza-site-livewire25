@@ -3,7 +3,7 @@
 ])
 
 <div
-    class="w-full sm:w-90 h-80 bg-white rounded-xl border border-zinc-200 group overflow-hidden transition hover:shadow-lg group relative">
+    class="w-full sm:w-90 h-80 bg-white rounded-2xl border border-zinc-300 group overflow-hidden transition hover:shadow-lg group relative">
 
     @if($item->img_url)
     <figure class="w-full h-full relative rounded-xl duration-300 group-hover:scale-110">

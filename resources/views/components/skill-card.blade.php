@@ -19,7 +19,7 @@ $levelRank = $level instanceof \App\Enums\SkillLevels
 : \App\Enums\SkillLevels::Base->rank();
 @endphp
 
-<div {{ $attributes->class(['w-full sm:w-80 flex flex-col gap-3.5 rounded-[14px] border border-zinc-200 bg-white p-5 hover:shadow-lg transition']) }}>
+<div {{ $attributes->class(['w-full sm:w-80 flex flex-col gap-3.5 rounded-2xl border border-zinc-300 bg-white p-5 hover:shadow-lg transition']) }}>
 
     <div class="flex items-center gap-3">
         @if($url)
@@ -34,7 +34,7 @@ $levelRank = $level instanceof \App\Enums\SkillLevels
         @endif
 
         <div>
-            <h3 class="text-[17px] font-semibold text-slate-900">{{ $name }}</h3>
+            <h3 class="text-[17px] font-semibold text-zinc-800">{{ $name }}</h3>
 
             @if ($description)
             <p class="mt-0.5 text-sm text-slate-600">{{ $description }}</p>

@@ -3,7 +3,7 @@
 ])
 
 <div
-    class="w-full h-[30rem] sm:w-full md:w-90 bg-white rounded-xl border border-zinc-200 group flex flex-col overflow-hidden transition hover:shadow-lg">
+    class="w-full h-[30rem] sm:w-full md:w-90 bg-white rounded-2xl border border-zinc-300 group flex flex-col overflow-hidden transition hover:shadow-lg">
     
     <div class="h-50 shrink-0 flex flex-col gap-4 overflow-hidden">
         @if($item->img_url)

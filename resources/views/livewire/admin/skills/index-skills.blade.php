@@ -9,15 +9,15 @@
         </div>
     </div>
 
-    <div class="w-full flex justify-between space-x-3  items-center mt-10">
+ {{--    <div class="w-full flex justify-between space-x-3  items-center mt-10">
         <h3 class="font-semibold">Descrizione Skills</h3>
         @if(!$skillInfo)
         <flux:button icon="plus" wire:navigate href="/admin/skills-home/create-general-description" variant="filled">
             Aggiungi Descrizione
         </flux:button>
         @endif
-    </div>
-    <div
+    </div> --}}
+{{--     <div
         class="my-5 border border-zinc-200 dark:border-zinc-700/90 dark:bg-zinc-900/50  overflow-hidden rounded-lg p-5">
         @if($skillInfo)
         <p class="font-medium text-sm  dark:text-slate-200 whitespace-normal overflow-wrap break-words leading-relaxed">
@@ -63,7 +63,7 @@
             Nessuna descrizione
         </p>
         @endif
-    </div>
+    </div> --}}
 
     <div class="w-full flex justify-between items-center space-x-3 mt-10">
         <h3 class="font-semibold">Icone Skills</h3>

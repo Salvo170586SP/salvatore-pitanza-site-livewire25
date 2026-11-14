@@ -23,9 +23,6 @@
                     <th scope="col" class="px-6 py-5 text-left text-xs font-medium uppercase   w-64">
                         Titolo
                     </th>
-                    <th scope="col" class="px-6 py-5 text-left text-xs font-medium uppercase   w-64">
-                        Descrizione
-                    </th>
                     <th scope="col" class="px-6 py-5 text-left text-xs font-medium uppercase  w-32">
                         Inizio</th>
                     <th scope="col" class="px-6 py-5 text-left text-xs font-medium uppercase  w-32">
@@ -40,11 +37,6 @@
                     <td class="px-6 py-4">
                         <div class="max-w-xs truncate">
                             {{$experience->title ?? 'n/d'}}
-                        </div>
-                    </td>
-                    <td class="px-6 py-4">
-                        <div class="max-w-xs truncate">
-                            {{$experience->description ?? 'n/d'}}
                         </div>
                     </td>
                     <td class="px-6 py-4">

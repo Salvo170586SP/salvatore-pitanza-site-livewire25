@@ -1,5 +1,5 @@
 <div>
-    <section class="mx-auto px-10 w-full h-full py-25 sm:py-25">
+    <section {{-- class="mx-auto px-10 w-full h-full py-25 sm:py-25" --}} class="w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 xl:px-16 space-y-15 py-25">
         <div class="flex flex-wrap justify-between mb-6">
             <div class="flex flex-col gap-1">
                 <h1

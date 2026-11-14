@@ -38,7 +38,7 @@
             @endforeach
         </div>
         <button wire:navigate href="/projects"
-            class="inline-flex items-center capitalize my-5 px-4 py-2 font-medium border border-zinc-200 bg-white hover:shadow-lg transition rounded-xl cursor-pointer">
+            class="inline-flex items-center capitalize my-5 px-4 py-2 font-medium border border-zinc-300 bg-white hover:shadow-lg transition rounded-2xl cursor-pointer">
             Tutti I Progetti
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
                 stroke="currentColor" class="size-4 ms-2 text-zinc-500">

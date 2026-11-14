@@ -3,7 +3,7 @@
 ])
 
 <div
-    class="w-full md:min-h-50 flex flex-col hover:shadow-lg transition items-center border border-zinc-200 bg-white rounded-xl p-5">
+    class="w-full md:min-h-50 flex flex-col hover:shadow-lg transition items-center border border-zinc-300 bg-white rounded-2xl p-5">
     <div class="w-full">
         <div class="text-primary">
             {!! $training->icon ?? 'n/d' !!}

@@ -26,7 +26,7 @@
 
         @if($biography)
         <div
-            class="w-full rounded-2xl bg-zinc-200/20 border border-zinc-200 dark:border-zinc-700/90 dark:bg-zinc-900/50  overflow-hidden p-5">
+            class="w-full rounded-2xl bg-zinc-200/20 border border-zinc-200 overflow-hidden p-5 space-y-5">
             <div class="flex gap-5">
                 @if($biography->img_url)
                 <figure class="w-60 h-60 overflow-hidden rounded-lg">
@@ -40,7 +40,7 @@
                 </div>
                 @endif
 
-                @if($biography->img_wide_url)
+                {{-- @if($biography->img_wide_url)
                 <figure class="w-full h-60 overflow-hidden rounded-lg">
                     <img class="w-full h-full object-cover" src="{{ asset('/storage/'.$biography->img_wide_url) }}"
                         alt="{{$biography->img_wide_url}}" />
@@ -50,14 +50,14 @@
                     class="w-full h-60 overflow-hidden rounded-lg border bg-gray-100 flex justify-center items-center font-medium text-gray-400">
                     IMG
                 </div>
-                @endif
+                @endif --}}
 
             </div>
-            <div class="w-full p-3 text-xs font-medium">
+            <div class="w-full font-medium">
                 {{$biography->description}}
             </div>
 
-            <div class="w-full flex justify-between items-center mt-3">
+            <div class="w-full flex justify-between items-center mt-10">
                 <span class="w-full inline-block mt-5 text-xs font-medium dark:text-zinc-300">Ultima
                     modifica il {{$biography->getDate()}}</span>
                 <div class="w-full flex justify-end items-center gap-2">

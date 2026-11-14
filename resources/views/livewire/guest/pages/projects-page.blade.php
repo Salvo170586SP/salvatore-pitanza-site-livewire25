@@ -1,5 +1,5 @@
 <div>
-    <section class="px-4 sm:px-6 w-full h-full mx-auto py-25">
+    <section class="w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 xl:px-16 py-25">
 
         <div class="flex flex-col gap-1">
             <h1 class="font-serif-display text-3xl sm:text-4xl font-bold leading-tight tracking-tight text-[#212121]">
