@@ -11,7 +11,7 @@
                     </figure>
                     <div class="-space-y-2 sm:-space-y-1">
                         <p class="font-medium text-sm sm:text-base">Salvatore Pitanza</p>
-                        <span class="font-light text-xs">Full-Stack Developer</span>
+                        <span class="font-light text-xs">Full-Stack Web Developer</span>
                     </div>
                 </div>
                 <div class="w-full flex-1 justify-end gap-8">

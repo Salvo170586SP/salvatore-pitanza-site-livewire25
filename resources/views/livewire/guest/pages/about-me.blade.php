@@ -5,7 +5,8 @@
 
     <section class="w-full flex flex-col md:flex-row sm:items-between gap-5">
       <div class="w-full md:w-400">
-        <p class="text-sky-800 font-bold">Palermo, Sicilia · Disponibile da remoto o in sede in Sicilia</p>
+        <p class="text-sky-800 font-bold text-sm">Palermo, Sicilia · Disponibile da remoto, in modalità ibrida o in sede in Sicilia e a Torino.
+  {{-- Disponibile da remoto o in sede in Sicilia --}}</p>
 
         <div class="my-5">
           <h1 class="font-serif-display text-3xl sm:text-4xl font-bold leading-tight">
@@ -50,7 +51,7 @@
     </section>
 
     <div
-      class="w-full grid grid-cols-1 sm:grid-cols-4 gap-1 sm:gap-8 p-5 border border-zinc-300 rounded-2xl hover:shadow-lg bg-white space-y-5 {{-- mt-5 --}}">
+      class="w-full grid grid-cols-1 sm:grid-cols-4 gap-1 sm:gap-8 p-5 border border-zinc-300 rounded-2xl hover:shadow-lg bg-white space-y-5 transition">
       <div class="space-y-2">
         <p class="text-gray-500 text-sm">Stack</p>
         <p class="font-medium">
@@ -67,7 +68,9 @@
       </div>
       <div class="space-y-2">
         <p class="text-gray-500 text-sm">Disponibilità</p>
-        <p class="font-medium">Remoto, Torino o in sede in Sicilia</p>
+        <p class="font-medium">Remoto, ibrido o in sede. <br>
+Sedi: Palermo e Sicilia, Torino</p>
+        {{-- <p class="font-medium">Remoto, Torino o in sede in Sicilia</p> --}}
       </div>
     </div>
 

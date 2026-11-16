@@ -10,7 +10,7 @@ class Experiences extends Component
 {
     public function render()
     {
-        $experiences = Experience::where('user_id', 1)->orderBy('created_at')->get();
+        $experiences = Experience::where('user_id', 1)->orderByDesc('start_date')->get();
         return view('livewire.guest.components.experiences', compact('experiences'));
     }
 }
