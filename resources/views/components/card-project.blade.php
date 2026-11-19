@@ -19,7 +19,7 @@
         @endif
     </div>
 
-    <div class="p-3 flex flex-1 min-h-0 flex-col border-t">
+    <div class="p-3 flex flex-1 min-h-0 flex-col border-t dark:border-zinc-700">
         <div class="flex-1 min-h-0 overflow-hidden">
             <div class="flex justify-between items-center mt-2 mb-3">
                 <p class="text-[#212529] text-base font-bold leading-normal line-clamp-2">{{$item->title}}</p>
@@ -42,13 +42,13 @@
         <div class="w-full flex shrink-0 gap-2 mt-3">
             @if($item->url_git)
             <a href="{{$item->url_git}}" target="_blank"
-                class="px-4 py-3 text-sm font-semibold border border-zinc-200 hover:text-sky-600 text-zinc-800 rounded-xl">
+                class="px-4 py-3 text-sm font-semibold border border-zinc-300 hover:text-sky-600 text-zinc-800 rounded-xl">
                 Repository
             </a>
             @endif
             @if($item->url_web)
             <a href="{{$item->url_web}}" target="_blank"
-                class="px-4 py-3 text-sm font-semibold border bg-black hover:text-blue-50 text-white rounded-xl">
+                class="px-4 py-3 text-sm font-semibold border dark:border-zinc-700 bg-black hover:text-blue-50 text-white rounded-xl">
                 Demo live</a>
             @endif
         </div>

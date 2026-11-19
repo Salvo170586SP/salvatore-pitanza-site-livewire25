@@ -1,17 +1,17 @@
 <div>
     <div class="relative isolate">
         <!-- Sfondo esteso a tutta la sezione -->
-        <div aria-hidden="true" class="absolute inset-0 -z-10 bg-cover bg-center bg-no-repeat opacity-80"
+        <div aria-hidden="true" class="absolute inset-0 -z-10 bg-cover bg-center bg-no-repeat opacity-80 dark:invert dark:opacity-20"
             style="background-image: url('{{ asset('assets/icon/sfondo.jpg') }}');">
         </div>
         <div aria-hidden="true"
-            class="pointer-events-none absolute inset-x-0 bottom-0 z-0 h-1/2 bg-gradient-to-b from-transparent via-white/80 to-gray-100">
+            class="pointer-events-none absolute inset-x-0 bottom-0 z-0 h-1/2 bg-gradient-to-b from-transparent via-white/80 to-gray-100 dark:via-zinc-950/80 dark:to-zinc-900">
         </div>
 
         <!-- HeroSection -->
         <div
             class="relative z-10 backdrop-blur-xs flex min-h-screen w-full flex-col items-center sm:gap-16 px-5 pt-30 sm:pt-24 lg:pt-40">
-            <section id="jum-right" class=" flex flex-col gap-10 mb-10">
+            <section id="jum-right" class="flex flex-col gap-10 mb-10">
                 <div class="flex flex-col gap-1 items-center">
                     <h1 class="text-4xl font-black leading-tight tracking-[-0.033em] sm:text-5xl md:text-6xl max-w-2xl">
                         Salvatore Pitanza
@@ -30,7 +30,7 @@
                 </p>
                 <div class="flex-wrap gap-3 flex justify-center">
                     <button wire:navigate href="/projects"
-                        class="flex min-w-[184px] max-w-[480px] border cursor-pointer items-center justify-center hover:shadow-lg transition rounded-2xl h-12 px-5 bg-black text-white text-base font-bold leading-normal tracking-[0.015em] hover:bg-sky-900">
+                        class="flex min-w-[184px] max-w-[480px] border border-zinc-300  cursor-pointer items-center justify-center hover:shadow-lg transition rounded-2xl h-12 px-5 bg-black text-white text-base font-bold leading-normal tracking-[0.015em] hover:bg-sky-900">
                         <span class="truncate">Portfolio</span>
                     </button>
                     <button wire:navigate href="/skills"

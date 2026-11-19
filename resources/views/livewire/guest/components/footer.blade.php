@@ -1,6 +1,6 @@
 <div>
     <!-- Footer -->
-    <footer id="footer" class="h-[200px] flex flex-col gap-8 px-5 py-10 text-center border-t border-border-light">
+    <footer id="footer" class="h-[200px] flex flex-col gap-8 px-5 py-10 text-center border-t border-border-light dark:border-zinc-700">
 
         @if(request()->is('drawings'))
         <div 

@@ -1,6 +1,6 @@
 <div>
     <section id="skills"
-        class="mx-auto flex justify-center space-x-10 py-10 md:py-15 items-start border-y">
+        class="mx-auto flex justify-center space-x-10 py-10 md:py-15 items-start border-y dark:border-zinc-700">
         <div class="h-full flex flex-col items-center justify-center gap-5 px-8">
             <h2 class="text-xl sm:text-3xl font-bold leading-tight mb-5">Tecnologie Principali Usate</h2>
             <div class="grid w-full md:grid-cols-3 lg:grid-cols-5 text-center gap-3 md:gap-3">

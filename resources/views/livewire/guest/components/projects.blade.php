@@ -1,11 +1,11 @@
 <div>
     @if($projects && $projects->count() > 0)
-    <section id="work" class="mx-auto w-full flex flex-col text-black px-10 py-10 md:py-10 items-center">
+    <section id="work" class="w-full flex flex-col text-black px-10 py-10 md:py-10 items-center">
         <h2 class="w-full text-center text-xl sm:text-3xl font-bold leading-tight mb-5">
             Ultimi Progetti
         </h2>
 
-        <div class="w-full flex flex-col flex-wrap sm:flex-row justify-center items-center gap-5 mt-5">
+        <div class="max-w-7xl  mx-auto flex flex-col flex-wrap sm:flex-row justify-center items-center gap-5 mt-5">
             @foreach($projects->take(3) as $project)
             <x-card-project :item="$project">
                 <x-slot name="badge">
