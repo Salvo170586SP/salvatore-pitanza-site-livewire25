@@ -25,6 +25,8 @@ use App\Livewire\Admin\Trainings\TrainingsCreate;
 use App\Livewire\Admin\Trainings\TrainingsEdit;
 use App\Livewire\Admin\Trainings\TrainingsIndex;
 use App\Livewire\Guest\Pages\AboutMe as PagesAboutMe;
+use App\Livewire\Guest\Pages\Blog\Blog;
+use App\Livewire\Guest\Pages\Blog\BlogArticle;
 use App\Livewire\Guest\Pages\Drawings;
 use App\Livewire\Guest\Pages\ErrorPage;
 use App\Livewire\Guest\Pages\HomePage;
@@ -38,6 +40,8 @@ Route::get('/about-me', PagesAboutMe::class)->name('about');
 Route::get('/skills', SkillsPage::class)->name('skills');
 Route::get('/projects', ProjectsPage::class)->name('projects');
 Route::get('/drawings', Drawings::class)->name('drawings');
+Route::get('/blog', Blog::class)->name('blog');
+Route::get('/blog/article', BlogArticle::class)->name('blog.article');
 
 Route::middleware(['auth'])->group(function () {
     //biography

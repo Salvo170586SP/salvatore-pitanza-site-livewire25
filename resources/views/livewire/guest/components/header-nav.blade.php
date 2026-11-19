@@ -32,6 +32,10 @@
                             class="text-sm font-medium leading-normal underline underline-offset-4 @if(request()->is('projects')) decoration-sky-700 text-sky-700 @else decoration-transparent @endif  hover:decoration-sky-800 hover:text-sky-800 dark:text-zinc-300 transition-colors duration-300">
                             Progetti
                         </button>
+                        <button wire:navigate href="/blog"
+                            class="text-sm font-medium leading-normal underline underline-offset-4 hover:decoration-sky-800 @if(request()->is('drawings')) decoration-sky-700 text-sky-700 @else decoration-transparent @endif hover:text-sky-800 dark:text-zinc-300 transition-colors duration-300">
+                            Blog
+                        </button>
                         <button wire:navigate href="/drawings"
                             class="text-sm font-medium leading-normal underline underline-offset-4 hover:decoration-sky-800 @if(request()->is('drawings')) decoration-sky-700 text-sky-700 @else decoration-transparent @endif hover:text-sky-800 dark:text-zinc-300 transition-colors duration-300">
                             Oltre il codice
